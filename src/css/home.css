@@ -28,13 +28,18 @@
     place-content: center;
 }
 
-.home-hero-text h2 {
+.home-hero-text h2, .contact-subcontainer h2,
+.home-hero-text h4, .contact-subcontainer h4 {
     font-family: Avenir,"halyard-text", Avenir, sans-serif;
     font-weight: 450;
+    font-size: 1em;
+}
+
+.home-hero-text h2, .contact-subcontainer h2 {
     font-size: 1.25em;
 }
 
-p.home-caption-text  {
+p.home-caption-text, .contact-subcontainer p {
     font-family: 'Open Sans', Avenir, sans-serif;
     font-weight: 200;
     font-size: 0.85em;
