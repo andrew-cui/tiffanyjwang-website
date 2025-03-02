@@ -1,8 +1,7 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  margin: 0;
+  width: 100%;
+  font-family: "halyard-display", sans-serif;
 }
 
 .logo {
@@ -39,4 +38,34 @@
 
 .read-the-docs {
   color: #888;
+}
+
+
+
+/* App container */
+
+.app-container {
+  margin: 0 10%;
+  margin-top: 8em;
+}
+
+@media (max-width: 960px) {
+  .app-container {
+    margin: 0 8%;
+    margin-top: 7em;
+  }  
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    margin: 0 5%;
+    margin-top: 6em;
+  }  
+}
+
+@media (max-width: 576px) {
+  .app-container {
+    margin: 0 7.5%;
+    margin-top: 6.5em;
+  }  
 }

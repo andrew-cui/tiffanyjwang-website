@@ -8,12 +8,11 @@ import './../css/App.css'
 
 
 function Contact() {
-    const [count, setCount] = useState(0)
 
     return (
         <>
         <div>
-        <NavBar/>
+        <NavBar currentPage={'contact'}/>
             contact
         </div>
         
