@@ -79,7 +79,7 @@
 }
 
 
-@media (max-width: 960px) {
+@media (max-width: 1024px) {
     .navbar-links-item {
         margin: 0 1.5em;
     }

@@ -3,17 +3,17 @@
 reactjs website for tiff
 
 key features:
-
+- [] css: remove tailwind and refactor all code names
 
 ### navbar 
-- [] left side hero logo
-- [] right side links with no dropdown but hover underline - md+
+- [x] left side hero logo
+- [x] right side links with no dropdown but hover underline - md+
 - [] right side burger that opens to full screen options - <=md
-- [] bottom logos that persist including on right side open
+- [x] bottom logos that persist including on right side open
 
 ### homepage
-- [] hero logo
-- [] bio and link to kvst literary
+- [x] hero logo
+- [x] bio and link to kvst literary
 - [] "current updates"
 
 ### books
@@ -25,7 +25,7 @@ key features:
 - [] link to dan's page
 
 ### contact
-- [] links on lhs
+- [x] links on lhs
 - [] functioning template to send an email
 - [] confirm emails are sent
 - [] logging in private s3

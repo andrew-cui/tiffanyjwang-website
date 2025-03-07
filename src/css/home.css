@@ -47,7 +47,7 @@ p.home-caption-text, .contact-subcontainer p {
     margin: 0;
 }
 
-@media (max-width: 968px) {
+@media (max-width: 1024px) {
     .home-hero-image {
         height: 500px;  
         border-radius: 45px;      
