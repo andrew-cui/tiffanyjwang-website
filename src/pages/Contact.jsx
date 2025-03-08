@@ -4,13 +4,66 @@ import { useState } from 'react'
 import NavBar from './../components/NavBar.jsx'
 import NavIcons from './../components/NavIcons.jsx'
 import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer } from './../components/Spacers.jsx'
+import './../css/index.css'
 import './../css/App.css'
 import './../css/contact.css'
-import './../css/index.css'
+import emailjs from 'emailjs-com';
+
 
 
 function Contact() {
-    const [submit, setSubmitGraphic] = useState(null);
+    const [submit, setIsSubmitted] = useState(false);
+
+    const [formData, setFormData] = useState({
+        to: 'form@tiffanyjwang.com',
+        firstName: '',
+        lastName: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+
+      const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+          ...formData,
+          [name]: value
+        });
+      };
+    
+      const handleSubmit = (e) => {
+        e.preventDefault(); // Prevent form from reloading the page
+        console.log('Form submitted:', formData);
+
+        // Send email
+        emailjs.send(
+            'service_v3apcdq',        // Email service ID
+            'template_yrimy4a',       // Email template ID
+            formData,                 // Form data to send
+            'EUMkE_1mVt1Qv4HuI'            // Your EmailJS user ID
+        )
+        .then(
+            (response) => {
+            console.log('Email sent successfully', response);
+            alert('Email sent successfully!');
+            },
+            (err) => {
+            console.log('Email sending error', err);
+            alert('Failed to send email. Please try again.');
+            }
+        );
+    
+        setIsSubmitted(true);
+    
+        setFormData({
+          to: 'form@tiffanyjwang.com',
+          firstName: '',
+          lastName: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+    };
 
     return (
         <>
@@ -27,30 +80,79 @@ function Contact() {
                     <h4>For <b className="contact-bold">publicity requests</b>, please contact Matt Kaye at Bindery (<a className="contact-link" href="mailto:matt@binderybooks.com?subject=Publicity%20Requests:%20Tiffany%20Wang%20/%20Inferno's%20Heir">matt@binderybooks.com</a>).</h4>
                 </div>
                 <div className="contact-subcontainer contact-subcontainer-form">
-                    <h2><b>Contact Me</b></h2>
-                    <div className={`contact-display-card ${submit ? 'contact-display-submitted' : ''}`}>
-                        <form>
-                        <h5>Your Info</h5>
-                        <div className="contact-form w-full flex">
-                            <input type="text" placeholder="First Name" className="" required />
-                            <input type="text" placeholder="Last Name" className="" />
-                        </div>
-                        {/* Email */}
-                        <input type="email" placeholder="Email (optional)" className="" />
+                    <h2><b>Write a Message!</b></h2>
+                    <div className={`contact-display-card`}>
+                        <form onSubmit={handleSubmit} className={`contact-form-wrapper ${submit ? 'contact-form-submitted' : ''}`}>
+                            <h5>Your Info</h5>
+                            <div className="contact-form w-full flex">
+                                <input 
+                                    type="text" 
+                                    placeholder="First Name" 
+                                    id="firstName"
+                                    name="firstName"
+                                    value={formData.firstName}
+                                    onChange={handleChange}
+                                    required
+                                    data-1p-ignore />
+                                <input 
+                                    type="text" 
+                                    placeholder="Last Name"
+                                    id="lastName"
+                                    name="lastName"
+                                    value={formData.lastName}
+                                    onChange={handleChange} 
+                                    data-1p-ignore
+                                />
+                            </div>
+                            {/* Email */}
+                            <input 
+                                type="email" 
+                                placeholder="Email (optional)" 
+                                id="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
+                            />
 
-                        <SM_Spacer/>
-                        <h5>Your Note</h5>
-                        {/* Subject */}
-                        <input type="text" placeholder="Subject" className="" required />
+                            <SM_Spacer/>
+                            <h5>Your Note</h5>
+                            {/* Subject */}
+                            <input 
+                                type="text" 
+                                placeholder="Subject" 
+                                id="subject"
+                                name="subject"
+                                value={formData.subject} 
+                                onChange={handleChange}
+                                data-1p-ignore
+                            />
 
-                        {/* Message */}
-                        <textarea placeholder="Your message here!" className="contact-form-message" required></textarea>
+                            {/* Message */}
+                            <textarea 
+                                placeholder="Your message here!" 
+                                className="contact-form-message" 
+                                id="message"
+                                name="message"
+                                value={formData.message} 
+                                onChange={handleChange}
+                                required
+                                data-1p-ignore
+                            />
 
-                        {/* Submit */}
-                        <button type="submit" className="bg-blue-500 text-white hover:bg-blue-600">
-                            Send Message
-                        </button>
+                            <SM_Spacer/>
+                            {/* Submit */}
+                            <div className="flex w-full">
+                            <button type="submit" className="contact-form-submit">
+                                <div className="">
+                                    <span>Send your message</span>
+                                    <img width="16" height="16" src="https://img.icons8.com/glyph-neue/64/send.png" alt="send"/>
+                                </div>
+                            </button>
+                            </div>
                         </form>
+                        <div className={`${submit ? 'submit-confirmation-show' : 'submit-confirmation-hide'}`}>
+                            <i>Sent, thank you!</i>
+                        </div>
                     </div>
                 </div>
             </div>
