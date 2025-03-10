@@ -12,6 +12,7 @@ import './css/App.css'
 
 
 function App() {
+  const location = useLocation();
 
   return (
       <div>
