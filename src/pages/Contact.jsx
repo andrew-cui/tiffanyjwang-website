@@ -15,7 +15,6 @@ function Contact() {
     const [submit, setIsSubmitted] = useState(false);
 
     const [formData, setFormData] = useState({
-        to: 'form@tiffanyjwang.com',
         firstName: '',
         lastName: '',
         email: '',
@@ -56,7 +55,6 @@ function Contact() {
         setIsSubmitted(true);
     
         setFormData({
-          to: 'form@tiffanyjwang.com',
           firstName: '',
           lastName: '',
           email: '',
@@ -82,7 +80,7 @@ function Contact() {
                 <div className="contact-subcontainer contact-subcontainer-form">
                     <h2><b>Write a Message!</b></h2>
                     <div className={`contact-display-card`}>
-                        <form onSubmit={handleSubmit} className={`contact-form-wrapper ${submit ? 'contact-form-submitted' : ''}`}>
+                        <form name="contact" netlify onSubmit={handleSubmit} className={`contact-form-wrapper ${submit ? 'contact-form-submitted' : ''}`}>
                             <h5>Your Info</h5>
                             <div className="contact-form w-full flex">
                                 <input 
