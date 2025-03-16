@@ -8,6 +8,7 @@ import { useState } from 'react'
 import ScrollToTopUponNewPage from './components/ScrollToTop.jsx'
 import Home from './pages/Home.jsx'
 import Contact from './pages/Contact.jsx'
+import Books from './pages/Books.jsx'
 import './css/App.css'
 
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/contact" element={<Contact/>} />
           <Route path="/form" element={<Contact/>} />
+          <Route path="/books" element={<Books/>} />
 
 
           <Route path="*" element={<Navigate to="/" replace />} />

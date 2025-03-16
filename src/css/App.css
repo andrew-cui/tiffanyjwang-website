@@ -16,6 +16,9 @@
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
+a {
+  cursor: pointer;
+}
 
 @keyframes logo-spin {
   from {
@@ -43,10 +46,22 @@
 
 
 /* App container */
-
 .app-container {
-  margin: 0 10%;
+  margin: 0 20%;
   margin-top: 8em;
+}
+@media (max-width: 1920px) {
+  .app-container {
+    margin: 0 15%;
+    margin-top: 8em;
+  }  
+}
+
+@media (max-width: 1440px) {
+  .app-container {
+    margin: 0 10%;
+    margin-top: 8em;
+  }  
 }
 
 @media (max-width: 1024px) {
@@ -59,13 +74,20 @@
 @media (max-width: 768px) {
   .app-container {
     margin: 0 5%;
-    margin-top: 6em;
+    margin-top: 6.5em;
   }  
 }
 
 @media (max-width: 576px) {
   .app-container {
     margin: 0 7.5%;
-    margin-top: 6.5em;
+    margin-top: 7.5em;
   }  
+}
+
+.flex-container {
+  margin-bottom: 5em;
+  gap: 5%;
+  display: flex;
+  flex-wrap: wrap;
 }

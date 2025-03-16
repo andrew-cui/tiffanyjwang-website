@@ -1,0 +1,173 @@
+.book-container {
+    justify-content: center;
+}
+.book-card {
+    display: flex;
+    flex-direction: row;
+    min-height: 500px;
+    min-width: 85%;
+    /* background-color: #ffffffcc;
+    backdrop-filter: blur(8px); */
+    box-shadow: 0px 2px 5px #00000050;
+    border-radius: 1em;
+    padding: 1.75em;
+    min-height: 300px;
+    transition: 500ms ease-in-out;
+    place-content: center;
+    gap: 5%;
+}
+.book-card a {
+    text-decoration: underline;
+}
+.book-lhs {
+    flex: 1 1 55%;
+    justify-content: start;
+    padding: 0.5em 1em;
+}
+.book-lhs h2 {
+    font-size: 2em;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /* text-transform: uppercase; */
+    font-weight: 700;
+}
+.book-lhs h3 {
+    font-size: 1.4em;
+    font-weight: 600;
+}
+.book-lhs h4 {
+    font-size: 1.1em;
+    font-weight: 600;
+}
+.book-lhs h5 {
+    padding: .5em 1.5em;
+    font-size: 1.15em;
+    font-weight: 400;
+    margin-bottom: .5em;
+    line-height: 1.5em;
+    text-align: center;
+}
+h5#infernosheir > a:hover {
+    background: linear-gradient(to right, rgb(252,12,21) 40%, rgb(149,15,57) 100%);
+    border-bottom: 0.5px solid rgb(149,15,57);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+.book-lhs p {
+    font-weight: 300;
+    font-size: 1.1em;
+}
+
+.book-rhs {
+    flex: 1 1 40%;
+    place-items: center;
+}
+.title-image {
+    margin: 1em 12.5%;
+    width: 75%;
+    border-radius: 5px;
+}
+
+.button-goodreads {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(270deg, rgba(85, 59, 8, 0.2), #FFFFfecc);
+    backdrop-filter: blur(8px);
+    box-shadow: 0px 1px 3px rgba(85, 59, 8, 0.4);
+    opacity: 50%;
+    border-radius: 1em;
+    font-family: 'Open Sans', Avenir, sans-serif;
+    font-weight: 100;
+    font-size: 1em;
+    padding: 0.5em 1em;
+    border-width: 0.5px;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+.button-goodreads:hover {
+    box-shadow: 0px 2.5px 5px rgba(85, 59, 8, 0.7);
+}
+
+.button-goodreads img {
+    margin: auto 0.5em;
+    height: 16px;
+    margin-right: 0em;
+}
+
+@media (max-width: 1920px) {
+    .book-card {
+    }
+    .book-lhs {
+        flex: 1 1 50%;
+    }
+    .book-rhs {
+        flex: 1 1 45%;
+    }
+  }
+  
+  @media (max-width: 1440px) {
+    .book-lhs {
+        flex: 1 1 45%;
+    }
+    .book-rhs {
+        flex: 1 1 50%;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .book-card {
+        flex-direction: column;
+        gap: 0%;
+    }
+    .book-rhs {
+        padding: 0 5em;
+        margin-top: 1.5em;
+        margin-bottom: 2.5em;
+        padding: 0 5em;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .book-card {
+        padding-top: 1.5em;
+    }
+    .book-lhs h5 {
+        padding: .5em;
+        margin-bottom: .25em;
+    }
+    .book-rhs {
+        margin-top: 2.5em;
+        margin-bottom: 1.5em;
+        padding: 0 3em;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .book-card {
+        padding-top: 2.5em;
+    }
+    .book-rhs {
+        padding: 0;
+    }
+}
+  
+.book-title {
+    position: relative;
+    width: 100%;
+}
+
+.book-infernosheir {
+    padding: 0 auto;
+    text-align: center;
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; */
+    background: linear-gradient(to right, rgb(252,12,21) 40%, rgb(8, 46, 67) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}

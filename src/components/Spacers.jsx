@@ -22,4 +22,10 @@ const XL_Spacer = () => {
     )
 }
 
-export { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer }
+const Inline_Spacer = () => {
+    return (
+        <><span style={{marginLeft: '0.5em'}}>&nbsp;</span>|<span style={{marginRight: '0.5em'}}>&nbsp;</span></>
+    )
+}
+
+export { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer, Inline_Spacer}

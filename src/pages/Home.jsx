@@ -13,7 +13,7 @@ function Home() {
         <>
         <NavBar currentPage={'home'}/>
         <div className="app-container">
-            <div className="home-container flex flex-wrap">
+            <div className="flex-container home-container">
                 <div className="home-hero-image">
                     <img src="https://images.squarespace-cdn.com/content/v1/65d50069b811380a895ef714/6c2ad843-a03e-4474-83a4-4a0cdcef2705/2024-TJW-Author-3.jpg?format=2500w"></img>
                 </div>
@@ -23,7 +23,7 @@ function Home() {
                 
                     <h2>She is represented by <a className="link-underline" href="https://ktliterary.com/" target="_blank">Kelly Van Sant of KT Literary</a>.</h2>
                     <LG_Spacer/>
-                    <p className="home-caption-text">Image by Andrew Cui / favicon by Katherine Li</p>
+                    <p className="home-caption-text">Image by <a href="www.andrewcui.com" target="_blank">Andrew Cui</a> / favicon by Katherine Li</p>
                 </div>
             </div>
         </div>

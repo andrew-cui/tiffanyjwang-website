@@ -68,7 +68,7 @@ function Contact() {
         <div>
         <NavBar currentPage={'contact'}/>
         <div className="app-container">
-            <div className="contact-container flex flex-wrap">
+            <div className="flex-container contact-container">
                 <div className="contact-subcontainer">
                     <h2><b>Get in touch!</b></h2>
                     <hr></hr>
