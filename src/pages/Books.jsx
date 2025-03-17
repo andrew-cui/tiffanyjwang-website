@@ -57,7 +57,7 @@ function Books() {
                         </span>
                     </div>
                     <div className="book-rhs">
-                        <img className="title-image" src="../assets/Wang-InfernosHeir-6x9-CV-FT.jpg"/>
+                        <img className="title-image" src="./Wang-InfernosHeir-6x9-CV-FT.jpg"/>
                         <SM_Spacer/>
                         <p className="home-caption-text text-center">
                         Cover by <a href="https://danfunderburgh.cargo.site/" target="_blank">Dan Funderburgh</a>
