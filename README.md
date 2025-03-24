@@ -8,7 +8,7 @@ key features:
 ### navbar 
 - [x] left side hero logo
 - [x] right side links with no dropdown but hover underline - md+
-- [] right side burger that opens to full screen options - <=md
+- [x] right side burger that opens to full screen options - <=md
 - [x] bottom logos that persist including on right side open
 
 ### homepage
@@ -17,15 +17,15 @@ key features:
 - [] "current updates"
 
 ### books
-- [] one entry per book
+- [x] one entry per book
 - [x] links to purchase
 - [x] overview of the book
-- [] testimonials / blurbs
-- [] cross-fade between book options
+- [x] testimonials / blurbs
+- [x] cross-fade between book options
 - [] international availability
 - [x] options to add to goodreads
 - [x] link to dan's page
-- [] page should have both options with a subnavbar at the top
+- [x] page should have both options with a subnavbar at the top
 - [] reactrouter should link to either IH or TQ based on selection (not possible?)
 
 ### contact

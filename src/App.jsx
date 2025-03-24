@@ -2,9 +2,6 @@
 import {
   BrowserRouter, Routes, Route, Navigate, useLocation
 } from 'react-router-dom'
-import { motion, AnimatePresence } from 'framer-motion';
-
-import { useState } from 'react'
 import ScrollToTopUponNewPage from './components/ScrollToTop.jsx'
 import Home from './pages/Home.jsx'
 import Contact from './pages/Contact.jsx'
