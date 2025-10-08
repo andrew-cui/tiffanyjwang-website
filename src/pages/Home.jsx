@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react'
 import NavBar from './../components/NavBar.jsx'
 import NavIcons from './../components/NavIcons.jsx'
-import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer } from './../components/Spacers.jsx'
+import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer } from './../components/ButtonsSpacers.jsx'
 import './../css/App.css'
 import './../css/home.css'
 

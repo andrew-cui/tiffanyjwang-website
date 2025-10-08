@@ -22,10 +22,20 @@ const XL_Spacer = () => {
     )
 }
 
+
 const Inline_Spacer = () => {
     return (
         <><span style={{marginLeft: '0.5em'}}>&nbsp;</span>|<span style={{marginRight: '0.5em'}}>&nbsp;</span></>
     )
 }
 
-export { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer, Inline_Spacer}
+const Goodreads_Button = () => {
+    return (
+        <><button className="button-goodreads">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Goodreads_%27g%27_logo.svg/1024px-Goodreads_%27g%27_logo.svg.png?20220601041842"/> &nbsp; add to goodreads
+        </button>
+        </>
+    )
+}
+
+export { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer, Inline_Spacer, Goodreads_Button }

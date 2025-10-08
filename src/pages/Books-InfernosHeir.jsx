@@ -3,9 +3,9 @@ import {
     useLocation
   } from 'react-router-dom'
 import { useState } from 'react'
-import NavBar from './../components/NavBar.jsx'
-import NavIcons from './../components/NavIcons.jsx'
-import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer, Inline_Spacer } from './../components/Spacers.jsx'
+import NavBar from '../components/NavBar.jsx'
+import NavIcons from '../components/NavIcons.jsx'
+import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer, Inline_Spacer, Goodreads_Button } from '../components/ButtonsSpacers.jsx'
 import './../css/App.css'
 import './../css/books.css'
 import './../css/home.css'
@@ -41,7 +41,7 @@ function InfernosHeir () {
                     <SM_Spacer/>
                     <hr></hr>
                     <span className="text-center">
-                        <h3>Read / listen now!</h3>
+                        <h3>Read & listen now!</h3>
                         <div>
                             <h5 id="infernosheir">
                                 <a href="https://www.barnesandnoble.com/w/infernos-heir-tiffany-wang/1144758931">Barnes & Noble</a><Inline_Spacer/>
@@ -66,8 +66,7 @@ function InfernosHeir () {
                     Cover by <a href="https://danfunderburgh.cargo.site/" target="_blank">Dan Funderburgh</a>
                     </p>
                     <MD_Spacer/>
-                    <a href="https://www.goodreads.com/book/show/207014554-inferno-s-heir" target="_blank" alt="Goodreads: Inferno's Heir"><button className="button-goodreads">
-                        add to <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Goodreads_logo.svg/606px-Goodreads_logo.svg.png"/></button></a>
+                    <a href="https://www.goodreads.com/book/show/207014554-inferno-s-heir" target="_blank" alt="Goodreads: Inferno's Heir"><Goodreads_Button/></a>
 
                     <MD_Spacer/>
                     <span>
@@ -138,9 +137,7 @@ function TempestsQueen () {
                     Cover by <a href="https://danfunderburgh.cargo.site/" target="_blank">Dan Funderburgh</a>
                     </p>
                     <MD_Spacer/>
-                    <a href="https://www.goodreads.com/book/show/222942059-tempest-s-queen" target="_blank" alt="Goodreads: Tempest's Queen">
-                    <button className="button-goodreads">
-                        add to <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Goodreads_logo.svg/606px-Goodreads_logo.svg.png"/></button></a>
+                    <a href="https://www.goodreads.com/book/show/222942059-tempest-s-queen" target="_blank" alt="Goodreads: Tempest's Queen"><Goodreads_Button/></a>
                 </div>
             </div>
         </>
@@ -149,7 +146,8 @@ function TempestsQueen () {
 
 
 
-function Books() {
+
+function Books_InfernosHeir() {
     // const location = useLocation()
     // location.state === null ? true : false
     const [isIHVisible, setIHVisible] = useState(true)
@@ -199,4 +197,4 @@ function Books() {
     )
 }
 
-export default Books
+export default Books_InfernosHeir;
