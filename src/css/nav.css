@@ -1,92 +1,110 @@
-.navbar-wrapper {
-    position: absolute;
+/* NAVIGATION CSS */
+.nav-top {
+    /* position: absolute; */
+    position: fixed;
+    z-index: 2;
     top: 0.25em;
-    height: 80px;
+    min-height: 140px;
     width: 100%;
-    background-color: #ffffffcc;
+    background-color: #faf8f6CC;
     /* backdrop-filter: blur(1px); */
     /* box-shadow: 0px 2px 2px #00000020; */
 }
-
-.navbar-flex {
+.nav-flex {
     display: flex;
     justify-content: space-between; 
     align-items: center;       
 }
-  
-.navbar-title {
-    flex: 1 1 40%;
-    justify-content: left;
+
+/* NAV FOOTER ICONS */
+.nav-bot {
+    position: relative;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    width: 100%;
+}
+.nav-bot-icons {
+    display: flex;
     align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5em;
+}
+.nav-icon, .nav-icon svg, .nav-icon path {
+    width: 1.75em;
+    height: 1.75em;
+    margin: 0 .5em;
+}
+p.nav-bot-cr {
+    font-family: "Noto Serif", system-ui, serif;
+    text-transform: lowercase;
+    text-align: center;
+    font-size: 0.75em;
+    color: #27272a;
+    font-weight: 300; 
 }
 
-.navbar-title-items {
-    justify-content: left;
+
+/* TITLE */
+.nav-title, .navbar-title-items {
+    margin-top: 5px;
+    width: 100%;
+    justify-content: center;
     align-items: center;
 }
-
-.navbar-title h2 {
-    font-size: 1.25em;
+.nav-title-logo {
+    height: 60px;
+    padding: 15px;
+}
+.nav-title h2 {
+    font-family: "Noto Serif", system-ui, serif;
+    font-size: 1.75em;
     color: #27272a;
     font-weight: 300;
-    padding-right: .25em;
 }
 
-
-/* Desktop navigation */
-.navbar-desktop {
+/* DESKTOP */
+.nav-desktop {
     display: flex;
     margin: 0 2.5em;
-}
-
-.author-logo {
-    height: 80px;
-}
-
-.author-logo img {
-    height: 50px;
-    padding: 15px;
-    padding-right: 8px;
-}
-  
-.navbar-links {
-    flex: 1 1 60%;
-    justify-content: right;        
+    justify-content: center;        
     align-items: center;                                    
-    text-align: center;      
-    margin-right: 1.5em;       
-}
-
-.navbar-links-item {
+    text-align: center;          
+}  
+.nav-links-item {
     height: 24px;
     margin: 0 2em;
 }
-.navbar-link-text {
+.nav-link-text {
     font-size: 1.1em;
     color: #27272a;
     font-weight: 300;
     margin: 0;
 }
 
-.navbar-link-text:hover,
-.navbar-link-text:active,
-.navbar-link-text:focus,
-.navbar-link-text-active {
+.nav-link-text:hover,
+.nav-link-text:active,
+.nav-link-text:focus,
+.nav-link-text-active {
     text-decoration: underline;
     transition: ease-in-out;
     transition-delay: 50ms;
-    transition-duration: 500ms;
+    transition-duration: 1000ms;
 }
 
+/* MOBILE */
 
-@media (max-width: 1024px) {
+
+
+
+
+/* @media (max-width: 1024px) {
     .navbar-links-item {
         margin: 0 1.5em;
     }
     .navbar-links {
         margin-right: .75em;
     }
-}
+} */
 
 @media (max-width: 768px) {
     .navbar-desktop {
@@ -161,3 +179,5 @@
         display: none;
     }
 }
+
+

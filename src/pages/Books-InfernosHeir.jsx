@@ -3,8 +3,7 @@ import {
     useLocation
   } from 'react-router-dom'
 import { useState } from 'react'
-import NavBar from '../components/NavBar.jsx'
-import NavIcons from '../components/NavIcons.jsx'
+import {NavBar, NavIcons} from '../components/NavBar.jsx'
 import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer, Inline_Spacer, Goodreads_Button } from '../components/ButtonsSpacers.jsx'
 import './../css/App.css'
 import './../css/books.css'
@@ -94,7 +93,7 @@ function TempestsQueen () {
                             <span style={{fontSize: '2rem'}}>T</span>empest's&nbsp; 
                             <span style={{fontSize: '2rem'}}>Q</span>ueen
                         </h2>
-                        <p>The sequel to INFERNO'S HEIR.<br/>Releasing October 28, 2025</p>
+                        <p>The sequel to INFERNO'S HEIR.</p>
                         <hr style={{margin: '0 7.5%'}}/>
                     </div>
                     <h4 id="tempestsqueen">
@@ -104,7 +103,7 @@ function TempestsQueen () {
                         Six months ago, Teia Carthan seized the throne against all odds. She sacrificed everything--her morals, her friends, even the spark of love--to hear the whisper of her new title: Highness.
                     </p>
                     <p id="tempestsqueen">
-                    Now, Teia sets sail across the Dark Sea to warn her cousin, the Shaylani emperor, of a threat that could doom the Five Kingdoms: <b>Cornelius Lehm lives</b>, and he's planning to raise the Serkawr. 
+                    Now, Teia sets sail across the Dark Sea to warn her cousin, the Shaylani emperor, of a threat that could doom the Five Kingdoms: Cornelius Lehm lives, and he's planning to raise the Serkawr. 
                     </p>
                     <p id="tempestsqueen">
                     But as she begins a furious journey across Shaylan, Teia knows she needs help to defeat Lehm--even if it means working with the very rebels she betrayed to claim her crown.Trust is a fragile thing, and Teia crushed it beneath her heel. 

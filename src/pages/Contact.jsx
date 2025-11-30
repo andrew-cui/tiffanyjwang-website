@@ -1,8 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 
 import { useState } from 'react'
-import NavBar from './../components/NavBar.jsx'
-import NavIcons from './../components/NavIcons.jsx'
+import {NavBar, NavIcons} from '../components/NavBar.jsx'
 import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer } from '../components/ButtonsSpacers.jsx'
 import './../css/index.css'
 import './../css/App.css'

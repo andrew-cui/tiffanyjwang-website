@@ -17,6 +17,7 @@ function App() {
         <ScrollToTopUponNewPage /> 
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home/>} />
+          {/* <Route path="/home" element={<Home/>} /> */}
           <Route path="/contact" element={<Contact/>} />
           <Route path="/form" element={<Contact/>} />
           <Route path="/books" element={<Books_InfernosHeir/>} />
