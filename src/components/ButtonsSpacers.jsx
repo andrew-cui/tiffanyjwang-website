@@ -1,3 +1,4 @@
+
 const SM_Spacer = () => {
     return (
       <div className="spacer-small my-1" style={{height: '1em'}}/>
@@ -32,10 +33,13 @@ const Inline_Spacer = () => {
 const Goodreads_Button = () => {
     return (
         <><button className="button-goodreads">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Goodreads_%27g%27_logo.svg/1024px-Goodreads_%27g%27_logo.svg.png?20220601041842"/> &nbsp; add to goodreads
+            {/* <img src="https://images.gr-assets.com/misc/1751925215-1751925215_goodreads_misc.png"/> &nbsp;  */}
+            goodreads
         </button>
         </>
     )
 }
+
+
 
 export { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer, Inline_Spacer, Goodreads_Button }

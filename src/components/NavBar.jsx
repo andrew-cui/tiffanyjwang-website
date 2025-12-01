@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   Link
 } from 'react-router-dom'
@@ -20,11 +21,6 @@ export function NavBar ({currentPage}) {
     const toggleMobileNavbar = () => {
         setIsOpen(!isOpenMobile)
     }
-    // const handleNavbarClick = () => {
-    //     if(isOpenMobile) {
-    //         setIsOpen(false)
-    //     }
-    // };
 
     return (
         <div className="nav-top">
@@ -37,59 +33,55 @@ export function NavBar ({currentPage}) {
             {/* Desktop Navigation */}
             <div className="nav-desktop flex">
             {nav_top_links.map((item, index) => (
-                <Link key={index} to={'/' + item.link} style={{pointerEvents: item.disabled ? 'none' : 'auto'}} className="nav-links-item">
+                <Link key={index} to={'/' + item.link} style={{pointerEvents: item.disabled ? 'none' : 'auto'}} className="nav-link-item">
                     <h3 className={`nav-link-text ${currentPage === item.link ? 'nav-link-text-active' : ''}`} style={item.style}>{item.title}</h3>
                 </Link>
             ))}
             </div>
 
-{/* Mobile Navigation */}
-            <div className="navbar-mobile">
-                <div className="navbar-mobile-header navbar-flex">
-                    <div className="navbar-mobile-title navbar-title">
-                        <Link to={'/'} className="navbar-title-items flex flex-wrap">
-                            <h2>Tiffany Wang</h2>
-                        </Link>
-                    </div>
+            {/* Mobile Navigation */}
+            <div className="nav-mobile">
+                <div className="nav-mobile-menu nav-flex">
                     {isOpenMobile ?
-                    <button className="navbar-mobile-menu" onClick={toggleMobileNavbar}>
+                    <button className="nav-mobile-button" onClick={toggleMobileNavbar}>
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28" height="28" viewBox="0 0 50 50">
                         <path d="M 0 25 L 50 25" stroke="black" strokeWidth="3" transform="rotate(45 25 25)"/>
                         <path d="M 0 25 L 50 25" stroke="black" strokeWidth="3" transform="rotate(-45 25 25)"/>
                         </svg>
                     </button>
                     :
-                    <button className="navbar-mobile-menu" onClick={toggleMobileNavbar}>
+                    <button className="nav-mobile-button" onClick={toggleMobileNavbar}>
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28" height="28" viewBox="0 0 50 50">
                         <path d="M 0 16 L 0 18 L 50 18 L 50 16 Z M 0 32 L 0 34 L 50 34 L 50 32 Z"></path>
                         </svg>
                     </button>
                     }
                 </div>
-
-                {isOpenMobile ?
-                <div className="navbar-mobile-overlay">
-                    <div className="navbar-mobile-links">
-                        <Link to={'/'} className="navbar-links-item" >
-                            <h3 className={`navbar-link-text`}>Home</h3>
-                        </Link>
-                        <Link to={'/books'} className="navbar-links-item" >
-                            <h3 className={`navbar-link-text`}>Books</h3>
-                        </Link>
-                        {/* <Link to={'/blog'} className="navbar-links-item" >
-                            <h3 className={`navbar-link-text`}>Blog</h3>
-                        </Link> */}
-                        <Link to={'/contact'} className="navbar-links-item" >
-                            <h3 className={`navbar-link-text`}>Contact</h3>
-                        </Link>
+                
+                <AnimatePresence>
+                {isOpenMobile && (
+                    <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    style={{ overflow: "hidden" }}
+                    >
+                    <div className="nav-mobile-dropdown">
+                        <div className="nav-mobile-links">
+                            {nav_top_links.map((item, index) => (
+                                <Link key={index} to={'/' + item.link} style={{pointerEvents: item.disabled ? 'none' : 'auto'}} className="nav-link-item">
+                                    <h3 className={`nav-link-text ${currentPage === item.link ? 'nav-link-text-active' : ''}`} style={item.style}>{item.title}</h3>
+                                </Link>
+                            ))}
+                        </div>
+                        <div className="nav-mobile-icons">
+                            <NavIcons/>
+                        </div>
                     </div>
-                    <div className="navicons-wrapper">
-                        <NavIcons/>
-                    </div>
-                </div>
-                : <></>}
+                    </motion.div>
+                )}
+                </AnimatePresence>
             </div>
-
 
         </div>
     )
@@ -134,8 +126,7 @@ export function NavIcons () {
                     <a
                         href={item.href || "#"}
                         target={`${item.label == "home" ? '' : "_blank"}`}
-                    >
-                        {item.icon}
+                    >{item.icon}
                     </a>
                 </div>
                 ))}

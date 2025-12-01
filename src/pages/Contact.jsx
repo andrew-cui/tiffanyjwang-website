@@ -66,15 +66,22 @@ function Contact() {
         <>
         <div>
         <NavBar currentPage={'contact'}/>
+        <AnimatePresence>
+        <motion.div
+            initial={{ opacity: 0, x: 0 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 0 }}
+            transition={{ duration: 0.7 }}
+        >
         <div className="app-container">
             <div className="flex-container contact-container">
                 <div className="contact-subcontainer">
                     <h2><b>Get in touch!</b></h2>
                     <hr></hr>
-                    <h4>You can find me at any of the social media links below (although I’m increasingly inactive on Twitter / X), or by filling out the contact form on this site!</h4>
+                    <h4>You can find me at any of the social media links below, or by filling out the contact form on this site!</h4>
                     <h4>I am represented by <b className="contact-bold">Kelly Van Sant</b> from <a href="https://ktliterary.com/agents" target="_blank">KT Literary</a> (<a className="contact-link" href="mailto:kelly@ktliterary.com">kelly@ktliterary.com</a>).</h4>
                     <h4>For <b className="contact-bold">foreign rights and translation inquiries</b>, please contact Maria Napolitano (<a className="contact-link" href="mailto:maria@ktliterary.com?subject=Inferno's%20Heir%20-%20Foreign%20/%20Translation%20Rights%20">maria@ktliterary.com</a>).</h4>
-                    <h4>For <b className="contact-bold">publicity requests</b>, please contact Matt Kaye at Bindery (<a className="contact-link" href="mailto:matt@binderybooks.com?subject=Publicity%20Requests:%20Tiffany%20Wang%20/%20Inferno's%20Heir">matt@binderybooks.com</a>).</h4>
+                    {/* <h4>For <b className="contact-bold">publicity requests</b>, please contact Matt Kaye at Bindery (<a className="contact-link" href="mailto:matt@binderybooks.com?subject=Publicity%20Requests:%20Tiffany%20Wang%20/%20Inferno's%20Heir">matt@binderybooks.com</a>).</h4> */}
                 </div>
                 <div className="contact-subcontainer contact-subcontainer-form">
                     <h2><b>Write a Message!</b></h2>
@@ -154,6 +161,8 @@ function Contact() {
                 </div>
             </div>
         </div>
+        </motion.div>
+        </AnimatePresence>
         <NavIcons/>
         </div>
         

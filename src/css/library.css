@@ -1,0 +1,149 @@
+/* BOOKSHELF ANIMATIONS */
+
+/* Container */
+.library-container {
+    display: block;
+    box-shadow: 0px 2px 5px #00000050;
+    border-radius: 1em;
+    margin: 0 auto;
+}
+.library {
+    padding: 1.5em 1em;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 3.5em;
+    row-gap: 2em;
+    justify-content: center;
+    text-align: center;
+
+    @media (max-width: 768px) {
+        row-gap: 1em;
+    }
+}
+.library-homepage {
+    column-gap: 5%;
+    padding-left: 1.5em;
+    padding-top: .5em;
+    justify-content: left;
+}
+.library-header {
+    text-align: left;
+    padding: 0.5em 1.5em 0 1.5em;
+
+    h2 {
+        margin-bottom: 0 !important;
+        font-family: "Noto Serif", system-ui, serif !important;
+        font-weight: 300 !important; 
+    }
+    hr {
+        margin: 0;
+    }
+}
+
+/* Styling for full-art and unreleased books */
+.book, 
+.book-unreleased {
+    position: relative;
+    hr {
+        width: 120px;
+    }
+    h4 {
+        margin-bottom: 5px;
+    }
+    h5 {
+        font-size: 1.1em;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+    p {
+        margin: 0;
+    }
+    img {
+        height: 180px;
+        width: 120px;
+        object-fit: cover;
+        border-radius: 5px;
+        box-shadow: 1px 1px 1px rgba(50,50,50,0.25);
+    }
+}
+
+/* Hover transitions */
+.book {
+    a {
+        cursor: pointer;
+    }
+    .book-overlay {
+        position: absolute;
+        bottom: 5px;
+        width: 100%;
+        opacity: 0;
+        transition: opacity 0.3s ease-in;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        border-radius: 5px;
+        display: flex;
+        color: white;
+        line-height: 1.25;
+    }
+    .book-img-caption, .book-overlay, .book-img-overlay {
+        transition: 0.25s ease-in-out;
+    }
+    :hover {
+        transition: 0.25s ease-in-out;
+        .book-ih {
+            background: linear-gradient(to bottom, rgba(152, 27, 33, 0.5) 40%, rgba(48, 86, 97, 0.5) 80%);
+        }
+        .book-tq {
+            background: linear-gradient(to bottom, rgba(21,154,215, 0.5) 25%, rgba(153,139,190, 0.5) 60%);
+        }
+        .book-overlay {
+            opacity: 1;
+        }
+        .book-img-caption {
+            box-shadow: 1px 1px 2px rgba(50,50,50,0.5);
+            filter: brightness(0.9);
+            transform: translateY(-1px); 
+        }
+    }
+}
+.book-caption {
+    position: relative;
+    display: inline-block;
+}
+h4.book-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;          
+    height: 1px;
+    width: 0%;
+    background: #27272a;
+    opacity: 0.75;
+    transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1); /* smooth */
+}
+h4.book-selected::after {
+  width: 100%;
+}
+
+/* Suppress animation for unreleased books */
+.book-unreleased {
+    h5, hr {
+        opacity: 0.5;
+    }
+    h4, p {
+        opacity: 0.75;
+    }
+    .book-overlay {
+        display: none;
+    }
+}
+
+/* Don't show unreleased books on homepage */
+.book-hidden {
+    width: 0;
+    height: 0;
+    display: none;
+}

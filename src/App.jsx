@@ -1,27 +1,34 @@
 /* Primary SPA router */
+import { useEffect } from 'react';
 import {
   BrowserRouter, Routes, Route, Navigate, useLocation
 } from 'react-router-dom'
-import ScrollToTopUponNewPage from './components/ScrollToTop.jsx'
+// import { TopOfPage } from './components/SiteComponents.jsx'
 import Home from './pages/Home.jsx'
 import Contact from './pages/Contact.jsx'
-import Books_InfernosHeir from './pages/Books-InfernosHeir.jsx'
+import Books from './pages/Books.jsx'
 import './css/App.css'
 
+
+function TopOfPage () {
+    useEffect(() => {
+      window.scrollTo(0, 0); // Scroll to top whenever the route changes
+    }, [useLocation()]);
+    return;
+}
 
 function App() {
   const location = useLocation();
 
   return (
       <div>
-        <ScrollToTopUponNewPage /> 
+        <TopOfPage /> 
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home/>} />
           {/* <Route path="/home" element={<Home/>} /> */}
           <Route path="/contact" element={<Contact/>} />
           <Route path="/form" element={<Contact/>} />
-          <Route path="/books" element={<Books_InfernosHeir/>} />
-
+          <Route path="/books" element={<Books/>} />
 
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
