@@ -1,10 +1,11 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react'
-import { NavBar, NavIcons } from './../components/NavBar.jsx'
-import { Library } from '../components/Library.jsx'
-import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer } from '../components/ButtonsSpacers.jsx'
-import './../css/App.css'
-import './../css/home.css'
+import { NavBar, NavIcons } from '@components/NavBar'
+import { Banner } from '@components/Banner'
+import { Library } from '@components/Library'
+import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer } from '@components/ButtonsSpacers'
+import '@css/App.css'
+import '@css/home.css'
 
 
 
@@ -31,13 +32,13 @@ function Home() {
                         <h2>She is represented by <a className="link-underline" href="https://ktliterary.com/" target="_blank">Kelly Van Sant of KT Literary</a>.</h2>
                         <h2>Coming in 2027: <u><a href="https://www.publishersweekly.com/pw/by-topic/childrens/childrens-book-news/article/98517-rights-report-week-of-september-1-2025.html" target="_blank"><i>The Secrets We Carry Duology</i></a></u></h2>
                         <MD_Spacer/>
-                        
-                        <Library homepage={true}
+                        <Banner/>
+                        {/* <Library homepage={true}
                             onSelectBook={null}
                             overlay={false} width={"100%"}
                             header={
                                 <div className="library-header"><h2><a href="/books">Published Books 📖</a></h2><hr></hr></div>
-                            }/>
+                            }/> */}
                     </div>
                 </div>
             </div>

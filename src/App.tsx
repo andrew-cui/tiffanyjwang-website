@@ -1,20 +1,19 @@
-/* Primary SPA router */
 import { useEffect } from 'react';
 import {
   BrowserRouter, Routes, Route, Navigate, useLocation
 } from 'react-router-dom'
-// import { TopOfPage } from './components/SiteComponents.jsx'
-import Home from './pages/Home.jsx'
-import Contact from './pages/Contact.jsx'
-import Books from './pages/Books.jsx'
-import './css/App.css'
+import Home from './pages/Home'
+import Contact from './pages/Contact'
+import Books from './pages/Books'
+import '@css/App.css'
 
 
-function TopOfPage () {
-    useEffect(() => {
-      window.scrollTo(0, 0); // Scroll to top whenever the route changes
-    }, [useLocation()]);
-    return;
+function TopOfPage (): null {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to top whenever the route changes
+  }, [location.pathname]);
+  return null;
 }
 
 function App() {
@@ -25,7 +24,6 @@ function App() {
         <TopOfPage /> 
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home/>} />
-          {/* <Route path="/home" element={<Home/>} /> */}
           <Route path="/contact" element={<Contact/>} />
           <Route path="/form" element={<Contact/>} />
           <Route path="/books" element={<Books/>} />
@@ -38,10 +36,14 @@ function App() {
 
 
 const Root = () => (
-  <BrowserRouter  basename="/" future={{
-    v7_relativeSplatPath: true,
-    v7_startTransition: true,
-  }}>
+  <BrowserRouter  
+    basename="/" 
+    {...({
+      future: {
+        v7_relativeSplatPath: true,
+        v7_startTransition: true,
+      },
+    } as any)}>
     <App />
   </BrowserRouter>
 );

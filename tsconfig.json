@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+
+    "allowJs": true,
+    "strict": false,
+
+    "noEmit": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+
+    // Only this, nothing else here:
+    "types": ["vite/client"]
+  },
+  "include": ["src"]
+}

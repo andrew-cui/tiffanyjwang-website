@@ -1,4 +1,4 @@
-import books from './books.json'
+import books from '@content/books.json'
 import './../css/library.css'
 import { motion, AnimatePresence } from 'framer-motion';
 

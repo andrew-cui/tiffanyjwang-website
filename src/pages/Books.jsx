@@ -1,14 +1,14 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react'
-import {NavBar, NavIcons} from '../components/NavBar.jsx'
-import { Library } from '../components/Library.jsx'
+import {NavBar, NavIcons} from '@components/NavBar'
+import { Library } from '@components/Library'
 
-import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer, Inline_Spacer, Goodreads_Button } from '../components/ButtonsSpacers.jsx'
-import './../css/App.css'
-import './../css/books.css'
-import './../css/home.css'
+import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer, Inline_Spacer, Goodreads_Button } from '@components/ButtonsSpacers'
+import '@css/App.css'
+import '@css/books.css'
+import '@css/home.css'
 
-function Books_InfernosHeir () {
+function Books () {
     const width = "90%";
     const [activeBook, setActiveBook] = useState(null);
 
@@ -70,4 +70,4 @@ function Books_InfernosHeir () {
     )
 }
 
-export default Books_InfernosHeir;
+export default Books;

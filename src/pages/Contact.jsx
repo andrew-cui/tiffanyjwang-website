@@ -1,11 +1,11 @@
 import { motion, AnimatePresence } from 'framer-motion';
 
 import { useState } from 'react'
-import {NavBar, NavIcons} from '../components/NavBar.jsx'
-import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer } from '../components/ButtonsSpacers.jsx'
-import './../css/index.css'
-import './../css/App.css'
-import './../css/contact.css'
+import {NavBar, NavIcons} from '@components/NavBar'
+import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer } from '@components/ButtonsSpacers'
+import '@css/index.css'
+import '@css/App.css'
+import '@css/contact.css'
 import emailjs from 'emailjs-com';
 
 
