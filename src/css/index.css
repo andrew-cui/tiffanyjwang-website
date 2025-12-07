@@ -3,10 +3,7 @@
 @tailwind utilities;
 
 :root {
-  font-family: "halyard-display", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  font-weight: 400;
-
   color-scheme: light;
   color: #27272a;
   background-color: #faf8f6;
@@ -22,11 +19,11 @@
 html {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
-}
 
-/* Chrome, Safari, Opera */
-html::-webkit-scrollbar {
-  display: none;
+  /* Chrome, Safari, Opera */
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 body {
@@ -57,6 +54,7 @@ h3 {
 
 h4 {
   font-size: 1.1em;
+  font-weight: 400;
 }
 
 h5 {
@@ -79,9 +77,10 @@ a {
   color: #27272a;
   text-decoration: none;
   cursor: pointer;
+
+  & .link-underline {
+    text-decoration: underline;
+    cursor: pointer;
+  }
 }
 
-.link-underline {
-  text-decoration: underline;
-  cursor: pointer;
-}

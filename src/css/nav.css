@@ -12,6 +12,12 @@
     justify-content: space-between; 
     align-items: center;       
 }
+.nav-title-name {
+    font-family: "Noto Serif", system-ui, serif;
+     font-weight: 300;
+     margin: 0;
+     text-transform: lowercase;
+}
 
 /* TITLE */
 .nav-title, .navbar-title-items {
@@ -31,43 +37,14 @@
     margin: 0 2.5em;
     justify-content: center;        
     align-items: center;                                    
-    text-align: center;          
-    .nav-link-item {
+    text-align: center;         
+
+    .nav-link-desktop {
         height: 24px;
         margin: 0 2em;
     }
-    .nav-link-text {
-        font-size: 1.1em;
-        color: #27272a;
-        font-weight: 300;
-        margin: 0;
-        position: relative;
-        &::after {
-            content: "";
-            position: absolute;
-            inset: auto 0 -2px 0;
-            width: 0;
-            height: 2px;
-            background: #272727;
-            transition: width 0.3s ease 0.2s, background 0.3s ease 0.2s;
-        }
-    }
-    :hover,
-    :active,
-    :focus {
-        color: #EFBF04;
-        transition: color 0.4s ease 0.2s;
-        &::after {
-            background: #EFBF04;
-            width: 100%;
-            transition: width 0.3s ease 0.2s, background 0.3s ease 0.2s;
-        }
-    }
+}
 
-}
-.nav-link-text-active {
-    color: #EFBF04 !important;
-}
 /* MOBILE */
 @media (min-width: 768px) {
     .nav-mobile {
@@ -106,32 +83,32 @@
         width: 100%;
     }
 }
-.nav-mobile-dropdown, .nav-mobile-links {
+.nav-mobile-dropdown, .nav-mobile-items {
     position: fixed;
     top: var(--nav-height);
     
-    .nav-link-item {
+    .nav-link-mobile {
         display: block;
         text-align: center;
         padding: 0.4em 0;
         transition: background-color 0.3s ease-in-out;
     }
-    .nav-link-item:hover,
-    .nav-link-item:active,
-    .nav-link-item:focus {
+    .nav-link-mobile:hover,
+    .nav-link-mobile:active,
+    .nav-link-mobile:focus {
         color: #272727;
         text-decoration: none;
         background-color: rgba(242, 190, 69, 0.6);
     }
-    .nav-link-item:hover > .nav-link-text-active {
+    .nav-link-mobile:hover > .nav-link-text-active {
         color: #272727;
         transition: color 0.3s ease-in-out;
     }
-    .nav-link-text {
+    .nav-link-mobile-text {
         font-family: "Noto Serif", system-ui, serif;
         font-size: 18px;
         font-weight: 300;
-    }    
+    }
 }
 .nav-mobile-icons {
     background: linear-gradient(to bottom, rgba(250, 248, 246, 0) 0%, #faf8f6 35%);
@@ -145,7 +122,7 @@
 /* NAV FOOTER ICONS */
 .nav-bot {
     position: relative;
-    margin: 3em 0;
+    margin: 5em 0 3em 0;
 }
 .nav-bot-icons {
     display: flex;

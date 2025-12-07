@@ -1,4 +1,4 @@
-import './../css/library.css'
+import '@css/library.css'
 import { motion, AnimatePresence } from 'framer-motion';
 
 export function Banner () {

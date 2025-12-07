@@ -1,7 +1,8 @@
 import { motion, AnimatePresence } from 'framer-motion';
 
 import { useState } from 'react'
-import {NavBar, NavIcons} from '@components/NavBar'
+import { NavBar } from '@components/NavBar'
+import { NavIcons } from '@components/NavIcons'
 import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer } from '@components/ButtonsSpacers'
 import '@css/index.css'
 import '@css/App.css'
@@ -71,7 +72,7 @@ function Contact() {
             initial={{ opacity: 0, x: 0 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 1 }}
         >
         <div className="app-container">
             <div className="flex-container contact-container">

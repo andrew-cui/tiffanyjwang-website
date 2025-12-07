@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react'
-import {NavBar, NavIcons} from '@components/NavBar'
+import { NavBar } from '@components/NavBar'
+import { NavIcons } from '@components/NavIcons'
 import { Library } from '@components/Library'
 
 import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer, Inline_Spacer, Goodreads_Button } from '@components/ButtonsSpacers'
@@ -15,7 +16,13 @@ function Books () {
     return (
         <>
         <NavBar currentPage={'books'}/>
-        <div className="app-container">
+        <AnimatePresence>
+        <motion.div
+            initial={{ opacity: 0, x: 0 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 0 }}
+            transition={{ duration: 1 }}
+        ><div className="app-container">
             <Library 
                 homepage={false}
                 onSelectBook={setActiveBook}
@@ -65,6 +72,7 @@ function Books () {
                 </AnimatePresence> */}
             {/* </div> */}
         </div>
+        </motion.div></AnimatePresence>
         <NavIcons/>
         </>
     )
