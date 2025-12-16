@@ -1,4 +1,4 @@
-import socials from '@content/socials.tsx'
+import socials from '@content/socials'
 
 export function NavIcons () { 
     return (

@@ -1,0 +1,22 @@
+[
+    {   "title": "home", 
+        "link": "/home", 
+        "disabled": false,
+        "classes": ""
+    },
+    {   "title": "books", 
+        "link": "/books", 
+        "disabled": false,
+        "classes": ""
+    },
+    {   "title": "contact", 
+        "link": "/contact", 
+        "disabled": false,
+        "classes": ""
+    },
+    {   "title": "blog", 
+        "link": "/blog", 
+        "disabled": true,
+        "classes": ""
+    }
+]

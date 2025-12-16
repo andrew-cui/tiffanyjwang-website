@@ -1,7 +1,8 @@
 import {
   Link
 } from 'react-router-dom'
-import '@css/shared.css'        
+import '@css/shared.css'      
+import pages from '@content/pages.json'
 
 type HyperlinkProps = {
     title?: string;
@@ -9,15 +10,26 @@ type HyperlinkProps = {
     disabled?: boolean;
     classes?: string;
     inline?: boolean // true = show 
+    sitePage?: boolean // true = don't redirect 
 };
 
-export function Hyperlink ({ title = '', href = '', disabled = false, classes = '', inline = false } : HyperlinkProps) {
-    const hyperlinkDest = (href.substring(0, 1) === '/' ? '' : '/') + href;
+export function Hyperlink ({ 
+        title = '', 
+        href = '/', 
+        classes = '', 
+        disabled = false, 
+        inline = false,
+        sitePage = false 
+    } : HyperlinkProps) {
 
     return (
         <>
         {inline ? ' ' : ''}
-        <Link to={hyperlinkDest} style={{pointerEvents: disabled ? 'none' : 'auto'}} className={`hyperlink ${classes}`}>
+        <Link to={href} 
+            style={{pointerEvents: disabled ? 'none' : 'auto'}} 
+            className={`hyperlink ${disabled ? 'link-disabled' : ''} ${classes}`} 
+            target={`${sitePage ? '' : '_blank'}`}
+            rel={`${sitePage ? '' : 'noopener noreferrer'}`}>
             <h3 className={`hyperlink-text ${classes} ${inline ? 'hyperlink-text-inline' : ''}`}>
                 {title}
             </h3>

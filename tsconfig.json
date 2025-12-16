@@ -19,7 +19,16 @@
     "esModuleInterop": true,
 
     // Only this, nothing else here:
-    "types": ["vite/client"]
+    "types": ["vite/client"],
+
+    "baseUrl": "src",
+    "paths": {
+      "@css/*": ["css/*"],
+      "@components/*": ["components/*"],
+      "@pages/*": ["pages/*"],
+      "@content/*": ["content/*"],
+      "@assets/*": ["assets/*"],
+    }
   },
   "include": ["src"]
 }

@@ -7,23 +7,16 @@ import '@css/nav.css'
 import { NavIcons } from '@components/NavIcons'
 import { Hyperlink } from '@components/Hyperlink'
 import favicon from '/favicon-no-bg.png'
-// import sitePages from '../assets/nav_items.json'
+import nav_top_links from '@content/pages.json'
+
+type NavBarProps = {
+    currentPage?: string;
+}
 
 // Top Navigation
-export function NavBar ({currentPage}) {
-    console.log(currentPage)
-
-    const nav_top_links = [
-    {   title: "home", link: "home", disabled: false },
-    {   title: "books", link: "books", disabled: false },
-    // {   link: "blog", title: "Blog (in the works)", style: {color: '#cccccc'}, disabled: true },
-    {   title: "contact", link: "contact", disabled: false },
-    ]
-
+export function NavBar ({currentPage} : NavBarProps) {
     const [isOpenMobile, setIsOpen] = useState(false);
-    const toggleMobileNavbar = () => {
-        setIsOpen(!isOpenMobile)
-    }
+    const toggleMobileNavbar = () => {  setIsOpen(!isOpenMobile)    }
 
     return (
         <div className="nav-top">
@@ -41,7 +34,9 @@ export function NavBar ({currentPage}) {
                     title = {item.title}
                     href = {item.link}
                     disabled = {item.disabled}
-                    classes = {(item.classes ?? ' ') + ' nav-link-desktop ' + (currentPage === item.link ? 'hyperlink-active' : '')} />
+                    classes = {(item.classes ?? ' ') + ' nav-link-desktop ' + ((currentPage === item.link || '/' + currentPage === item.link) ? 'hyperlink-active' : '')} 
+                    sitePage = {true}
+                />
             ))}
             </div>
 

@@ -31,7 +31,7 @@ function Home() {
                     </div>
                     <div className="home-hero-text">
                         <h2>
-                            <span className="nav-title-name">Tiffany Wang</span>& is an writer based in New York City and the author of the 
+                            <span className="nav-title-name">Tiffany Wang</span>&nbsp;is an writer based in New York City and the author of the 
                             <Hyperlink
                                 title = {"INFERNO'S HEIR"}
                                 href = {'https://www.barnesandnoble.com/w/infernos-heir-tiffany-wang/1144758931'}
@@ -43,9 +43,42 @@ function Home() {
                                 href = {'https://ktliterary.com/'}
                                 classes = {'home-link'} 
                                 inline = {true}/>.</h2>
-                        <h2>Coming in 2027: <u><a href="https://www.publishersweekly.com/pw/by-topic/childrens/childrens-book-news/article/98517-rights-report-week-of-september-1-2025.html" target="_blank"><i>The Secrets We Carry Duology</i></a></u></h2>
                         <MD_Spacer/>
-                        <Banner/>
+                        <Banner 
+                            title = {'The Secrets We Carry'}
+                            subtitle = {'Releasing in 2027'}
+                            content = {(
+                                <p>An immortal goddess and a boy who has vowed revenge against the gods are caught in a political plot that could scorch the mortal realm and topple the heavens, while inexplicably falling in love with each other. Written as a duology coming in 2027!</p>
+                            )}
+                            links = {[
+                                {
+                                    "name": "Publishers Weekly announcement",
+                                    "href": "https://www.publishersweekly.com/pw/by-topic/childrens/childrens-book-news/article/98517-rights-report-week-of-september-1-2025.html",
+                                    sitePage: false
+                                }
+                            ]}
+                        />
+                        <MD_Spacer/>
+                        <Banner 
+                            title = {"Tempest's Queen"}
+                            subtitle = {'Available now in the US & UK'}
+                            content = {(
+                                <p>BOOK 2: The queen has won her crown. Now, she must prove she's worthy to wear it. The sequel to <i>INFERNO'S HEIR (2024)</i></p>
+                            )}
+                            imgSrc = {'TQ-CV.jpg'}
+                            links = {[
+                                {
+                                    "name": "Buy @ B&N US",
+                                    "href": "https://www.barnesandnoble.com/w/tempests-queen-tiffany-wang/1146745369",
+                                    sitePage: false
+                                },
+                                {
+                                    "name": "Read Inferno's Heir",
+                                    "href": "https://www.barnesandnoble.com/w/infernos-heir-tiffany-wang/1144758931",
+                                    sitePage: false
+                                }
+                            ]}
+                        />
                         {/* <Library homepage={true}
                             onSelectBook={null}
                             overlay={false} width={"100%"}

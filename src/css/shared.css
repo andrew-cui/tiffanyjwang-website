@@ -1,7 +1,9 @@
 /* CSS FOR SHARED COMPONENTS */        
+
+/* LINK WRAPPERS */        
 .hyperlink { 
     .hyperlink-text {
-        font-size: 1.1em;
+        font-size: 1em;
         color: #27272a;
         font-weight: 300;
         margin: 0;
@@ -15,11 +17,10 @@
             background: #272727;
             transition: width 0.3s ease 0.2s, background 0.3s ease 0.2s;
         }
-
         &.hyperlink-active {
-            color: #EFBF04;
+            color: var(--color-gold);
             &::after {
-                background: #EFBF04;
+                background: var(--color-gold);
                 width: 100%;
             }
         }
@@ -29,16 +30,15 @@
     &:active,
     &:focus {
         .hyperlink-text {
-            color: #EFBF04;
+            color:  var(--color-gold);
             transition: color 0.3s ease 0.2s;
             &::after {
-                background: #EFBF04;
+                background:  var(--color-gold);
                 width: 100%;
                 transition: width 0.3s ease 0.2s, background 0.3s ease 0.2s;
             }
         }
     }
-
     .hyperlink-text-inline {
         display: inline-block;
         &::after {
@@ -49,3 +49,102 @@
     }
 }
 
+.hyperlink {
+    .hyperlink-text.hyperlink-static {
+        font-family: 'Open Sans', Avenir, sans-serif;
+        font-weight: 400;
+        color: var(--color-gold);
+        &::after {
+            position: relative;
+            background: none;
+            content: ' >';
+            inset: 0 0 0 2px;
+            margin-left: 1px;
+            /* width: 0; */
+            /* max-width: 0; */
+            transition: margin-left 0.5s ease;
+        }
+        transition: filter 0.3s ease-in-out;
+
+        &:hover {
+            filter: brightness(0.8);
+            &::after {
+                margin-left: 3px;
+            }
+        }
+    }
+}
+
+.link-disabled {
+    color: #cccccc;
+}
+
+
+/* BANNERS */       
+.banner {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    padding: 1em 1.5em 1em 1.5em;
+    border: 1px solid rgba(var(--rgb-gold), 0.25);
+    border-radius: 15px;
+    background-image: linear-gradient(to bottom right, hsl(40 60% 50% / .05) , hsl(40 30% 99%) , hsl(40 60% 50% / .05));
+    box-shadow: 1px 1px 3px rgba(var(--rgb-gold), 0.1);
+    opacity: 0.9;
+
+    transition: box-shadow 0.3s ease-in-out, opacity 0.2s ease;
+    &:hover {
+        box-shadow: 1px 1px 3px 0.5px rgba(219, 171, 4, 0.3);
+        opacity: 1;
+    }
+
+    gap: 2em;
+    row-gap: 0;
+    flex-wrap: wrap;
+}
+
+.banner-content {
+    .banner-subtitle {
+        color: rgba(209, 161, 4, 0.8);
+        text-transform: uppercase;
+        margin-bottom: .25em;
+    }
+    h3.banner-title {
+        margin-top: .25em;
+        font-size: 18px;
+        font-weight: 400;
+    }
+    .banner-body {
+        font-size: 14px;
+        margin-bottom: 1.5em;
+    }
+
+    flex: 1 1 calc(75%);
+    @media (max-width: 960px) {
+        flex: 1 1 60%;
+    }
+    @media (max-width: 768px) {
+        flex: 1 1 100%;
+    }
+
+    .hyperlink-static {
+        margin-bottom: .25em;
+        margin-right: 2em;
+        display: inline-block;
+    }
+}
+
+.banner-image {
+    img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 1px 1px 0.5px rgba(0,0,0,0.1);
+    }
+    flex: 0 1 20%;
+    @media (max-width: 960px) {
+        flex: 0 1 30%;
+    }
+    @media (max-width: 768px) {
+        flex: 0 1 25%;
+    }
+}

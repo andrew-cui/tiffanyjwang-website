@@ -13,7 +13,7 @@
 @media (max-width: 1920px) {
   .app-container {
     margin: 0 15%;
-    margin-top: 12em;
+    margin-top: 13em;
   }  
 }
 
@@ -27,21 +27,21 @@
 @media (max-width: 1024px) {
   .app-container {
     margin: 0 8%;
-    margin-top: 12em;
+    margin-top: 11em;
   }  
 }
 
 @media (max-width: 768px) {
   .app-container {
     margin: 0 7%;
-    margin-top: 10em;
+    margin-top: 12em;
   }  
 }
 
 @media (max-width: 576px) {
   .app-container {
     margin: 0 5%;
-    margin-top: 10em;
+    margin-top: 12em;
   }  
 }
 

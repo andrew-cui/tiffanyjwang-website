@@ -4,6 +4,7 @@
 
 :root {
   line-height: 1.5;
+  font-size: 16px;
   color-scheme: light;
   color: #27272a;
   background-color: #faf8f6;
@@ -13,7 +14,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --nav-height: 140px;
+  --nav-height: 150px;
+  --background-standard: #faf8f6;
+  --background-semitransparent: rgba(250, 248, 246, 0.85);
+  --color-gold: #EFBF04;
+  --rgb-gold: 239, 191, 4;
 }
 
 html {
@@ -40,25 +45,25 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  font-size: 2.75em;
+  font-size: 40px;
   line-height: 1.1;
 }
 
 h2 {
-  font-size: 1.75em;
+  font-size: 26px;
 }
 
 h3 {
-  font-size: 1.3em;
+  font-size: 16px;
 }
 
 h4 {
-  font-size: 1.1em;
+  font-size: 14px;
   font-weight: 400;
 }
 
 h5 {
-  font-size: 1em;
+  font-size: 14px;
   text-transform: uppercase;
   font-family: "halyard-display", system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-weight: 300;
@@ -70,7 +75,7 @@ h5 {
 p {
   font-family: 'Open Sans', Avenir, sans-serif;
   font-weight: 200;
-  font-size: 0.85em;
+  font-size: 14px;
 }
 
 a { 

@@ -1,19 +1,78 @@
-.contact-container {
-    place-items: start;
-    text-align: center;
-    margin-top: 10em;
-}
-
-.contact-subcontainer {
-    min-height: 400px;
-    flex: 0 1 35%;
+.contact-section {
     align-content: center;
     place-content: start;
+
+    .banner-body {
+        /* display: inline; */
+        margin-bottom: 4px;
+        margin-right: 2em;
+    }
+
+    .hyperlink-text {
+        font-size: 14px;
+    }
+
+    .hyperlink {
+        .hyperlink-text.hyperlink-static {
+            margin-bottom: 0;
+            justify-content: center;
+            &::after {
+                content: none;
+            }
+            &::before {
+                content: "";
+                display: inline-block;
+                background-color: var(--color-gold);
+                -webkit-mask: url("/email.svg") no-repeat center;
+                mask: url("/email.svg") no-repeat center;
+                -webkit-mask-size: contain;
+                mask-size: contain;
+                height: 14px;
+                width: 14px;
+                margin: 0 4px 0 0;
+                transform: translateY(1.5px)
+            }
+        }
+    }
+}
+.contact-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; /* left */
+    align-items: center; 
+    flex-wrap: wrap;
+    gap: 20px;
+    row-gap: 10px;
+
+    .contact-card {
+        flex: 0 1 30%;
+
+        .banner {
+            margin: 0;
+            width: auto;
+            max-width: 90%;
+            padding: .5em 1em .75em 1em
+        }
+
+        h3.banner-title {
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+    }
+
 }
 
-.contact-subcontainer-form {
-    flex: 1 1 60%;
+h3.contact-title {
+    font-size: 18px;
+    text-align: center;
+    font-weight: 400;
 }
+
+p.contact-banner {
+    margin: 0;
+    display: inline;
+}
+
 
 .contact-display-card {
     background-color: #ffffffcc;
@@ -39,7 +98,6 @@
 
 b.contact-bold {
     font-weight: 700;
-    /* font-family: "halyard-display", Avenir, sans-serif; */
 }
 
 .contact-link:hover {
@@ -49,6 +107,19 @@ b.contact-bold {
 form {
     width: 100%;
 }
+
+
+/* 
+.contact-subcontainer h2 {
+    font-family: Avenir, "halyard-text", Avenir, sans-serif;
+    font-weight: 450;
+    font-size: 1em;
+}
+
+.contact-subcontainer h2, 
+.contact-subcontainer h4 {
+    margin-bottom: 1em;
+} */
 
 .form-input label {
     display: block;

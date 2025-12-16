@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react'
 import { NavBar } from '@components/NavBar'
 import { NavIcons } from '@components/NavIcons'
+import { Banner } from '@components/Banner'
+import { Hyperlink } from '@components/Hyperlink'
 import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer } from '@components/ButtonsSpacers'
 import '@css/index.css'
 import '@css/App.css'
@@ -15,8 +17,7 @@ function Contact() {
     const [submit, setIsSubmitted] = useState(false);
 
     const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
+        name: '',
         email: '',
         subject: '',
         message: ''
@@ -55,8 +56,7 @@ function Contact() {
         setIsSubmitted(true);
     
         setFormData({
-          firstName: '',
-          lastName: '',
+          name: '',
           email: '',
           subject: '',
           message: ''
@@ -74,40 +74,61 @@ function Contact() {
             exit={{ opacity: 0, x: 0 }}
             transition={{ duration: 1 }}
         >
-        <div className="app-container">
-            <div className="flex-container contact-container">
-                <div className="contact-subcontainer">
-                    <h2><b>Get in touch!</b></h2>
-                    <hr></hr>
-                    <h4>You can find me at any of the social media links below, or by filling out the contact form on this site!</h4>
-                    <h4>I am represented by <b className="contact-bold">Kelly Van Sant</b> from <a href="https://ktliterary.com/agents" target="_blank">KT Literary</a> (<a className="contact-link" href="mailto:kelly@ktliterary.com">kelly@ktliterary.com</a>).</h4>
-                    <h4>For <b className="contact-bold">foreign rights and translation inquiries</b>, please contact Maria Napolitano (<a className="contact-link" href="mailto:maria@ktliterary.com?subject=Inferno's%20Heir%20-%20Foreign%20/%20Translation%20Rights%20">maria@ktliterary.com</a>).</h4>
-                    {/* <h4>For <b className="contact-bold">publicity requests</b>, please contact Matt Kaye at Bindery (<a className="contact-link" href="mailto:matt@binderybooks.com?subject=Publicity%20Requests:%20Tiffany%20Wang%20/%20Inferno's%20Heir">matt@binderybooks.com</a>).</h4> */}
+        <div className="app-container" id="contact">
+            <div className="contact-container">
+                <div className="contact-section">
+                    <h3 className="contact-title">professional inquiries</h3>
+
+                    <div className="contact-details">
+                        <div className="contact-card">
+                            <Banner 
+                                title = {'Kelly Van Sant'}
+                                content = {(
+                                    <p className="contact-banner">Literary agent, 
+                                        <Hyperlink
+                                        title = {'KT Literary'}
+                                        href = {'https://ktliterary.com/agents'}
+                                        inline = {true} /></p>
+                                )}
+                                links = {[{ "name": "kelly@ktliterary.com",  "href": "mailto:kelly@ktliterary.com"  }]}
+                            />
+                            </div>
+                        <div className="contact-card">
+                            <Banner 
+                                title = {'Maria Napolitano'}
+                                content = {(
+                                    <p className="contact-banner">Foreign rights and translation inquiries </p>
+                                )}
+                                links = {[{ "name": "maria@ktliterary.com",  "href": "mailto:maria@ktliterary.com?subject=Tiffany%20Wang%20-%20Foreign%20/%20Translation%20Rights%20"  }]}
+                            />
+                        </div>
+                        <div className="contact-card">
+                            <Banner 
+                                title = {'Film'}
+                                content = {(
+                                    <p className="contact-banner">TBD</p>
+                                )}
+                                // links = {[{ "name": "maria@ktliterary.com",  "href": "mailto:maria@ktliterary.com?subject=Tiffany%20Wang%20-%20Foreign%20/%20Translation%20Rights%20"  }]}
+                            />
+                        </div>
+                    </div>
+                    <p>I'm also active at the social media links, or by filling out the contact form on this site!</p>
                 </div>
                 <div className="contact-subcontainer contact-subcontainer-form">
                     <h2><b>Write a Message!</b></h2>
                     <div className={`contact-display-card`}>
-                        <form name="contact" netlify onSubmit={handleSubmit} className={`contact-form-wrapper ${submit ? 'contact-form-submitted' : ''}`}>
+                        <form name="contact" onSubmit={handleSubmit} className={`contact-form-wrapper ${submit ? 'contact-form-submitted' : ''}`}>
                             <h5>Your Info</h5>
                             <div className="contact-form w-full flex">
                                 <input 
                                     type="text" 
-                                    placeholder="First Name" 
-                                    id="firstName"
-                                    name="firstName"
-                                    value={formData.firstName}
+                                    placeholder="Name" 
+                                    id="name"
+                                    name="name"
+                                    value={formData.name}
                                     onChange={handleChange}
                                     required
                                     data-1p-ignore />
-                                <input 
-                                    type="text" 
-                                    placeholder="Last Name"
-                                    id="lastName"
-                                    name="lastName"
-                                    value={formData.lastName}
-                                    onChange={handleChange} 
-                                    data-1p-ignore
-                                />
                             </div>
                             {/* Email */}
                             <input 
