@@ -1,12 +1,12 @@
 /* BOOKSHELF ANIMATIONS */
 
 /* Container */
-.library-container {
+/* .library-container {
     display: block;
     box-shadow: 0px 2px 5px #00000050;
     border-radius: 1em;
     margin: 0 auto;
-}
+} */
 .library {
     padding: 1.5em 1em;
     display: flex;
@@ -71,6 +71,13 @@
 
 /* Hover transitions */
 .book {
+    background-color: #ffffffaa;
+    backdrop-filter: blur(14px);
+    box-shadow: 0px 2px 5px #00000050;
+    border-radius: 20px;
+    padding: 10px 40px 20px 40px;
+    width: 200px;
+
     a {
         cursor: pointer;
     }
@@ -113,7 +120,7 @@
     position: relative;
     display: inline-block;
 }
-h4.book-title::after {
+/* h4.book-title::after {
     content: "";
     position: absolute;
     left: 0;
@@ -122,11 +129,11 @@ h4.book-title::after {
     width: 0%;
     background: #27272a;
     opacity: 0.75;
-    transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1); /* smooth */
-}
-h4.book-selected::after {
+    transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1); 
+} */
+/* h4.book-selected::after {
   width: 100%;
-}
+} */
 
 /* Suppress animation for unreleased books */
 .book-unreleased {

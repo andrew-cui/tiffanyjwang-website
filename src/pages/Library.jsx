@@ -8,6 +8,7 @@ export function Library ({
         onSelectBook,
         activeBook = null,
         overlay = false, width = '100%', header = null}) { 
+
     return (
         <div className="library-container" style={{width:width}}>
             {header}
@@ -23,6 +24,7 @@ export function Library ({
                             console.log(book.title);
                         }
                     }
+            
 
                     return (
                         <div key={index} className={`${book.comingsoon ? (homepage ? 'book-hidden' : 'book-unreleased') : 'book'}`}>
@@ -30,12 +32,12 @@ export function Library ({
                             {/* {!homepage && <hr/>} */}
                                 {overlay ? (
                                     <div className={`book-wrapper`}>
-                                        <a href={isClickable ? book.link_bn : undefined}
-                                            target={isClickable ? "_blank" : undefined}
+                                        <a href={isClickable ? book.link_page : undefined}
+                                            // target={isClickable ? "_blank" : undefined}
                                             onClick={handleClick}>
                                             <AnimatePresence>
-                                            {!activeBook && 
-                                            <motion.div
+                                            {/* {!activeBook &&  */}
+                                            {<motion.div
                                             key={index}
                                             initial={{ opacity: 0, y: 4, filter: "blur(5px)"}}
                                             animate={{ opacity: 1, y: 0, filter: "blur(0)" }}
@@ -52,11 +54,13 @@ export function Library ({
                                     </div>
                                 ) : (
                                     <div className={`book-wrapper`}>
-                                        <a href={isClickable ? book.link_bn : undefined}
-                                            target={isClickable ? "_blank" : undefined}
+                                        <a 
+                                        href={isClickable ? book.link_page : undefined}
+                                            // target={isClickable ? "_blank" : undefined}
                                             onClick={handleClick}>
                                             <AnimatePresence>
-                                            {!activeBook && 
+                                            {/* {!activeBook &&  */}
+                                            {
                                             <motion.div
                                             key={index}
                                             initial={{ opacity: 0, y: 4, filter: "blur(5px)"}}

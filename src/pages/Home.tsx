@@ -4,7 +4,7 @@ import { NavBar } from '@components/NavBar'
 import { NavIcons } from '@components/NavIcons'
 import { Banner } from '@components/Banner'
 import { Hyperlink } from '@components/Hyperlink'
-import { Library } from '@components/Library'
+import { Library } from '@pages/Library'
 import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer } from '@components/ButtonsSpacers'
 import '@css/App.css'
 import '@css/home.css'
@@ -26,7 +26,7 @@ function Home() {
                 <div className="home-container flex-container">
                     <div className="home-hero-image">
                         {/* https://images.squarespace-cdn.com/content/v1/65d50069b811380a895ef714/6c2ad843-a03e-4474-83a4-4a0cdcef2705/2024-TJW-Author-3.jpg?format=2500w */}
-                        <img src="/tjw-2.jpg"></img>
+                        <img src="/tiff/tjw-2.jpg"></img>
                         <p className="home-caption-text">image by <a href="www.andrewcui.com" target="_blank">@andrew.cui</a>, 2025 / favicon by <a href="https://www.instagram.com/katherine.li" target="_blank">@katherine.li</a></p>
                     </div>
                     <div className="home-hero-text">
@@ -65,7 +65,7 @@ function Home() {
                             content = {(
                                 <p>BOOK 2: The queen has won her crown. Now, she must prove she's worthy to wear it. The sequel to <i>INFERNO'S HEIR (2024)</i></p>
                             )}
-                            imgSrc = {'TQ-CV.jpg'}
+                            imgSrc = {'books/TQ-CV.jpg'}
                             links = {[
                                 {
                                     "name": "Buy @ B&N US",

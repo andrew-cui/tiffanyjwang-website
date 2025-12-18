@@ -1,67 +1,18 @@
 import { motion, AnimatePresence } from 'framer-motion';
 
-import { useState } from 'react'
 import { NavBar } from '@components/NavBar'
 import { NavIcons } from '@components/NavIcons'
 import { Banner } from '@components/Banner'
 import { Hyperlink } from '@components/Hyperlink'
+import { Form } from '@components/Form'
 import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer } from '@components/ButtonsSpacers'
 import '@css/index.css'
 import '@css/App.css'
 import '@css/contact.css'
-import emailjs from 'emailjs-com';
-
+import socials from '@content/socials'
 
 
 function Contact() {
-    const [submit, setIsSubmitted] = useState(false);
-
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-
-      const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-          ...formData,
-          [name]: value
-        });
-      };
-    
-      const handleSubmit = (e) => {
-        e.preventDefault(); // Prevent form from reloading the page
-        console.log('Form submitted:', formData);
-
-        // Send email
-        emailjs.send(
-            'service_v3apcdq',        // Email service ID
-            'template_yrimy4a',       // Email template ID
-            formData,                 // Form data to send
-            'EUMkE_1mVt1Qv4HuI'            // Your EmailJS user ID
-        )
-        .then(
-            (response) => {
-            console.log('Email sent successfully', response);
-            alert('Email sent successfully!');
-            },
-            (err) => {
-            console.log('Email sending error', err);
-            alert('Failed to send email. Please try again.');
-            }
-        );
-    
-        setIsSubmitted(true);
-    
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
-        });
-    };
 
     return (
         <>
@@ -78,17 +29,17 @@ function Contact() {
             <div className="contact-container">
                 <div className="contact-section">
                     <h3 className="contact-title">professional inquiries</h3>
-
+                    <MD_Spacer></MD_Spacer>
                     <div className="contact-details">
                         <div className="contact-card">
                             <Banner 
                                 title = {'Kelly Van Sant'}
                                 content = {(
-                                    <p className="contact-banner">Literary agent, 
+                                    <span className="contact-banner"><p className="inline">Literary agent, </p>
                                         <Hyperlink
                                         title = {'KT Literary'}
                                         href = {'https://ktliterary.com/agents'}
-                                        inline = {true} /></p>
+                                        inline = {true} /></span>
                                 )}
                                 links = {[{ "name": "kelly@ktliterary.com",  "href": "mailto:kelly@ktliterary.com"  }]}
                             />
@@ -104,82 +55,35 @@ function Contact() {
                         </div>
                         <div className="contact-card">
                             <Banner 
-                                title = {'Film'}
+                                title = {'Mary Pender'}
                                 content = {(
-                                    <p className="contact-banner">TBD</p>
+                                    <p className="contact-banner">Film rights</p>
                                 )}
                                 // links = {[{ "name": "maria@ktliterary.com",  "href": "mailto:maria@ktliterary.com?subject=Tiffany%20Wang%20-%20Foreign%20/%20Translation%20Rights%20"  }]}
                             />
                         </div>
                     </div>
-                    <p>I'm also active at the social media links, or by filling out the contact form on this site!</p>
-                </div>
-                <div className="contact-subcontainer contact-subcontainer-form">
-                    <h2><b>Write a Message!</b></h2>
-                    <div className={`contact-display-card`}>
-                        <form name="contact" onSubmit={handleSubmit} className={`contact-form-wrapper ${submit ? 'contact-form-submitted' : ''}`}>
-                            <h5>Your Info</h5>
-                            <div className="contact-form w-full flex">
-                                <input 
-                                    type="text" 
-                                    placeholder="Name" 
-                                    id="name"
-                                    name="name"
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                    required
-                                    data-1p-ignore />
+                    <SM_Spacer/>
+                    <p>I'm active at the social media links here. You can also send an email from the form below!</p>
+                    <div className="contact-socials">
+                        {socials.map((item, index) => (
+                        <a key={index} href={item.href || "#"}
+                                target={`${item.label == "home" ? '' : "_blank"}`}
+                            >
+                            <div className="social-icon banner">
+                                <span>{item.icon}</span>
+                            <h4>{item.label}</h4>
                             </div>
-                            {/* Email */}
-                            <input 
-                                type="email" 
-                                placeholder="Email (optional)" 
-                                id="email"
-                                name="email"
-                                value={formData.email}
-                                onChange={handleChange}
-                            />
-
-                            <SM_Spacer/>
-                            <h5>Your Note</h5>
-                            {/* Subject */}
-                            <input 
-                                type="text" 
-                                placeholder="Subject" 
-                                id="subject"
-                                name="subject"
-                                value={formData.subject} 
-                                onChange={handleChange}
-                                data-1p-ignore
-                            />
-
-                            {/* Message */}
-                            <textarea 
-                                placeholder="Your message here!" 
-                                className="contact-form-message" 
-                                id="message"
-                                name="message"
-                                value={formData.message} 
-                                onChange={handleChange}
-                                required
-                                data-1p-ignore
-                            />
-
-                            <SM_Spacer/>
-                            {/* Submit */}
-                            <div className="flex w-full">
-                            <button type="submit" className="contact-form-submit">
-                                <div className="">
-                                    <span>Send your message</span>
-                                    <img width="16" height="16" src="https://img.icons8.com/glyph-neue/64/send.png" alt="send"/>
-                                </div>
-                            </button>
-                            </div>
-                        </form>
-                        <div className={`${submit ? 'submit-confirmation-show' : 'submit-confirmation-hide'}`}>
-                            <i>Sent, thank you!</i>
-                        </div>
+                        </a>
+                        ))}
                     </div>
+                </div>
+
+                <MD_Spacer/>
+                <div className="contact-section">
+                    <h3 className="contact-title">get in touch</h3>
+                    <MD_Spacer/>
+                    <Form/>
                 </div>
             </div>
         </div>

@@ -9,9 +9,15 @@
         "disabled": false,
         "classes": ""
     },
+
     {   "title": "contact", 
         "link": "/contact", 
         "disabled": false,
+        "classes": ""
+    },
+    {   "title": "news", 
+        "link": "/news", 
+        "disabled": true,
         "classes": ""
     },
     {   "title": "blog", 
