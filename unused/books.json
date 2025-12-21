@@ -1,0 +1,26 @@
+[
+    {   
+        "title": "Inferno's Heir", 
+        "subtitle": "Fearing for her life, an outcast princess joins the rebellion against her own kingdom and family... but when playing with fire, someone always gets burned.", 
+        "release": "Fall 2024", 
+        "comingsoon": false,
+        "className": "book-ih",
+        "src": "/books/IH-CV.jpg", 
+        "link_page": "infernosheir", 
+        "emoji": "🔥❤️‍🔥", 
+        "link_bn": "https://www.barnesandnoble.com/w/infernos-heir-tiffany-wang/1144758931",
+        "href_goodreads": "https://www.goodreads.com/book/show/206777437-inferno-s-heir"
+    },
+    {   
+        "title": "Tempests's Queen", 
+        "subtitle": "The queen has won her crown. Now, she must prove she’s worthy to wear it.", 
+        "release": "Fall 2025", 
+        "comingsoon": false,
+        "className": "book-tq",
+        "src": "/books/TQ-CV.jpg", 
+        "link_page": "tempestsqueen", 
+        "emoji": "🐉👑", 
+        "link_bn": "https://www.barnesandnoble.com/w/tempests-queen-tiffany-wang/1146745369",
+        "href_goodreads": "https://www.goodreads.com/book/show/222942059-tempest-s-queen"
+    }
+]

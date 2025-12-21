@@ -28,6 +28,7 @@
       "@pages/*": ["pages/*"],
       "@content/*": ["content/*"],
       "@assets/*": ["assets/*"],
+      "@models/*": ["models/*"],
     }
   },
   "include": ["src"]

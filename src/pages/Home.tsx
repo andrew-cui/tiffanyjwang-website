@@ -48,7 +48,7 @@ function Home() {
                             title = {'The Secrets We Carry'}
                             subtitle = {'Releasing in 2027'}
                             content = {(
-                                <p>An immortal goddess and a boy who has vowed revenge against the gods are caught in a political plot that could scorch the mortal realm and topple the heavens, while inexplicably falling in love with each other. Written as a duology coming in 2027!</p>
+                                <p>An immortal goddess and a boy who has vowed revenge against the gods are caught in a political plot that could scorch the mortal realm and topple the heavens, while inexplicably falling in love with each other. Written as a duology coming in 2027.</p>
                             )}
                             links = {[
                                 {

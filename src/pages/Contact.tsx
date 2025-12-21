@@ -26,6 +26,7 @@ function Contact() {
             transition={{ duration: 1 }}
         >
         <div className="app-container" id="contact">
+            <h1 className="page-title">Contact</h1>
             <div className="contact-container">
                 <div className="contact-section">
                     <h3 className="contact-title">professional inquiries</h3>

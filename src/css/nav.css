@@ -16,7 +16,7 @@
     font-family: "Noto Serif", system-ui, serif;
      font-weight: 400;
      margin: 0;
-     text-transform: lowercase;
+     /* text-transform: lowercase; */
 }
 
 /* TITLE */
@@ -28,7 +28,7 @@
 }
 .nav-title-logo {
     height: 60px;
-    padding: 15px;
+    margin: 15px;
 }
 
 /* DESKTOP */

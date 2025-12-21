@@ -18,7 +18,15 @@
   --background-standard: #faf8f6;
   --background-semitransparent: rgba(250, 248, 246, 0.85);
   --color-gold: #EFBF04;
-  --rgb-gold: 239, 191, 4;
+  --color-gold: rgb(204, 153, 51);
+  --rgb-gold: 204, 153, 51;
+  /* 239, 191, 4; */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html {
@@ -82,6 +90,10 @@ a {
   color: #27272a;
   text-decoration: none;
   cursor: pointer;
+
+  button {
+    cursor: pointer;
+  }
 
   & .link-underline {
     text-decoration: underline;

@@ -1,5 +1,5 @@
-import books from '@content/books.json'
-import './../css/library.css'
+import books from '@content/books.tsx'
+import '@css/library.css'
 import { motion, AnimatePresence } from 'framer-motion';
 
 export function Library ({
@@ -21,64 +21,62 @@ export function Library ({
                         if (!homepage && clickable && onSelectBook) {
                             e.preventDefault();
                             onSelectBook(book);
-                            console.log(book.title);
                         }
                     }
-            
 
                     return (
-                        <div key={index} className={`${book.comingsoon ? (homepage ? 'book-hidden' : 'book-unreleased') : 'book'}`}>
+                        <>
+                        <div key={index} className={`${book.comingsoon ? (homepage ? 'library-book-hidden' : 'library-book-unreleased') : 'library-book'}`}>
                             <h5>{book.release}</h5>
-                            {/* {!homepage && <hr/>} */}
-                                {overlay ? (
-                                    <div className={`book-wrapper`}>
-                                        <a href={isClickable ? book.link_page : undefined}
-                                            // target={isClickable ? "_blank" : undefined}
-                                            onClick={handleClick}>
-                                            <AnimatePresence>
-                                            {/* {!activeBook &&  */}
-                                            {<motion.div
-                                            key={index}
-                                            initial={{ opacity: 0, y: 4, filter: "blur(5px)"}}
-                                            animate={{ opacity: 1, y: 0, filter: "blur(0)" }}
-                                            exit={{ opacity: 0, y: 4, filter: "blur(5px)" }}
-                                            transition={{ duration: 0.5,
-                                                ease: [0.4, 0, 0.2, 1] }}
-                                            ><img src={book.src} className={`book-img-overlay`}></img></motion.div>}
-                                            </AnimatePresence>
-                                            {!homepage && <div className={`book-overlay ` + book.className}>
-                                                <h4 className={`${(activeBook != null && activeBook.title === book.title) ? 'book-selected': ''}`}>{book.title}</h4>
-                                                <p>{book.emoji}</p>
-                                            </div>}
-                                        </a>
-                                    </div>
-                                ) : (
-                                    <div className={`book-wrapper`}>
-                                        <a 
-                                        href={isClickable ? book.link_page : undefined}
-                                            // target={isClickable ? "_blank" : undefined}
-                                            onClick={handleClick}>
-                                            <AnimatePresence>
-                                            {/* {!activeBook &&  */}
-                                            {
-                                            <motion.div
-                                            key={index}
-                                            initial={{ opacity: 0, y: 4, filter: "blur(5px)"}}
-                                            animate={{ opacity: 1, y: 0, filter: "blur(0)" }}
-                                            exit={{ opacity: 0, y: 4, filter: "blur(5px)" }}
-                                            transition={{ duration: 0.5,
-                                                ease: [0.4, 0, 0.2, 1] }}
-                                            ><img src={book.src} className={`book-img-caption`}></img></motion.div>}
-                                            </AnimatePresence>
-                                            
-                                        {!homepage && <div className={`book-caption`}>
-                                            <h4 className={`book-title ${(activeBook != null && activeBook.title === book.title) ? 'book-selected': ''}`}>{book.title}</h4>
-                                            <p>{book.emoji}</p>
-                                        </div>}
-                                        </a>
-                                    </div>
-                                )}           
+                                <div className={`library-book-wrapper`}>
+                                    <a 
+                                    href={isClickable ? book.html_id : undefined}
+                                        // target={isClickable ? "_blank" : undefined}
+                                        onClick={handleClick}>
+                                        <AnimatePresence>
+                                        <motion.div
+                                        initial={{ opacity: 0, y: 4, filter: "blur(5px)"}}
+                                        animate={{ opacity: 1, y: 0, filter: "blur(0)" }}
+                                        exit={{ opacity: 0, y: 4, filter: "blur(5px)" }}
+                                        transition={{ duration: 0.5,
+                                            ease: [0.4, 0, 0.2, 1] }}
+                                        ><img src={book.img_src} className={`library-book-img-caption`}></img></motion.div>
+                                        </AnimatePresence>
+                                        
+                                    {!homepage && <div className={`library-book-caption`}>
+                                        <h4 className={`library-book-title ${(activeBook != null && activeBook.title === book.title) ? 'book-selected': ''}`}>{book.title}</h4>
+                                        <p className='library-book-subtitle'>Inferno's Heir duology</p>
+                                    </div>}
+                                    </a>
+                                </div>  
                         </div>
+
+
+{/* <>EXTRAS</> */}
+                {/* <div key={index+100} className={`${book.comingsoon ? (homepage ? 'library-book-hidden' : 'library-book-unreleased') : 'library-book'}`}>
+                            <h5>{book.release}</h5>
+                                <div className={`library-book-wrapper`}>
+                                    <a 
+                                    href={isClickable ? book.html_id : undefined}
+                                        onClick={handleClick}>
+                                        <AnimatePresence>
+                                        <motion.div
+                                        initial={{ opacity: 0, y: 4, filter: "blur(5px)"}}
+                                        animate={{ opacity: 1, y: 0, filter: "blur(0)" }}
+                                        exit={{ opacity: 0, y: 4, filter: "blur(5px)" }}
+                                        transition={{ duration: 0.5,
+                                            ease: [0.4, 0, 0.2, 1] }}
+                                        ><img src={book.img_src} className={`library-book-img-caption`}></img></motion.div>
+                                        </AnimatePresence>
+                                        
+                                    {!homepage && <div className={`library-book-caption`}>
+                                        <h4 className={`library-book-title ${(activeBook != null && activeBook.title === book.title) ? 'book-selected': ''}`}>{book.title}</h4>
+                                        <p className='library-book-subtitle'>Inferno's Heir duology</p>
+                                    </div>}
+                                    </a>
+                                </div>  
+                        </div> */}
+                        </>
                     )
                 })}
             </div>

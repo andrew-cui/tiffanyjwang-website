@@ -3,12 +3,14 @@ import { useState, useEffect, useRef } from 'react'
 import { NavBar } from '@components/NavBar'
 import { NavIcons } from '@components/NavIcons'
 import { Library } from '@pages/Library'
+import { Book } from '@components/Book'
 
 import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer, Inline_Spacer, Goodreads_Button } from '@components/ButtonsSpacers'
 import '@css/App.css'
 import '@css/books.css'
+import '@css/library.css'
 import '@css/home.css'
-import books from '@content/books.json'
+import books from '@content/books.tsx'
 
 function Books () {
     const [scrolled, setScrolled] = useState(false);
@@ -19,7 +21,7 @@ function Books () {
     useEffect(() => {
         if (!activeBook) return; console.log(activeBook)
         
-        const el = document.getElementById(activeBook.link_page)
+        const el = document.getElementById(activeBook.html_id)
         if(!el) return; 
         const elementPosition = el.getBoundingClientRect().top + window.scrollY;
         window.scrollTo({
@@ -52,6 +54,24 @@ function Books () {
         };
     }, [activeBook])
 
+    // const libraryRef = useRef(null);
+
+    // const scrollRight = () => {
+    //     console.log(libraryRef.current?.scrollWidth);
+    //     console.log(libraryRef.current?.clientWidth);
+    //     libraryRef.current?.scrollBy({
+    //     left: 300,
+    //     behavior: "smooth",
+    //     });
+    // };
+
+    // const scrollLeft = () => {
+    //     libraryRef.current?.scrollBy({
+    //     left: -300,
+    //     behavior: "smooth",
+    //     });
+    // };
+
 
     return (
         <>
@@ -63,6 +83,7 @@ function Books () {
             exit={{ opacity: 0, x: 0 }}
             transition={{ duration: 1 }}
         ><div className="app-container">
+            <h1 className="page-title">Books</h1>
 
             <AnimatePresence>
                 {scrolled && (
@@ -71,7 +92,7 @@ function Books () {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: 0 }}
                     transition={{ duration: 0.2 }}>
-                    <div className="book-selector">
+                    <div className="library-book-selector">
                         <button 
                             onClick={() => {
                             setActiveBook(null);
@@ -95,19 +116,26 @@ function Books () {
                 </motion.div>
                 )}
             </AnimatePresence>
-            <Library 
-                homepage={false}
-                onSelectBook={setActiveBook}
-                activeBook={activeBook}
-                overlay={false} width={width} />
+            <div>
+            {/* <button onClick={scrollLeft}>←</button> */}
+                <Library 
+                // className="library-wrapper" ref={libraryRef}
+                    homepage={false}
+                    onSelectBook={setActiveBook}
+                    activeBook={activeBook}
+                    overlay={false} width={width} />
+            {/* <button onClick={scrollRight}>→</button> */}
+            </div>
             <LG_Spacer/>
+            <hr></hr>
 
             {/* <hr></hr> */}
-            <div id="infernosheir">
-            </div>
-            {/* <hr></hr> */}
-            <div id="tempestsqueen">
-            </div>
+            {books.map((book, index) => (
+                <Book
+                    key={index}
+                    bookData={book}
+                />
+            ))}
         </div>
         </motion.div></AnimatePresence>
         <NavIcons/>

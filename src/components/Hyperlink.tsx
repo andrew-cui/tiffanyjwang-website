@@ -7,8 +7,8 @@ import pages from '@content/pages.json'
 type HyperlinkProps = {
     title?: string;
     href?: string;
-    disabled?: boolean;
     classes?: string;
+    disabled?: boolean;    
     inline?: boolean // true = show 
     sitePage?: boolean // true = don't redirect 
 };
