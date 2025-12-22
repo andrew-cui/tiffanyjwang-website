@@ -1,6 +1,7 @@
 import books from '@data/bookData'
 import '@css/library.css'
 import { motion, AnimatePresence } from 'framer-motion';
+import { SM_Spacer } from './ButtonsSpacers';
 
 export function Library ({
     bookData,
@@ -25,7 +26,8 @@ export function Library ({
 
                 return (
                     <div key={index} className={`${book.comingsoon ? (homepage ? 'library-book-hidden' : 'library-book-unreleased') : 'library-book'}`}>
-                        <h5>{book.release}</h5>
+                        {/* <h5>{book.release}</h5> */}
+                        <SM_Spacer/>
                             <div className={`library-book-wrapper`}>
                                 <a 
                                 onClick={(e) => {

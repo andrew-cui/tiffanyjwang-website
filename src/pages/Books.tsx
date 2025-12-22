@@ -1,5 +1,6 @@
-import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react'
+import { motion, AnimatePresence } from 'framer-motion';
+import { useLocation, useNavigate } from "react-router-dom";
 import { NavBar } from '@components/NavBar'
 import { NavIcons } from '@components/NavIcons'
 import { Library } from '@components/Library'
@@ -15,12 +16,37 @@ import '@css/home.css'
 import books from '@data/bookData'
 
 function Books () {
+    const location = useLocation();
+    const navigate = useNavigate();
     const [scrolled, setScrolled] = useState(false);
     const [activeBook, setActiveBook] = useState(null);
     const [autoScroll, setAutoScroll] = useState(false);
     const bookRefs = useRef<Record<string, HTMLDivElement | null>>({});
     const threshold = 400;
     const offset = 115;
+
+    // Navigate upon page load
+    useEffect(() => {
+        const bookId = location.state?.scrollTo;
+        if (!bookId) return;
+
+        const book = books.find(b => b.html_id === bookId);
+        const el = bookRefs.current[bookId];
+        if (!book || !el) return;
+
+        setActiveBook(book);
+        setAutoScroll(true);
+
+        requestAnimationFrame(() => {
+            window.scrollTo({
+                top: el.getBoundingClientRect().top + window.scrollY - offset + 1,
+                behavior: "smooth"
+            });
+
+            setAutoScroll(false);
+            navigate(".", { replace: true, state: null });
+        });
+    }, [location.state]);
 
     const handleBookClick = (book: BookData) => {
         const el = bookRefs.current[book.html_id];

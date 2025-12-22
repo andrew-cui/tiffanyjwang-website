@@ -1,16 +1,18 @@
+import { MouseEvent, ReactNode } from 'react'
 import {
   Link
 } from 'react-router-dom'
 import '@css/shared.css'      
 
 type HyperlinkProps = {
-    title?: string;
+    title?: ReactNode | string;
     href?: string;
     classes?: string;
     disabled?: boolean;    
     inline?: boolean // true = show 
     sitePage?: boolean // true = don't redirect 
     arrow?: boolean
+    onClick?: (e: MouseEvent<HTMLAnchorElement>) => void;
 };
 
 export function Hyperlink ({ 
@@ -20,8 +22,20 @@ export function Hyperlink ({
         disabled = false, 
         inline = false,
         sitePage = false,
-        arrow = false
+        arrow = false,
+        onClick
     } : HyperlinkProps) {
+
+    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        if (disabled) { 
+            e.preventDefault();  
+            return; 
+        }
+        if (onClick) {
+            e.preventDefault();  
+            onClick(e); 
+        }
+  };
 
     return (
         <>
@@ -30,7 +44,8 @@ export function Hyperlink ({
             style={{pointerEvents: disabled ? 'none' : 'auto'}} 
             className={`hyperlink ${disabled ? 'link-disabled' : ''} ${classes}`} 
             target={`${sitePage ? '' : '_blank'}`}
-            rel={`${sitePage ? '' : 'noopener noreferrer'}`}>
+            rel={`${sitePage ? '' : 'noopener noreferrer'}`}
+            onClick={handleClick}>
             <h3 className={`hyperlink-text ${classes} ${inline ? 'hyperlink-text-inline' : ''}`}>
                 {title}
                 {arrow && <i className="bi bi-chevron-double-right"></i>}

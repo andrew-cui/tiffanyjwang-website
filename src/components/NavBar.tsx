@@ -1,20 +1,18 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Link, useLocation
+  Link, useLocation, useNavigate
 } from 'react-router-dom'
 import '@css/nav.css'
 import { NavIcons } from '@components/NavIcons'
 import { Hyperlink } from '@components/Hyperlink'
 import favicon from '/favicon-no-bg.png'
 import nav_top_links from '@data/pagesData.json'
-
-type NavBarProps = {
-    currentPage?: string;
-}
+import books from '@data/bookData'
 
 // Top Navigation
 export function NavBar () {
+    const navigate = useNavigate();
     const location = useLocation();
     const currentPage = location.pathname;
     console.log(currentPage)
@@ -31,16 +29,50 @@ export function NavBar () {
             
             {/* Desktop Navigation */}
             <div className="nav-desktop">
-            {nav_top_links.map((item, index) => (
-                <Hyperlink
-                    key = {index}
-                    title = {item.title}
-                    href = {item.link}
-                    disabled = {item.disabled}
-                    classes = {(item.classes ?? ' ') + ' nav-link-desktop ' + ((currentPage === item.link || '/' + currentPage === item.link) ? 'hyperlink-active' : '')} 
-                    sitePage = {true}
-                />
-            ))}
+            {nav_top_links.map((item, index) => {
+                    if(item.title === 'books') {
+
+                        return (
+                            <div className="nav-desktop-books">
+                                <Hyperlink
+                                    key = {index}
+                                    title = {item.title}
+                                    href = {item.link}
+                                    disabled = {item.disabled}
+                                    classes = {(item.classes ?? ' ') + ' nav-link-desktop nav-link-desktop-book' + ((currentPage === item.link || '/' + currentPage === item.link) ? 'hyperlink-active' : '')} 
+                                    sitePage = {true}
+                                />
+                                <div className="nav-desktop-books-dropdown">
+                                {books.filter(book => book.nav).map((book, bookIndex) => (
+                                    <Hyperlink
+                                        key = {bookIndex}
+                                        title = {<>{book.title}</>}
+                                        href = {item.link}
+                                        disabled = {false}
+                                        classes = {(item.classes ?? ' ') + ' nav-link-desktop nav-link-desktop-dropdown-book'} 
+                                        sitePage = {true}
+                                        onClick = {() => {
+                                            navigate("/books", {
+                                            state: { scrollTo: book.html_id }
+                                            })
+                                        }
+                                        }
+                                    />
+                                ))}
+                                </div>
+                            </div>
+                        );
+                    }
+                    return (
+                    <Hyperlink
+                        key = {index}
+                        title = {item.title}
+                        href = {item.link}
+                        disabled = {item.disabled}
+                        classes = {(item.classes ?? ' ') + ' nav-link-desktop ' + ((currentPage === item.link || '/' + currentPage === item.link) ? 'hyperlink-active' : '')} 
+                        sitePage = {true}
+                    />)
+            })}
             </div>
 
             {/* Mobile Navigation */}
@@ -73,7 +105,13 @@ export function NavBar () {
                     <div className="nav-mobile-dropdown">
                         <div className="nav-mobile-items">
                             {nav_top_links.map((item, index) => (
-                                <Link key={index} to={item.link} style={{pointerEvents: item.disabled ? 'none' : 'auto'}} className={`nav-link-mobile`}>
+                                <Link 
+                                key={index} 
+                                to={item.link} 
+                                style={{pointerEvents: item.disabled ? 'none' : 'auto'}} 
+                                className={`nav-link-mobile`}
+                                onClick={toggleMobileNavbar}
+                                >
                                     <h3 className={`nav-link-mobile-text ` + (currentPage === item.title ? 'nav-link-text-active' : '')}>
                                         {item.title}
                                     </h3>

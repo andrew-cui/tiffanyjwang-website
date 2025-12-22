@@ -2,12 +2,16 @@
 
 /* LINK WRAPPERS */        
 .hyperlink { 
+    display: inline-block;
     .hyperlink-text {
+        display: inline-block;
+        white-space: nowrap;
         font-size: 1em;
         color: #27272a;
         font-weight: 300;
         margin: 0;
         position: relative;
+        
         &::after {
             content: "";
             position: absolute;

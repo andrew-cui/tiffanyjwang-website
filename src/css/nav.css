@@ -44,6 +44,7 @@
         height: 24px;
         font-size: 18px;
         margin: 0 1em;
+        display: block;
     }
 }
 
@@ -154,4 +155,45 @@ p.nav-bot-cr {
     font-size: 0.75em;
     color: #27272a;
     font-weight: 300; 
+}
+
+.nav-desktop-books {
+  position: relative;
+}
+
+
+
+.nav-desktop-books-dropdown {
+  position: absolute;
+  z-index: 3;
+  margin-top: 2px;
+  padding: 5px 10px 10px 0;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 1px 0 #88888870;
+  
+
+  white-space: nowrap;
+
+  text-align: left;
+  height: auto;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(6px);
+  transition: opacity 150ms ease, transform 150ms ease;
+
+  .hyperlink {
+    display: block;
+    width: max-content;
+    }
+}
+.nav-link-desktop.nav-link-desktop-dropdown-book {
+    margin: 12px 1em;
+}
+
+.nav-desktop-books:hover .nav-desktop-books-dropdown {
+  opacity: 1;
+  background-color: var(--background-semitransparent);
+  pointer-events: auto;
+  transform: translateY(0);
 }
