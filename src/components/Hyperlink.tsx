@@ -2,7 +2,6 @@ import {
   Link
 } from 'react-router-dom'
 import '@css/shared.css'      
-import pages from '@content/pages.json'
 
 type HyperlinkProps = {
     title?: string;
@@ -11,6 +10,7 @@ type HyperlinkProps = {
     disabled?: boolean;    
     inline?: boolean // true = show 
     sitePage?: boolean // true = don't redirect 
+    arrow?: boolean
 };
 
 export function Hyperlink ({ 
@@ -19,7 +19,8 @@ export function Hyperlink ({
         classes = '', 
         disabled = false, 
         inline = false,
-        sitePage = false 
+        sitePage = false,
+        arrow = false
     } : HyperlinkProps) {
 
     return (
@@ -32,6 +33,7 @@ export function Hyperlink ({
             rel={`${sitePage ? '' : 'noopener noreferrer'}`}>
             <h3 className={`hyperlink-text ${classes} ${inline ? 'hyperlink-text-inline' : ''}`}>
                 {title}
+                {arrow && <i className="bi bi-chevron-double-right"></i>}
             </h3>
         </Link>
         </>

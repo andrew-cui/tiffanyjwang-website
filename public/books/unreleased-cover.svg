@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="450" viewBox="0 0 300 450">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f7f4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ebe8e2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4c9b5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c7baa2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect fill="url(#bgGrad)" width="300" height="450" rx="8"/>
+  
+  <!-- Border -->
+  <rect fill="none" stroke="url(#borderGrad)" stroke-width="2" x="15" y="15" width="270" height="420" rx="4"/>
+  
+  <!-- Inner decorative frame -->
+  <rect fill="none" stroke="#d4c9b5" stroke-width="0.5" x="25" y="25" width="250" height="400" rx="2" stroke-dasharray="4,4"/>
+  
+  <!-- Decorative elements -->
+  <circle cx="150" cy="180" r="40" fill="none" stroke="#c7baa2" stroke-width="1"/>
+  <circle cx="150" cy="180" r="30" fill="none" stroke="#c7baa2" stroke-width="0.5"/>
+  
+  <!-- Question mark or mystery symbol -->
+  <text x="150" y="195" text-anchor="middle" fill="#b5a890" font-family="Georgia, serif" font-size="48" font-style="italic">?</text>
+  
+  <!-- Text -->
+  <text x="150" y="280" text-anchor="middle" fill="#8a7e6a" font-family="Georgia, serif" font-size="11" letter-spacing="2">COMING</text>
+  <text x="150" y="300" text-anchor="middle" fill="#8a7e6a" font-family="Georgia, serif" font-size="11" letter-spacing="2">2027</text>
+  
+  <!-- Decorative line -->
+  <line x1="100" y1="320" x2="200" y2="320" stroke="#c7baa2" stroke-width="0.5"/>
+  
+  <!-- Small decorative dots -->
+  <circle cx="100" cy="320" r="2" fill="#c7baa2"/>
+  <circle cx="200" cy="320" r="2" fill="#c7baa2"/>
+  
+  <text x="150" y="360" text-anchor="middle" fill="#6b6052" font-family="Georgia, serif" font-size="14" font-weight="500">Cover Reveal</text>
+  <text x="150" y="380" text-anchor="middle" fill="#8a7e6a" font-family="Georgia, serif" font-size="12">Coming Soon</text>
+</svg>

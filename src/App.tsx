@@ -5,6 +5,8 @@ import {
 import Home from '@pages/Home'
 import Contact from '@pages/Contact'
 import Books from '@pages/Books'
+import { NavBar } from '@components/NavBar'
+import { NavIcons } from '@components/NavIcons'
 import '@css/App.css'
 
 
@@ -22,6 +24,7 @@ function App() {
   return (
       <div>
         <TopOfPage /> 
+        <NavBar/>
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home/>} />
           <Route path="/contact" element={<Contact/>} />
@@ -30,6 +33,7 @@ function App() {
 
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
+        <NavIcons/>
       </div>
   )
 }

@@ -26,9 +26,10 @@
       "@css/*": ["css/*"],
       "@components/*": ["components/*"],
       "@pages/*": ["pages/*"],
-      "@content/*": ["content/*"],
+      "@data/*": ["data/*"],
       "@assets/*": ["assets/*"],
       "@models/*": ["models/*"],
+      "@animations/*": ["animations/*"],
     }
   },
   "include": ["src"]

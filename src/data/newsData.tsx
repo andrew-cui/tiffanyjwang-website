@@ -22,7 +22,7 @@ const newsfeed: News[] = [
         author: "",
         type: "interview",
         date: new Date(2024, 5, 30),
-        　imagesrc: "",
+        imagesrc: "",
         icon: ""
     },
     {
@@ -33,7 +33,7 @@ const newsfeed: News[] = [
         author: "Robert Lee Brewer",
         type: "interview",
         date: new Date(2024, 10, 19),
-        　imagesrc: "",
+        imagesrc: "",
         icon: ""
     },
     {
@@ -44,7 +44,7 @@ const newsfeed: News[] = [
         author: "Olivia Ocran",
         type: "interview",
         date: new Date(2025,null,null),
-        　imagesrc: "",
+        imagesrc: "",
         icon: ""
     },
     {
@@ -55,7 +55,7 @@ const newsfeed: News[] = [
         author: "Elise Dumpleton",
         type: "interview",
         date: new Date(2024, 10, 13),
-        　imagesrc: "",
+        imagesrc: "",
         icon: ""
     },
     {
@@ -66,7 +66,7 @@ const newsfeed: News[] = [
         author: "Elise Dumpleton",
         type: "interview",
         date: new Date(2025, 10, 16),
-        　imagesrc: "",
+        imagesrc: "",
         icon: ""
     },
 
@@ -78,11 +78,9 @@ const newsfeed: News[] = [
         publisher: "Publisher's Weekly",
         type: "rights",
         date: new Date(2025, 9, 1),
-        　imagesrc: "",
+        imagesrc: "",
         icon: ""
     },
-
-
 
     // Reviews
 ]

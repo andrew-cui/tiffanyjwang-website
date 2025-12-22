@@ -16,10 +16,15 @@
 
   --nav-height: 150px;
   --background-standard: #faf8f6;
+  --background-white: #ffffffaa;
   --background-semitransparent: rgba(250, 248, 246, 0.85);
   --color-gold: #EFBF04;
   --color-gold: rgb(204, 153, 51);
   --rgb-gold: 204, 153, 51;
+
+  --serif: "Noto Serif", system-ui, serif;
+  --sans-serif-1: 'Open Sans', Avenir, sans-serif;
+  --sans-serif-2: "halyard-display", system-ui, Avenir, Helvetica, Arial, sans-serif;
   /* 239, 191, 4; */
 }
 
@@ -47,7 +52,7 @@ body {
 
 
 h1, h2, h3, h4 { 
-  font-family: "Noto Serif", system-ui, serif;
+  font-family: var(--serif);
   font-weight: 300;
   margin: 0.5em 0;
 }
@@ -73,7 +78,7 @@ h4 {
 h5 {
   font-size: 14px;
   text-transform: uppercase;
-  font-family: "halyard-display", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: var(--sans-serif-2);
   font-weight: 300;
   opacity: 0.8;
   margin: 0.5em 0;
@@ -81,7 +86,7 @@ h5 {
 }
 
 p {
-  font-family: 'Open Sans', Avenir, sans-serif;
+  font-family: var(--sans-serif-1);
   font-weight: 200;
   font-size: 14px;
 }

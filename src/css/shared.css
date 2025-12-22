@@ -50,27 +50,30 @@
 }
 
 .hyperlink {
-    .hyperlink-text.hyperlink-static {
-        font-family: 'Open Sans', Avenir, sans-serif;
+    .hyperlink-text.banner-link {
+        font-family: var(--sans-serif-1);
         font-weight: 400;
         color: var(--color-gold);
-        &::after {
+        
+        i {
             position: relative;
             background: none;
-            content: ' >';
             inset: 0 0 0 2px;
             margin-left: 1px;
-            /* width: 0; */
-            /* max-width: 0; */
+            margin-right: 30px;
             transition: margin-left 0.5s ease;
         }
         transition: filter 0.3s ease-in-out;
 
         &:hover {
             filter: brightness(0.8);
-            &::after {
-                margin-left: 3px;
+            i {
+                margin-left: 5px;
             }
+        }
+
+        &::after {
+            width: 0;
         }
     }
 }
@@ -147,5 +150,45 @@
     }
     @media (max-width: 768px) {
         flex: 0 1 25%;
+    }
+}
+.site-button {
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+    width: auto;
+    gap: 5px;
+    background-image: none;
+    border-color: rgba(0,0,0, 0.1);
+    box-shadow: 1px 1px 3px rgba(0,0,0, 0.1);
+    transition: 0.15s ease-in-out;
+
+    &:hover {
+        background-image: none;
+        box-shadow: 1px 1px 3px 0.5px rgba(0,0,0, 0.1);
+        background-color: rgba(0,0,0,0.75);
+        color: white;
+
+        svg, path {
+            fill: white;
+            stroke: white;
+        }
+    }
+
+    h4 {
+        display: inline;
+        margin: 0;
+    }
+
+    span {
+        margin-right: 6px;
+        transform: translateY(3px);
+    }
+
+    svg, path {
+        height: 20px;
+        width: 20px;
+        fill: black;
+        stroke: black;
     }
 }

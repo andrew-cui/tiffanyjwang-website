@@ -1,13 +1,21 @@
 .book {
     margin-bottom: 30px;
     border-radius: 10px;
-    padding: 20px 30px 20px 30px;
+    padding: 30px;
     width: 100%;
-    background-color: #ffffffaa;
-    box-shadow: 0px 1px 2px #33333350;
+    background-color: rgba(255,255,255,0.3);
+    box-shadow: 1px 1px 1px #88888870,
+        -0.5px -0.25px 0.5px #88888840;
     display: flex;
     flex-wrap: wrap;
     gap: 5%;
+    transition: 0.4s ease;
+
+    &:hover {
+        background-color: var(--background-white);
+        box-shadow: 1px 2px 1.5px #33333350,
+        -0.5px -0.25px 0.5px #33333350;
+    }
 }
 
 .book-cover {
@@ -19,7 +27,6 @@
         display: block;
         border-radius: 10px;
         width: 80%;
-        margin-left: 10%;
         max-width: 160px;
     }
 
@@ -29,6 +36,27 @@
 }
 .book-content {
     flex: 1 1 70%;
+
+    h2 {
+        font-size: 22px;
+        font-weight: 400;
+    }
+    h3 {
+        font-size: 16px;
+        font-style: italic;
+        font-weight: 400;
+        color: var(--color-gold);
+        font-family: var(--sans-serif-1);
+    }
+    h4 {
+        font-size: 16px;
+        font-weight: 500;
+        font-family: var(--sans-serif-1);
+        color: var(--color-gold);
+    }
+    p {
+        font-size: 15px;
+    }
 }
 @media (max-width: 768px) {
     .book-cover, .book-content {
@@ -38,7 +66,7 @@
 
 .book-blurb {
     position: relative;
-    padding-left: 20px;
+    padding-left: 15px;
 
     &::before {
         content: "";
@@ -48,5 +76,60 @@
         height: 100%;
         width: 2px;
         background-color: var(--color-gold); 
+    }
+
+    p {
+        margin-bottom: 5px;
+    }
+
+    .blurb-content {
+        margin-top: 5px;
+        font-size: 16px;
+        font-weight: 400;
+        font-style: italic;
+    }
+    .blurb-name {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #27272a;
+        font-weight: 500;
+    }
+    .blurb-bio {
+        font-weight: 300;
+
+    }
+}
+
+.book-button-title > i {
+    margin-right: 5px;
+}
+.book-button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    row-gap: 7.5px;
+}
+.book-button {
+    padding: 5px 15px;
+    border-radius: 10px;
+    border: 0.25px solid #27272a22;
+    box-shadow: 1px 1px 1.5px #33333350;
+    background-color: #faf8f6;
+    font-weight: 300;
+    font-size: 14px;
+
+    &:hover{
+        box-shadow: 1px 1px 1.5px #33333399;
+    }
+
+    &#goodreads {
+        box-shadow: none;
+        border: none;
+        background-color: rgba(255,255,255,0.3);
+
+        &:hover {
+            box-shadow: none;
+            background-color: rgba(0,0,0,0.75);
+        }
     }
 }

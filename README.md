@@ -1,43 +1,46 @@
 ## tiffanyjwang.com
+typescript / reactjs project by @andrew-cui
 
-reactjs website for tiff
+### milestone 4+
+- tbd: *eta* jan 2026
+- [] platform - complete typescript migration
+- [] platform - standardize and modularize reusable components
+- [] platform - rename components
+- [] design - refactor all css
+- [] books - updated books information
+- [] contact - logging emails
+- [] blog - login option for tiffany
+- [] blog - data storage off-site in s3
+- [] blog - remote blog entries and formatting
+- [] blog - search
 
-key features:
-- [] css: remove tailwind and refactor all code names
+### milestone 3
+- in progress: *updated* december 2025
+- [x] platform - migrated to typescript
+- [x] platform - updated navigation bars and placement with react router
+- [x] design - updated visual look of entire site
+- [x] home - added callouts / banners for new changes
+- [x] books - inferno's heir + tempest's queen dual drawer, testimonials, links
+- [x] books - standardized formatting with reusable components
+- [x] books - new navigation
+- [x] contact - updated form for anonymous sending, updated emailjs setup
+- [] news - shell page
+- [] news - news feed of content
+- [] blog - shell page
+- [] blog - hard-coded blog pages
 
-### navbar 
-- [x] left side hero logo
-- [x] right side links with no dropdown but hover underline - md+
-- [x] right side burger that opens to full screen options - <=md
-- [x] bottom logos that persist including on right side open
+### milestone 2
+- completed: september 2025
+- [x] platform - added animations
+- [x] home - updated with most recent photo and bio
+- [x] books - inferno's heir + tempest's queen dual drawer, testimonials, links, goodreads
+- [x] contact - email sending with emailjs + links
 
-### homepage
-- [x] hero logo
-- [x] bio and link to kvst literary
-- [] "current updates"
-
-### books
-- [x] one entry per book
-- [x] links to purchase
-- [x] overview of the book
-- [x] testimonials / blurbs
-- [x] cross-fade between book options
-- [] international availability
-- [x] options to add to goodreads
-- [x] link to dan's page
-- [x] page should have both options with a subnavbar at the top
-- [] reactrouter should link to either IH or TQ based on selection (not possible?)
-
-### contact
-- [x] links on lhs
-- [x] functioning template to send an email
-- [x] confirm emails are sent
-- [] logging in private s3
-- [x] anonymous option?
-
-### blog
-- [] hardcoded blog pages
-- [] templatized blog post entries
-- [] remote 3p blog entries
-- [] scroll & nav in blog
-- [] search in blog
+### milestone 1
+- completed: feb 2025
+- [x] platform - website migrated to reactjs / vite
+- [x] platform - deployment on netlify
+- [x] platform - responsive design 
+- [x] built - built including author bio
+- [x] books - inferno's heir
+- [x] contact / blog - shell & inactive pages

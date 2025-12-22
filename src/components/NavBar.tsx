@@ -1,20 +1,23 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Link
+  Link, useLocation
 } from 'react-router-dom'
 import '@css/nav.css'
 import { NavIcons } from '@components/NavIcons'
 import { Hyperlink } from '@components/Hyperlink'
 import favicon from '/favicon-no-bg.png'
-import nav_top_links from '@content/pages.json'
+import nav_top_links from '@data/pagesData.json'
 
 type NavBarProps = {
     currentPage?: string;
 }
 
 // Top Navigation
-export function NavBar ({currentPage} : NavBarProps) {
+export function NavBar () {
+    const location = useLocation();
+    const currentPage = location.pathname;
+    console.log(currentPage)
     const [isOpenMobile, setIsOpen] = useState(false);
     const toggleMobileNavbar = () => {  setIsOpen(!isOpenMobile)    }
 
@@ -27,7 +30,7 @@ export function NavBar ({currentPage} : NavBarProps) {
             </div>
             
             {/* Desktop Navigation */}
-            <div className="nav-desktop flex">
+            <div className="nav-desktop">
             {nav_top_links.map((item, index) => (
                 <Hyperlink
                     key = {index}
@@ -60,7 +63,7 @@ export function NavBar ({currentPage} : NavBarProps) {
                 </div>
                 
                 <AnimatePresence>
-                {isOpenMobile && (
+                    {isOpenMobile && (
                     <motion.div
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
@@ -82,7 +85,7 @@ export function NavBar ({currentPage} : NavBarProps) {
                         </div>
                     </div>
                     </motion.div>
-                )}
+                    )}
                 </AnimatePresence>
             </div>
 

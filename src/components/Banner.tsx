@@ -37,9 +37,10 @@ export function Banner ({
                     <Hyperlink 
                     key={index}
                     title = {item.name}
-                    classes = {'hyperlink-static'}
+                    classes = {'banner-link'}
                     disabled = {false}
                     inline = {true}
+                    arrow = {true}
                     href = {item.href}
                     sitePage = {item.sitePage ?? false}
                     />

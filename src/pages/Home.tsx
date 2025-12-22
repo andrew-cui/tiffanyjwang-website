@@ -4,7 +4,7 @@ import { NavBar } from '@components/NavBar'
 import { NavIcons } from '@components/NavIcons'
 import { Banner } from '@components/Banner'
 import { Hyperlink } from '@components/Hyperlink'
-import { Library } from '@pages/Library'
+import { AnimatePageLoad } from '@animations/AnimatePageLoad'
 import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer } from '@components/ButtonsSpacers'
 import '@css/App.css'
 import '@css/home.css'
@@ -14,14 +14,7 @@ import '@css/home.css'
 function Home() {
     return (
         <>
-        <NavBar currentPage={'home'}/>
-        <AnimatePresence>
-            <motion.div
-                initial={{ opacity: 0, x: 0 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 0 }}
-                transition={{ duration: 1 }}
-            >
+        <AnimatePageLoad ReactDOMElement={
             <div className="app-container">
                 <div className="home-container flex-container">
                     <div className="home-hero-image">
@@ -79,18 +72,10 @@ function Home() {
                                 }
                             ]}
                         />
-                        {/* <Library homepage={true}
-                            onSelectBook={null}
-                            overlay={false} width={"100%"}
-                            header={
-                                <div className="library-header"><h2><a href="/books">Published Books 📖</a></h2><hr></hr></div>
-                            }/> */}
                     </div>
                 </div>
             </div>
-            </motion.div>
-        </AnimatePresence>
-        <NavIcons/>
+        }/>
         </>
     )
     }

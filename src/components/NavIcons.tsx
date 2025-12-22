@@ -1,4 +1,4 @@
-import socials from '@content/socials'
+import socials from '@data/socialsData'
 
 export function NavIcons () { 
     return (

@@ -58,9 +58,7 @@ export function Form() {
     return (
     <div className="contact-form-container">
         <div className={`${submit ? 'submit-confirmation-hide' : ''} contact-form-title`}>
-            <h3>send me an </h3>
-            <img src="/icons/email.svg" className="contact-email-icon"></img>
-            <h3> here!</h3>
+            <h3>send me an <i className="bi bi-envelope-at contact-email-icon"></i> here!</h3>
         </div>
         <SM_Spacer/>
         <form 
