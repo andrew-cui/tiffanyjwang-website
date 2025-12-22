@@ -36,7 +36,7 @@ function Home() {
                                 href = {'https://ktliterary.com/'}
                                 classes = {'home-link'} 
                                 inline = {true}/>.</h2>
-                        <MD_Spacer/>
+                        <LG_Spacer/>
                         <Banner 
                             title = {'The Secrets We Carry'}
                             subtitle = {'Releasing in 2027'}

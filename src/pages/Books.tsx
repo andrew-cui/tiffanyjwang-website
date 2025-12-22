@@ -6,7 +6,7 @@ import { Library } from '@components/Library'
 import { Book } from '@components/Book'
 import { BookNav } from '@components/BookNav'
 import { AnimatePageLoad } from '@animations/AnimatePageLoad'
-
+import type { BookData } from "@models/booktypes";
 import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer, Inline_Spacer, Goodreads_Button } from '@components/ButtonsSpacers'
 import '@css/App.css'
 import '@css/books.css'
@@ -15,51 +15,50 @@ import '@css/home.css'
 import books from '@data/bookData'
 
 function Books () {
-
-    const [newLoad, setNewLoad] = useState(true);
     const [scrolled, setScrolled] = useState(false);
     const [activeBook, setActiveBook] = useState(null);
-    // books[0]
-    // Need to figure out dynamically changing it
-    // Need to figure out default
-    const width = "100%";
-
-    // Scroll handling for min pixels / scroll time
-    let timeout;
+    const [autoScroll, setAutoScroll] = useState(false);
+    const bookRefs = useRef<Record<string, HTMLDivElement | null>>({});
     const threshold = 400;
-    const handleScroll = () => {
-        setScrolled(window.scrollY > threshold);
-        clearTimeout(timeout); // Clear previous timeout
+    const offset = 115;
 
-        timeout = setTimeout(() => {
-            console.log("Scroll ended at scrollY:", window.scrollY);
-            console.log(window.scrollY)
-        }, 50); // Minimum time for new scroll
-    }
+    const handleBookClick = (book: BookData) => {
+        const el = bookRefs.current[book.html_id];
+        if (!el) return;
+
+        setAutoScroll(true);
+        setActiveBook(book);  // highlight in BookNav immediately
+
+        const scrollTarget = el.offsetTop - offset;
+        window.scrollTo({ top: scrollTarget, behavior: 'smooth' });
+        setTimeout(() => setAutoScroll(false), 300); 
+    };
 
     useEffect(() => {
-        if (activeBook) {
-            console.log(activeBook)
-            const el = document.getElementById(activeBook.html_id)
-            if(el) {
-                window.scrollTo({
-                    top: (el.getBoundingClientRect().top + window.scrollY) - 115,
-                    behavior: 'smooth',
-                })
+        const handleScrollSpy = () => {
+            if (autoScroll) return; // ignore clicks in progress
+
+            const scrollY = window.scrollY + offset;
+            setScrolled(scrollY > threshold);
+
+            // Update activeBook based on topmost book passed
+            for (let i = books.length - 1; i >= 0; i--) {
+                const el = bookRefs.current[books[i].html_id];
+                if (!el) continue;
+
+                if (scrollY >= el.offsetTop) {
+                    if (activeBook?.html_id !== books[i].html_id) {
+                        setActiveBook(books[i]);
+                    }
+                    break;
+                }
             }
-        }
-
-        // If user scrolls, update events
-        window.addEventListener("scroll", handleScroll);
-        handleScroll();
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-            clearTimeout(timeout);
         };
-    }, [activeBook])
 
-    // const libraryRef = useRef(null);
-
+        window.addEventListener('scroll', handleScrollSpy, { passive: true });
+        handleScrollSpy(); // initialize
+        return () => window.removeEventListener('scroll', handleScrollSpy);
+    }, [autoScroll, activeBook]);
     // const scrollRight = () => {
     //     console.log(libraryRef.current?.scrollWidth);
     //     console.log(libraryRef.current?.clientWidth);
@@ -85,20 +84,20 @@ function Books () {
                 {scrolled && (
                     <AnimatePresence><motion.div initial={{ opacity: 0, x: 0 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 0 }} transition={{ duration: 0.2 }}>
                         <BookNav
-                            bookData={books}
-                            setActiveBook={setActiveBook}
-                            setScrolled={setScrolled}
+                            bookData={books.filter(book => book.nav)}
+                            handleBookClick={handleBookClick}
                             activeBook={activeBook}
                         />
                     </motion.div></AnimatePresence>
                 )}
                 <div>
                 {/* <button onClick={scrollLeft}>←</button> */}
-                    <Library 
-                        homepage={false}
-                        onSelectBook={setActiveBook}
-                        activeBook={activeBook}
-                        overlay={false} width={width} />
+                <Library 
+                    bookData={books.filter(book => book.nav)}
+                    homepage={false}
+                    handleBookClick={handleBookClick}
+                    activeBook={activeBook}
+                    overlay={false} width={"100%"} />
                 {/* <button onClick={scrollRight}>→</button> */}
                 <div className="library-dots">
                     <i className="bi bi-three-dots"/>
@@ -106,12 +105,14 @@ function Books () {
                 </div>
                 <MD_Spacer/>
 
-                {books.map((book, index) => (
+                {books.map((book, _) => (
                     <Book
-                        key={index}
+                        key={book.html_id}
                         bookData={book}
+                        ref={(el: HTMLDivElement | null) => {bookRefs.current[book.html_id] = el}}
                     />
                 ))}
+                <LG_Spacer/>
             </div>
         }/>
         </>

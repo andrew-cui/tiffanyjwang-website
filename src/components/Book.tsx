@@ -4,19 +4,20 @@ import '@css/books.css'
 import { Hyperlink } from '@components/Hyperlink'
 import type { BookData } from "@models/booktypes";
 import { SM_Spacer } from './ButtonsSpacers';
+import { forwardRef } from 'react';
 
-export function Book ({ 
-    bookData
-    } : {
-        bookData: BookData
-    }) {
+type BookProps = {
+  bookData: BookData;
+};
+
+export const Book = forwardRef<HTMLDivElement, BookProps>(({ bookData }, ref) => {
     const bookLinks = bookData.purchaseLinks.filter(l => l.type === "read");
     const audioLinks = bookData.purchaseLinks.filter(l => l.type === "audio");
 
     // console.log(bookData);
 
     return (
-        <div id={bookData.html_id}
+        <div ref={ref} id={bookData.html_id}
             className={`book`}>
                 <div className='book-cover'>
                     <img src={bookData.img_src}></img>
@@ -70,4 +71,4 @@ export function Book ({
                 </div>
         </div>
     )
-}
+})

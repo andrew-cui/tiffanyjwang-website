@@ -7,8 +7,9 @@ export type BookLink = { href: string, site: ReactNode | string, logo?: ReactNod
 export type BookData = {
     html_id: string;
     title: string;
-    subtitle?: string;
     library_subtitle?: string;
+    subtitle?: string;
+    nav?: boolean;
     description?: ReactNode | string;
     comingsoon: boolean;
     release: string;

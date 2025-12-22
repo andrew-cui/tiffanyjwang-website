@@ -6,8 +6,9 @@ const books: BookData[] = [
     {   
         html_id: "infernosheir",    
         title: "Inferno's Heir", 
-        subtitle: "Fearing for her life, an outcast princess joins the rebellion against her own kingdom and family... but when playing with fire, someone always gets burned.", 
         library_subtitle: "Inferno's Heir Duology", 
+        subtitle: "Fearing for her life, an outcast princess joins the rebellion against her own kingdom and family... but when playing with fire, someone always gets burned.", 
+        nav: true,
         description: <>
         <p>Teia Carthan abandoned her morals long ago, and now there's nothing she won't do to stay alive. So far she has survived her parents' deaths, the ire of the Council, and innumerable attempts on her life, orchestrated by Jura, her half brother and soon-to-be king of Erisia. Teia's rare control over two elements marks her as both an outsider and a formidable opponent—but once Jura is crowned king, there will be no way to survive him. Not for Teia, not for anyone.</p>
         <p>When Jura moves to crush the rebellion that seeks to overthrow the monarchy, Teia sees one last opportunity to ensure her own safety. She can infiltrate the rebels, locate their base ... and betray them to Jura, trading their lives for her own.</p>
@@ -64,8 +65,9 @@ const books: BookData[] = [
     {   
         html_id: "tempestsqueen", 
         title: "Tempest's Queen", 
-        subtitle: "The queen has won her crown. Now, she must prove she’s worthy to wear it.", 
         library_subtitle: "Inferno's Heir Duology", 
+        subtitle: "The queen has won her crown. Now, she must prove she’s worthy to wear it.", 
+        nav: true,
         description: <>
         <p>Six months ago, Teia Carthan seized the throne against all odds. She sacrificed everything—her morals, her friends, even the spark of love—to hear the whisper of her new Highness. </p>
         <p>Now, Teia sets sail across the Dark Sea to warn her cousin, the Shaylani emperor, of a threat that could doom the Five Cornelius Lehm lives, and he’s planning to raise the Serkawr. But as she begins a furious journey across Shaylan, Teia knows she needs help to defeat Lehm—even if it means working with the very rebels she betrayed to claim her crown. </p>
@@ -110,6 +112,7 @@ const books: BookData[] = [
         title: "The Secrets We Carry", 
         library_subtitle: "Secrets We Carry Duology", 
         subtitle: "coming 2027", 
+        nav: true,
         description: <>
         <p>An immortal goddess and a boy who has vowed revenge against the gods are caught in a political plot that could scorch the mortal realm and topple the heavens, while inexplicably falling in love with each other. Written as a duology coming in 2027.</p>
         <Hyperlink 
@@ -125,6 +128,21 @@ const books: BookData[] = [
         comingsoon: true,
         release: "2027", 
         img_src: "/books/unreleased-cover.svg", 
+        img_caption: "",
+        blurbs: [],
+        href_goodreads: "",
+        purchaseLinks: []
+    },
+    {   
+        html_id: "secretswecarry2", 
+        title: "The Secrets We Carry - Book 2", 
+        library_subtitle: "Secrets We Carry Duology", 
+        subtitle: "coming 2027", 
+        nav: false,
+        description: "",
+        comingsoon: true,
+        release: "2027", 
+        img_src: null, 
         img_caption: "",
         blurbs: [],
         href_goodreads: "",

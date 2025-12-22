@@ -5,22 +5,19 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 type BookNavProps = {
     bookData: BookData[];
-    setActiveBook: (book: BookData) => void;
-    setScrolled: (scroll: boolean) => void;
+    handleBookClick: (book: BookData) => void;
     activeBook: BookData;
 };
 
 export function BookNav ({ 
     bookData,
-    setActiveBook,
-    setScrolled,
+    handleBookClick,
     activeBook,
     } : BookNavProps) {
 
     const [isOpenBookNav, setIsOpen] = useState(false);
     const toggleBookNav = () => {  
         setIsOpen(!isOpenBookNav)    
-        console.log(isOpenBookNav)
     }
 
     return (
@@ -56,8 +53,7 @@ export function BookNav ({
                                     className="book-navigation-item"
                                     onClick={() => {
                                         toggleBookNav();
-                                        setActiveBook(null);
-                                        setTimeout(() => setActiveBook(book), 0);
+                                        setTimeout(() => handleBookClick(book), 0);
                                     }}>
                                     <div className="book-navigation-item-cover"><img src={book.img_src}></img></div>
                                     <div className="book-navigation-item-title">

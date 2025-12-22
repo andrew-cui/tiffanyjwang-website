@@ -3,33 +3,36 @@ import '@css/library.css'
 import { motion, AnimatePresence } from 'framer-motion';
 
 export function Library ({
+    bookData,
         homepage = false, 
         clickable = true,
-        onSelectBook,
+        handleBookClick,
         activeBook = null,
         overlay = false, width = '100%', header = null}) { 
 
     return (
         <div className={`library ${homepage ? 'library-homepage' : ''}`}>
-            {books.map((book, index) => {
+            {bookData.map((book, index) => {
                 // If we have a selectable menu, then use the option to toggle the parent. Otherwise, external link
                 const isClickable = clickable;
                 //  && !book.comingsoon;
-                const handleClick = (e) => {
-                    if (!homepage && clickable && onSelectBook) {
-                        e.preventDefault();
-                        onSelectBook(book);
-                    }
-                }
+                // const handleClick = (e) => {
+                //     if (!homepage && clickable && onSelectBook) {
+                //         e.preventDefault();
+                //         onSelectBook(book);
+                //     }
+                // }
 
                 return (
                     <div key={index} className={`${book.comingsoon ? (homepage ? 'library-book-hidden' : 'library-book-unreleased') : 'library-book'}`}>
                         <h5>{book.release}</h5>
                             <div className={`library-book-wrapper`}>
                                 <a 
-                                href={isClickable ? book.html_id : undefined}
-                                    // target={isClickable ? "_blank" : undefined}
-                                    onClick={handleClick}>
+                                onClick={(e) => {
+                                        if (clickable && handleBookClick) {
+                                            e.preventDefault();  // stop default anchor jump
+                                            handleBookClick(book);   // smooth scroll + set active
+                                        }}}>
                                     <AnimatePresence>
                                     <motion.div
                                     initial={{ opacity: 0, y: 4, filter: "blur(5px)"}}
