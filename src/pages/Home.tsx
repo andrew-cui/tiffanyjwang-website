@@ -1,7 +1,3 @@
-import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react'
-import { NavBar } from '@components/NavBar'
-import { NavIcons } from '@components/NavIcons'
 import { Banner } from '@components/Banner'
 import { Hyperlink } from '@components/Hyperlink'
 import { AnimatePageLoad } from '@animations/AnimatePageLoad'
@@ -11,9 +7,7 @@ import '@css/home.css'
 
 
 
-function Home() {
-    console.log("All env:", import.meta.env);
-    
+function Home() {    
     return (
         <>
         <AnimatePageLoad ReactDOMElement={

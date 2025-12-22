@@ -1,14 +1,12 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLocation, useNavigate } from "react-router-dom";
-import { NavBar } from '@components/NavBar'
-import { NavIcons } from '@components/NavIcons'
 import { Library } from '@components/Library'
 import { Book } from '@components/Book'
 import { BookNav } from '@components/BookNav'
 import { AnimatePageLoad } from '@animations/AnimatePageLoad'
 import type { BookData } from "@models/booktypes";
-import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer, Inline_Spacer, Goodreads_Button } from '@components/ButtonsSpacers'
+import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer, Inline_Spacer } from '@components/ButtonsSpacers'
 import '@css/App.css'
 import '@css/books.css'
 import '@css/library.css'

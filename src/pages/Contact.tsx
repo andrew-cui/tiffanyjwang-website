@@ -1,7 +1,3 @@
-import { motion, AnimatePresence } from 'framer-motion';
-
-import { NavBar } from '@components/NavBar'
-import { NavIcons } from '@components/NavIcons'
 import { Banner } from '@components/Banner'
 import { Hyperlink } from '@components/Hyperlink'
 import { Form } from '@components/Form'

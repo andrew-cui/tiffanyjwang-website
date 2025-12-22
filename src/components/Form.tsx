@@ -31,7 +31,6 @@ export function Form() {
       const handleSubmit = (e) => {
         e.preventDefault(); // Prevent form from reloading the page
         console.log('Form submitted:', formData);
-        console.log("VITE_EMAILJS_USER_ID =", import.meta.env.VITE_EMAILJS_USER_ID);
 
         // Send email
         emailjs.send(
@@ -52,13 +51,7 @@ export function Form() {
         );
     
         setIsSubmitted(true);
-    
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
-        });
+        setFormData({   name: '',  email: '',    subject: '',    message: ''    });
     };
 
     return (

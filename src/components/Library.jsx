@@ -1,4 +1,3 @@
-import books from '@data/bookData'
 import '@css/library.css'
 import { motion, AnimatePresence } from 'framer-motion';
 import { SM_Spacer } from './ButtonsSpacers';
