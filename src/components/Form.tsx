@@ -29,10 +29,10 @@ export function Form() {
 
         // Send email
         emailjs.send(
-            import.meta.env.EMAILJS_SERVICE_ID,            // Email service ID
-            import.meta.env.EMAILJS_TEMPLATE_ID,            // Email template ID
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,            // Email service ID
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,            // Email template ID
             formData,                                   // Form data to send
-            import.meta.env.EMAILJS_USER_ID             // Your EmailJS user ID
+            import.meta.env.VITE_EMAILJS_USER_ID             // Your EmailJS user ID
         )
         .then(
             (response) => {
