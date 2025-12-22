@@ -12,6 +12,8 @@ import '@css/home.css'
 
 
 function Home() {
+    console.log("All env:", import.meta.env);
+    
     return (
         <>
         <AnimatePageLoad ReactDOMElement={
