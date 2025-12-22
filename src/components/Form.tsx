@@ -6,6 +6,11 @@ import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer } from '@components/ButtonsS
 
 export function Form() {
 
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const userId = import.meta.env.VITE_EMAILJS_USER_ID;
+    
+
     const [submit, setIsSubmitted] = useState(false);
 
     const [formData, setFormData] = useState({
@@ -26,13 +31,14 @@ export function Form() {
       const handleSubmit = (e) => {
         e.preventDefault(); // Prevent form from reloading the page
         console.log('Form submitted:', formData);
+        console.log("VITE_EMAILJS_USER_ID =", import.meta.env.VITE_EMAILJS_USER_ID);
 
         // Send email
         emailjs.send(
-            import.meta.env.VITE_EMAILJS_SERVICE_ID,            // Email service ID
-            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,            // Email template ID
+            serviceId,            // Email service ID
+            templateId,            // Email template ID
             formData,                                   // Form data to send
-            import.meta.env.VITE_EMAILJS_USER_ID             // Your EmailJS user ID
+            userId             // Your EmailJS user ID
         )
         .then(
             (response) => {

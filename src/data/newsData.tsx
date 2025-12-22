@@ -20,7 +20,7 @@ const newsfeed: News[] = [
         title: "What AAPI Heritage Month Means to Me",
         publisher: "Writer's Digest",
         author: "",
-        type: "interview",
+        type: "interview" as const,
         date: new Date(2024, 5, 30),
         imagesrc: "",
         icon: ""
@@ -31,7 +31,7 @@ const newsfeed: News[] = [
         title: "I Can Only Write in Complete Silence",
         publisher: "Writer's Digest",
         author: "Robert Lee Brewer",
-        type: "interview",
+        type: "interview" as const,
         date: new Date(2024, 10, 19),
         imagesrc: "",
         icon: ""
@@ -42,7 +42,7 @@ const newsfeed: News[] = [
         title: "An Interview with Tiffany Wang",
         publisher: "f(r)iction",
         author: "Olivia Ocran",
-        type: "interview",
+        type: "interview" as const,
         date: new Date(2025,null,null),
         imagesrc: "",
         icon: ""
@@ -53,7 +53,7 @@ const newsfeed: News[] = [
         title: "Q&A: Tiffany Wang, Author of Inferno's Heir",
         publisher: "Nerd Daily",
         author: "Elise Dumpleton",
-        type: "interview",
+        type: "interview" as const,
         date: new Date(2024, 10, 13),
         imagesrc: "",
         icon: ""
@@ -64,7 +64,7 @@ const newsfeed: News[] = [
         title: "Q&A: Tiffany Wang, Author of Tempest's Queen",
         publisher: "Nerd Daily",
         author: "Elise Dumpleton",
-        type: "interview",
+        type: "interview" as const,
         date: new Date(2025, 10, 16),
         imagesrc: "",
         icon: ""
@@ -76,7 +76,7 @@ const newsfeed: News[] = [
         href: "https://www.publishersweekly.com/pw/by-topic/childrens/childrens-book-news/article/98517-rights-report-week-of-september-1-2025.html",
         title: "Rights Report: The Secrets We Carry",
         publisher: "Publisher's Weekly",
-        type: "rights",
+        type: "rights" as const,
         date: new Date(2025, 9, 1),
         imagesrc: "",
         icon: ""
