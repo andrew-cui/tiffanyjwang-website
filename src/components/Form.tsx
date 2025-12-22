@@ -61,9 +61,11 @@ export function Form() {
         </div>
         <SM_Spacer/>
         <form 
-            name="emailform" 
+            name="tiffanywang_contactform" 
             onSubmit={handleSubmit} 
-            className={`contact-form ${submit ? 'contact-form-submitted' : ''}`}>
+            className={`contact-form ${submit ? 'contact-form-submitted' : ''}`}
+            data-netlify="true"
+        >
             
             {/* Contact form */}
             <div className="contact-form-sender">
