@@ -2,7 +2,8 @@ import { MouseEvent, ReactNode } from 'react'
 import {
   Link
 } from 'react-router-dom'
-import '@css/shared.css'      
+import '@styles/shared.css'   
+import '@styles/components/hyperlink.module.css'      
 
 type HyperlinkProps = {
     title?: ReactNode | string;
@@ -12,6 +13,7 @@ type HyperlinkProps = {
     inline?: boolean // true = show 
     sitePage?: boolean // true = don't redirect 
     arrow?: boolean
+    active?: boolean
     onClick?: (e: MouseEvent<HTMLAnchorElement>) => void;
 };
 
@@ -23,6 +25,7 @@ export function Hyperlink ({
         inline = false,
         sitePage = false,
         arrow = false,
+        active = false,
         onClick
     } : HyperlinkProps) {
 
@@ -42,11 +45,11 @@ export function Hyperlink ({
         {inline ? ' ' : ''}
         <Link to={href} 
             style={{pointerEvents: disabled ? 'none' : 'auto'}} 
-            className={`hyperlink ${disabled ? 'link-disabled' : ''} ${classes}`} 
+            className={`hyperlink ${disabled ? 'link-disabled' : ''} ${active ? 'hyperlink-active' : ''} ${classes}`} 
             target={`${sitePage ? '' : '_blank'}`}
             rel={`${sitePage ? '' : 'noopener noreferrer'}`}
             onClick={handleClick}>
-            <h3 className={`hyperlink-text ${classes} ${inline ? 'hyperlink-text-inline' : ''}`}>
+            <h3 className={`hyperlink-text ${active ? 'hyperlink-active' : ''} ${classes} ${inline ? 'hyperlink-text-inline' : ''}`}>
                 {title}
                 {arrow && <i className="bi bi-chevron-double-right"></i>}
             </h3>

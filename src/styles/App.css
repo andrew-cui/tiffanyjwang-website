@@ -1,47 +1,41 @@
-#root {
-  margin: 0;
-  width: 100%;
-  font-family: "halyard-display", sans-serif;
-}
-
 
 /* App container */
 .app-container {
   margin: 0 20%;
-  margin-top: 13.5em;
+  margin-top: 10em;
 }
 @media (max-width: 1920px) {
   .app-container {
     margin: 0 15%;
-    margin-top: 13em;
+    margin-top: 10em;
   }  
 }
 
 @media (max-width: 1440px) {
   .app-container {
     margin: 0 10%;
-    margin-top: 12em;
+    margin-top: 10em;
   }  
 }
 
 @media (max-width: 1024px) {
   .app-container {
     margin: 0 8%;
-    margin-top: 11em;
+    margin-top: 10em;
   }  
 }
 
 @media (max-width: 768px) {
   .app-container {
     margin: 0 7%;
-    margin-top: 12em;
+    margin-top: 10em;
   }  
 }
 
 @media (max-width: 576px) {
   .app-container {
     margin: 0 5%;
-    margin-top: 12em;
+    margin-top: 10em;
   }  
 }
 

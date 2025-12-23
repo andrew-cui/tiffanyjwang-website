@@ -15,13 +15,14 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@css": path.resolve(__dirname, "src/css"),
-      "@components": path.resolve(__dirname, "src/components"),
+      "@app": path.resolve(__dirname, "src/app"),
       "@pages": path.resolve(__dirname, "src/pages"),
+      "@components": path.resolve(__dirname, "src/components"),
+      "@animations": path.resolve(__dirname, "src/components/layout/animations"),
       "@data": path.resolve(__dirname, "src/data"),
-      "@assets": path.resolve(__dirname, "src/assets"),
-      "@models": path.resolve(__dirname, "src/models"),
-      "@animations": path.resolve(__dirname, "src/animations"),
+      "@css": path.resolve(__dirname, "src/css"),
+      "@styles": path.resolve(__dirname, "src/styles"),
+      "@types": path.resolve(__dirname, "src/types"),
     }
   }
 })

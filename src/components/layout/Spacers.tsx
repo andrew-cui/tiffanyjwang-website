@@ -30,16 +30,6 @@ const Inline_Spacer = () => {
     )
 }
 
-const Goodreads_Button = () => {
-    return (
-        <><button className="button-goodreads">
-            {/* <img src="https://images.gr-assets.com/misc/1751925215-1751925215_goodreads_misc.png"/> &nbsp;  */}
-            goodreads
-        </button>
-        </>
-    )
-}
 
 
-
-export { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer, Inline_Spacer, Goodreads_Button }
+export { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer, Inline_Spacer }

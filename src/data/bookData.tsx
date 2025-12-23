@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
-import type { BookData } from "@models/booktypes";
-import { Hyperlink } from "@components/Hyperlink";
+import type { BookData } from "types/booktypes";
+import { Hyperlink } from "@components/ui/Hyperlink";
 
 const books: BookData[] = [
     {   

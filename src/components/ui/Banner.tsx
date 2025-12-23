@@ -1,8 +1,9 @@
-import '@css/library.css'
+import '@styles/library.css'
 import { motion, AnimatePresence } from 'framer-motion';
 import { ReactNode } from 'react';
-import { Hyperlink } from '@components/Hyperlink'
-import '@css/shared.css'
+import { Hyperlink } from '@components/ui/Hyperlink'
+import '@styles/shared.css'
+import '@styles/components/banner.css'
 
 type BannerLink = { name: string, href: string, sitePage?: boolean }
 type BannerLinks = BannerLink[] // external links

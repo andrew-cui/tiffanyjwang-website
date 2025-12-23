@@ -23,13 +23,14 @@
 
     "baseUrl": "src",
     "paths": {
-      "@css/*": ["css/*"],
-      "@components/*": ["components/*"],
+      "@app/*": ["app/*"],
       "@pages/*": ["pages/*"],
+      "@components/*": ["components/*"],
+      "@animations/*": ["components/layout/animations/*"],
+      "@css/*": ["css/*"],
+      "@styles/*": ["styles/*"],
       "@data/*": ["data/*"],
-      "@assets/*": ["assets/*"],
-      "@models/*": ["models/*"],
-      "@animations/*": ["animations/*"],
+      "@types/*": ["types/*"],
     }
   },
   "include": ["src"]

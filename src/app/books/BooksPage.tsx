@@ -1,16 +1,16 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLocation, useNavigate } from "react-router-dom";
-import { Library } from '@components/Library'
-import { Book } from '@components/Book'
-import { BookNav } from '@components/BookNav'
-import { AnimatePageLoad } from '@animations/AnimatePageLoad'
-import type { BookData } from "@models/booktypes";
-import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer, Inline_Spacer } from '@components/ButtonsSpacers'
-import '@css/App.css'
-import '@css/books.css'
-import '@css/library.css'
-import '@css/home.css'
+import { Library } from '@app/books/BookSelector'
+import { Book } from '@app/books/BookCard'
+import { BookNav } from '@app/books/BookNavigation'
+import { AnimatePageLoad } from '@components/layout/animations/AnimatePageLoad'
+import type { BookData } from "types/booktypes";
+import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer, Inline_Spacer } from '@components/layout/Spacers'
+import '@styles/App.css'
+import '@styles/books.css'
+import '@styles/library.css'
+import '@styles/home.css'
 import books from '@data/bookData'
 
 function Books () {

@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import type { BookData } from "@models/booktypes";
-import '@css/booknavigation.css'
+import type { BookData } from "types/booktypes";
+import '@styles/booknavigation.css'
 import { motion, AnimatePresence } from 'framer-motion';
 
 type BookNavProps = {

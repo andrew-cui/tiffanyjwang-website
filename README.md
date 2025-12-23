@@ -6,6 +6,8 @@ typescript / reactjs project by @andrew-cui
 - [] platform - complete typescript migration
 - [] platform - standardize and modularize reusable components
 - [] platform - rename components
+- [x] platform - update components file system
+- [?] design - move components into odule css
 - [] design - refactor all css
 - [] books - updated books information
 - [] contact - logging emails

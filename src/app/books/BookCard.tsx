@@ -1,7 +1,7 @@
-import '@css/shared.css'      
-import '@css/books.css'
-import type { BookData } from "@models/booktypes";
-import { SM_Spacer } from './ButtonsSpacers';
+import '@styles/shared.css'      
+import '@styles/books.css'
+import type { BookData } from "types/booktypes";
+import { SM_Spacer } from '@components/layout/Spacers';
 import { forwardRef } from 'react';
 
 type BookProps = {

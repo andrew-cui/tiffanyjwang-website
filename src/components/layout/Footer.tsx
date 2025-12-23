@@ -1,11 +1,12 @@
 import socials from '@data/socialsData'
+import css from '@styles/components/nav.module.css'
 
-export function NavIcons () { 
+export function Footer () { 
     return (
-        <div className="nav-bot">
-            <div className="nav-bot-icons">
+        <div className={css.footer}>
+            <div className={css.footer_icons}>
                 {socials.map((item, index) => (
-                <div key={index} className="nav-icon">
+                <div key={index} className={css.footer_icon}>
                     <a
                         href={item.href || "#"}
                         target={`${item.label == "home" ? '' : "_blank"}`}
@@ -14,7 +15,7 @@ export function NavIcons () {
                 </div>
                 ))}
             </div>
-            <p className="nav-bot-cr">Copyright &copy; Tiffany Wang, 2024-2026. All rights reserved.</p>
+            <p className={css.footer_copyright}>Copyright &copy; Tiffany Wang, 2024-2026. All rights reserved.</p>
         </div>
     )
 }

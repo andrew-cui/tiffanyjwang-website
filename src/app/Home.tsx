@@ -1,9 +1,8 @@
-import { Banner } from '@components/Banner'
-import { Hyperlink } from '@components/Hyperlink'
-import { AnimatePageLoad } from '@animations/AnimatePageLoad'
-import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer } from '@components/ButtonsSpacers'
-import '@css/App.css'
-import '@css/home.css'
+import { Banner } from '@components/ui/Banner'
+import { Hyperlink } from '@components/ui/Hyperlink'
+import { AnimatePageLoad } from '@components/layout/animations/AnimatePageLoad'
+import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer } from '@components/layout/Spacers'
+import '@styles/home.css'
 
 
 

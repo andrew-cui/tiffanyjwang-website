@@ -1,0 +1,189 @@
+/* nav.module.css 
+* local styles for site-wide navigation
+*/
+
+/* navbar - wrapper object for top navigation system */
+.navbar {
+    z-index: 3;
+    top: 0;
+    height: var(--nav-height);
+    width: 100%;
+    background-color: var(--background-semitransparent);
+}
+
+/* nav_header - site header */
+.nav_header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+    width: 100%;
+}
+.nav_header_logo {
+    height: 60px;
+    margin: 15px;
+}
+h2.nav_header_title {
+    font-weight: 400;
+    /* margin: 0; */
+}
+@media (max-width: 300px) {
+    h2.nav_header_title {
+        display: none;
+    }
+}
+
+
+/* nav_desktop - desktop centered navigation */
+.nav_desktop {
+    display: flex;
+    justify-content: center;   
+    margin: 0 2.5em;
+
+    .nav_link_desktop {
+        display: block;
+        margin: 0 20px;
+        height: 24px;
+        font-size: 18px;
+    }
+}
+.nav_desktop_books {
+    /* sub-styles for books desktop dropdown */
+    .nav_desktop_books_menu {
+        z-index: 3;
+        position: absolute;
+        margin-top: 2px;
+        padding: 5px 10px 12px 0;
+        white-space: nowrap;
+        pointer-events: none;
+
+        opacity: 0;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 1px 0 #88888870;
+
+        transform: translateY(6px);
+        transition: opacity 150ms ease, transform 150ms ease;
+    }
+
+    .nav_link_desktop_books {
+        margin: 12px 1em;
+    }
+
+    &:hover .nav_desktop_books_menu {
+        opacity: 1;
+        background-color: var(--background-semitransparent);
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+}
+
+
+/* nav_mobile - mobile centered accordion navigation */
+.nav_mobile_toggle {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;     
+    margin: 0 3.25em;
+
+    .nav_mobile_toggle_button {
+        margin: 0 auto;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+}
+.nav_mobile_menu {
+    width: 100%;
+    height: 100%;
+    padding-top: .5em;
+    background-color: var(--background-semitransparent);
+    * {
+        width: 100%;
+    }
+}
+.nav_mobile_menu, .nav_mobile_items {
+    position: fixed;
+    top: var(--nav-height);
+    
+    .nav_link_mobile {
+        display: block;
+        text-align: center;
+        padding: 0.4em 0;
+        transition: background-color 0.3s ease-in-out;
+    }
+    .nav_link_mobile:hover,
+    .nav_link_mobile:active,
+    .nav_link_mobile:focus {
+        color: #272727;
+        text-decoration: none;
+        background-color: rgba(var(--rgb-gold), 0.6);
+    }
+    .nav_link_mobile:hover > .nav_link_text_active {
+        color: #272727;
+        transition: color 0.3s ease-in-out;
+    }
+    .nav_link_mobile_text {
+        font-family: "Noto Serif", system-ui, serif;
+        font-size: 18px;
+        font-weight: 300;
+    }
+}
+.nav_mobile_icons {
+    background: linear-gradient(to bottom, rgba(250, 248, 246, 0) 0%, var(--background-standard) 35%);
+    position: fixed;
+    padding-top: 60px;
+    margin: 0 auto;
+    bottom: 0;
+}
+
+
+/* NAV FOOTER ICONS */
+.footer {
+    position: relative;
+    margin: 5em 0 3em 0;
+}
+.footer_icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5em;
+}
+.footer_icon, .footer_icon svg, .footer_icon path {
+    width: 1.75em;
+    height: 1.75em;
+    margin: 0 .75em;
+    left: 0;
+    transition: 0.2s ease-in-out;
+}
+.footer_icon:hover {
+    svg, path {
+        fill: var(--color-gold);
+        stroke: var(--color-gold);
+    }
+}
+p.footer_copyright {
+    font-family: var(--serif);
+    text-transform: lowercase;
+    text-align: center;
+    font-size: 0.75em;
+}
+
+
+/* responsive screen sizing for mobile and desktop */
+@media (min-width: 768px) {
+    .navbar {
+        position: absolute;
+    }
+    .nav_mobile {
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    .nav_desktop {
+        display: none;
+    }
+    .navbar {
+        position: fixed;
+    }
+}

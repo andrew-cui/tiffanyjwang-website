@@ -1,11 +1,9 @@
-import { Banner } from '@components/Banner'
-import { Hyperlink } from '@components/Hyperlink'
-import { Form } from '@components/Form'
-import { AnimatePageLoad } from '@animations/AnimatePageLoad'
-import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer } from '@components/ButtonsSpacers'
-import '@css/index.css'
-import '@css/App.css'
-import '@css/contact.css'
+import { Banner } from '@components/ui/Banner'
+import { Hyperlink } from '@components/ui/Hyperlink'
+import { EmailForm } from '@components/ui/EmailForm'
+import { AnimatePageLoad } from '@components/layout/animations/AnimatePageLoad'
+import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer } from '@components/layout/Spacers'
+import '@styles/contact.css'
 import socials from '@data/socialsData'
 
 
@@ -72,7 +70,7 @@ function Contact() {
                     <div className="contact-section">
                         <h3 className="contact-title">get in touch</h3>
                         <MD_Spacer/>
-                        <Form/>
+                        <EmailForm />
                     </div>
                 </div>
             </div>

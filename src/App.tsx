@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import {  BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
-import Home from '@pages/Home'
-import Contact from '@pages/Contact'
-import Books from '@pages/Books'
-import { NavBar } from '@components/NavBar'
-import { NavIcons } from '@components/NavIcons'
-import '@css/App.css'
+import Home from '@app/Home'
+import Contact from '@app/Contact'
+import Books from '@app/books/BooksPage'
+import { Navigation } from '@components/layout/Navigation'
+import { Footer } from '@components/layout/Footer'
+import '@styles/App.css'
 
 
 function TopOfPage (): null {
@@ -22,7 +22,7 @@ function App() {
   return (
       <div>
         <TopOfPage /> 
-        <NavBar/>
+        <Navigation/>
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home/>} />
           <Route path="/contact" element={<Contact/>} />
@@ -31,7 +31,7 @@ function App() {
 
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
-        <NavIcons/>
+        <Footer/>
       </div>
   )
 }

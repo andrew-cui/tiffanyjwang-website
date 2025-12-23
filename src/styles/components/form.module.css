@@ -1,0 +1,146 @@
+/* form.module.css 
+* local styles for emailjs submission page
+*/
+
+/* form_container - wrapper object for entire form system */
+.form_container {
+    margin: 0 auto;
+    width: 80%;
+    background-color: #ffffffaa;
+    backdrop-filter: blur(14px);
+    box-shadow: 0px 2px 5px #00000050;
+    border-radius: 20px;
+    padding: 20px 40px 30px 40px;
+    transition: 500ms ease-in-out;
+    place-content: center;
+}
+.form_title {
+    h3 {
+        font-weight: 400;
+        i {
+            margin: auto 5px;
+            width: 20px;
+        }
+    }
+}
+
+
+/* contact_form - with inputs */
+.form_input_sender {
+    display: flex;
+    gap: 10%;
+
+    .form_input {
+        flex: 1 1 40%;
+    }
+}
+
+.form_input {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+
+    h4 {
+        text-transform: lowercase;
+        font-weight: 400;
+        font-size: 14px;
+    }
+
+    input, textarea {
+        font-family: var(--sans-serif-1);
+        width: 100%;
+        background-color: var(--background-standard);
+        padding: 7.5px 10px;
+        border: 1px solid rgba(204,204,204, 0.8);
+        border-radius: 10px;
+        box-shadow: none;
+        transition: border 0.3s ease, box-shadow 0.5s ease;
+        &:focus, &:focus-visible {
+            outline: none;
+            border: 1px solid var(--color-gold);
+            box-shadow: 1px 1px 3px rgba(var(--rgb-gold), 0.2);
+        }
+    }
+    textarea {
+        min-height: 80px;
+        resize: vertical;
+    }
+}
+
+
+/* form_submit - submission button */
+.form_submit {
+    width: 100%;
+    display: flex;
+
+    .form_button {
+        cursor: pointer;
+        margin: 0 auto;
+        padding: 8px;
+        width: 30%;
+        border-radius: 10px;
+        border: 0;
+        box-shadow: 0px 1px 2px #00000050;
+        transition: .25s ease-in-out;
+        font-family: var(--sans-serif-1);
+
+        .form_button_cta {
+            justify-content: center;
+        }
+        img {
+            transform: translateY(3px);
+            width: 0;
+            transition: .25s ease-in-out;
+        }
+
+        &:hover {
+            box-shadow: 0px 2px 4px #00000050;
+            img {
+                width: 18px;
+                margin-left: 8px;
+            }
+        }
+    }
+
+    .form_button_confirmation {
+        font-family: var(--sans-serif-1);
+        text-align: center;
+        margin: 0;
+        font-size: 14px;
+        margin-bottom: 5px;
+        text-transform: italic;
+    }
+}
+
+
+/* classes hidden and shown upon submission */
+.submitted_show {
+    justify-content: center;
+    width: 100%;
+}
+.submitted_hide {
+    display: none;
+}
+
+/* responsive css */
+@media (max-width: 1024px) {
+    .form_container {
+        width: 85%;
+    }
+    .form_button {
+        width: 40%;
+    }
+}
+@media (max-width: 768px) {
+    .form_container {
+        width: 90%;
+    }
+    .contact_form {
+        .contact_form_sender {
+            flex-direction: column;
+        }
+    }
+    .form_button {
+        width: 50%;
+    }
+}

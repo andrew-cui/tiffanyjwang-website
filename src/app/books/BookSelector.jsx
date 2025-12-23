@@ -1,6 +1,6 @@
-import '@css/library.css'
+import '@styles/library.css'
 import { motion, AnimatePresence } from 'framer-motion';
-import { SM_Spacer } from './ButtonsSpacers';
+import { SM_Spacer } from '../../components/layout/Spacers';
 
 export function Library ({
     bookData,
