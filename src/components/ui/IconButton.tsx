@@ -16,7 +16,7 @@ export function IconButton ({
 }
 ) {
     return (
-        <button type={type} className={`icon_button ${variant}`}>
+        <button type={type} className={`iconButton ${variant}`}>
             {!iconAfterText && icon && <span>{icon}</span>}
             <h4>{label}</h4>
             {iconAfterText && icon && <span>{icon}</span>}

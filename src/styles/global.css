@@ -36,6 +36,9 @@ html, #root {
   ::-webkit-scrollbar {
     display: none;
   }
+  .horizontal-list::-webkit-scrollbar {
+    display: none;         /* optional: hide scrollbar */
+  }
 }
 body {
   margin: 0;

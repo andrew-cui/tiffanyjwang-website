@@ -30,8 +30,8 @@
 .contact_socials {
     display: flex;
     justify-content: center;
-    gap: 1em;
-
+    padding-top: 10px;
+    gap: 2em;
 }
 
 .contact_title {

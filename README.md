@@ -3,22 +3,30 @@ typescript / reactjs project by @andrew-cui
 
 ### milestone 4+
 - tbd: *eta* jan 2026
-- [] platform - complete typescript migration
-- [] platform - standardize and modularize reusable components
-- [] platform - rename components
-- [x] platform - update components file system
-- [?] design - move components into odule css
-- [] design - refactor all css
 - [] books - updated books information
 - [] contact - logging emails
+- [] news - shell page
+- [] news - news feed of content
+- [] blog - shell page
+- [] blog - hard-coded blog pages
 - [] blog - login option for tiffany
 - [] blog - data storage off-site in s3
 - [] blog - remote blog entries and formatting
 - [] blog - search
 
-### milestone 3
+### milestone 3 - codebase
 - in progress: *updated* december 2025
-- [x] platform - migrated to typescript
+- [x] platform - begin migration to typescript
+- [] platform - complete typescript migration
+- [x] platform - update components file system
+- [] platform - standardize and modularize reusable components
+- [] platform - rename components
+- [?] design - move components into module css
+- [] design - improve css naming & consistency
+- [] design - refactor all css to reduce redundancy
+
+### milestone 3 - ui
+- completed december 2025
 - [x] platform - updated navigation bars and placement with react router
 - [x] design - updated visual look of entire site
 - [x] home - added callouts / banners for new changes
@@ -26,10 +34,6 @@ typescript / reactjs project by @andrew-cui
 - [x] books - standardized formatting with reusable components
 - [x] books - new navigation
 - [x] contact - updated form for anonymous sending, updated emailjs setup
-- [] news - shell page
-- [] news - news feed of content
-- [] blog - shell page
-- [] blog - hard-coded blog pages
 
 ### milestone 2
 - completed: september 2025

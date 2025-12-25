@@ -109,3 +109,8 @@
     gap: 10px;
     row-gap: 7.5px;
 }
+
+.library-dots {
+    width: 100%;
+    text-align: center;
+}

@@ -1,0 +1,76 @@
+/* bookCollection
+ * styling for book trio */
+
+/* overall parent item */
+.bookCollection {
+    display: var(--bookCollection-display, flex);
+    padding: 1.5em 1em;
+    padding-top: .5em;
+    column-gap: 1em;
+    row-gap: 1em;
+    text-align: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    scroll-behavior: smooth;
+    flex-shrink: 0;
+
+    @media (max-width: 768px) {
+        row-gap: 1em;
+    }
+}
+
+/* individual item content */
+.bookCollection__book_image {
+    transition: .3s ease-out;
+    border-radius: 10px;
+    height: 180px;
+    object-fit: cover;
+}
+h5.bookCollection__book_date {
+    color: var(--color-text);
+    filter: brightness(0.9);
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.bookCollection__book_content {
+    position: relative;
+    display: inline-block;
+}
+h4.bookCollection__book_title {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+p.bookCollection__book_subtitle {
+    font-size: 9px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* individual item in selector */
+.bookCollection__book {
+    position: relative;
+    padding: 10px 10px 18px 10px;
+    backdrop-filter: blur(14px);
+    border-radius: 10px;
+    width: 200px;
+    transition: .3s ease-out;
+    --bookCollection-hover-bg: --background-white;
+    --bookCollection-boxshadow: 0px 1px 2px #33333350;
+    --bookCollection-hover-scale: 1.02;
+
+    &:hover {
+        background-color: var(--bookCollection-hover-bg);
+        box-shadow: var(--bookCollection-boxshadow);
+
+        img {
+            transform: scale(var(--bookCollection-hover-scale));
+        }
+        h4, h5 {
+            color: var(--color-gold);
+        }
+    }
+}
+
+
+

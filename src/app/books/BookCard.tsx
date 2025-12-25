@@ -52,7 +52,7 @@ export const BookCard = forwardRef<HTMLDivElement, BookCardProps>(({ bookData },
                                 <IconButton
                                 icon={link.icon}
                                 label={link.site}
-                                variant={'icon_button_book_links'}/>
+                                variant={'iconButton--book_links'}/>
                             </a>
                         ))}
                         </div>
@@ -68,7 +68,7 @@ export const BookCard = forwardRef<HTMLDivElement, BookCardProps>(({ bookData },
                                 <IconButton
                                 icon={link.icon}
                                 label={link.site}
-                                variant={'icon_button_book_links'}/>
+                                variant={'iconButton--book_links'}/>
                             </a>
                         ))}
                         </div>

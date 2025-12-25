@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion';
-import { Library } from '@app/books/BookSelector'
+import { BookCollection } from '@app/books/BookCollection'
 import { BookCard } from '@app/books/BookCard'
 import { BookNav } from '@app/books/BookNavigation'
 import { AnimatePageLoad } from '@components/layout/animations/AnimatePageLoad'
@@ -10,7 +10,6 @@ import type { BookProps } from "@/types/book";
 import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer, Inline_Spacer } from '@components/layout/Spacers'
 import '@styles/global.css'
 import '@styles/books.css'
-import '@styles/library.css'
 import '@styles/home.css'
 import books from '@data/bookData'
 
@@ -62,9 +61,8 @@ export default function BooksPage () {
                 )}
                 <div>
                 {/* <button onClick={scrollLeft}>←</button> */}
-                <Library 
+                <BookCollection 
                     bookData={books.filter(book => book.nav)}
-                    homepage={false}
                     handleBookClick={handleBookClick}
                     activeBook={activeBook}/>
                 {/* <button onClick={scrollRight}>→</button> */}

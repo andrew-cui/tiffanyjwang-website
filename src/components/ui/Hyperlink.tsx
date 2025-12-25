@@ -39,7 +39,7 @@ export function Hyperlink ({
                 css.hyperlink,
                 {[css.hyperlink_active]: active},
                 {[css.hyperlink_no_underline]: !underline},
-                variant && variantcss[`hyperlink_${variant}`],
+                variant && variantcss[`hyperlink--${variant}`],
                 classes)} 
             target={external && '_blank'}
             rel={external && 'noopener noreferrer'}
@@ -49,7 +49,7 @@ export function Hyperlink ({
                 {[css.hyperlink_disabled]: disabled},
                 {[css.hyperlink_active]: active},
                 {[css.hyperlink_inline]: inline},
-                variant && variantcss[`hyperlink_${variant}`],
+                variant && variantcss[`hyperlink--${variant}`],
                 classes)}>
                 {text}
                 {arrow && <i className="bi bi-chevron-double-right"></i>}

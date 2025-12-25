@@ -1,5 +1,31 @@
 /* context specific styles */
 
+/* BOOKS PAGE */
+/* Suppress animation for unreleased books */
+.bookCollection__book--unreleased {
+    img {
+        filter: opacity(0.5);
+    }
+    h4, h5, p {
+        opacity: 0.5;
+    }
+
+    &:hover {
+        --bookCollection-hover-bg: none;
+        --bookCollection-boxshadow: none;
+        --bookCollection-hover-scale: 1;
+        .bookCollection__book_title--unreleased {
+            color: var(--color-primary);
+        }
+    }
+}
+
+/* Don't show unreleased books on homepage */
+.bookCollection--hidden {
+    --bookCollection-display: none;
+}
+
+
 /* CONTACT PAGE */
 .hyperlink_contact {
     font-size: 14px;

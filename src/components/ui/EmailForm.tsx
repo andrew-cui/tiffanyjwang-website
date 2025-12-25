@@ -47,10 +47,10 @@ export function EmailForm() {
     }
 
     return (
-        <div className={css.form_container}>
+        <div className={css.contactForm__container}>
             <div className={clsx(
-                            css.form_title,
-                            submit && css.submitted_hide
+                            css.contactForm__title,
+                            submit && css['contactForm--submitted-hide']    
                         )}>
                 <h3>send me an <i className="bi bi-envelope-at"></i> here!</h3>
             </div>
@@ -60,13 +60,13 @@ export function EmailForm() {
                 name="tiffanywang_contactform" 
                 onSubmit={handleSubmit} 
                 className={clsx(
-                            css.contact_form
+                            css.contactForm__form
                         )}
                 data-netlify="true">
-                <div className={css.form_input_sender}>
+                <div className={css.contactForm__input_sender}>
                     <div className={clsx(
-                            css.form_input,
-                            submit && css.submitted_hide
+                            css.contactForm__input,
+                            submit && css['contactForm--submitted-hide']
                         )}
                         id="form-name">
                         <h4>Name</h4>
@@ -80,8 +80,8 @@ export function EmailForm() {
                             data-1p-ignore />
                     </div>
                     <div className={clsx(
-                            css.form_input,
-                            submit && css.submitted_hide
+                            css.contactForm__input,
+                            submit && css['contactForm--submitted-hide']
                         )}
                         id="form-email">
                         <h4>Email</h4>
@@ -99,8 +99,8 @@ export function EmailForm() {
 
                 {/* Subject */}
                 <div className={clsx(
-                        css.form_input,
-                        submit && css.submitted_hide
+                        css.contactForm__input,
+                        submit && css['contactForm--submitted-hide']
                     )}
                     id="form-subject">
                     <h4>Subject</h4>
@@ -117,8 +117,8 @@ export function EmailForm() {
 
                 {/* Message */}
                 <div className={clsx(
-                        css.form_input,
-                        submit && css.submitted_hide
+                        css.contactForm__input,
+                        submit && css['contactForm--submitted-hide']
                     )}
                     id="form-message">
                     <h4>Message</h4>
@@ -136,17 +136,17 @@ export function EmailForm() {
                 <SM_Spacer/>
 
                 {/* Submit */}
-                <div className={css.form_submit}>
+                <div className={css.contactForm__submit}>
                     {!submit &&     
                     <IconButton
                         icon={<i className="bi bi-envelope-check"></i>}
                         label={'send message'}
                         iconAfterText
-                        variant={'icon_button_form_cta'}
+                        variant={'iconButton--contactForm__submit'}
                         type={"submit"}/>        
                     }                    
-                    <div className={submit ? css.submitted_show : css.submitted_hide}>
-                        <p className={css.form_submit_confirmation}>Sent, thank you!</p>
+                    <div className={submit ? css['contactForm--submitted-show'] : css['contactForm--submitted-hide']}>
+                        <p className={css.contactForm__submit_confirmation}>Sent, thank you!</p>
                     </div>
                 </div>
             </form>

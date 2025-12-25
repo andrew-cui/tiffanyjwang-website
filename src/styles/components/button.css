@@ -2,11 +2,11 @@ button {
   cursor: pointer;
 }
 
-button.icon_button {
+button.iconButton {
   background-color: var(--background-primary);
 }
 
-.icon_button {
+.iconButton {
   display: flex;
   align-items: center;
   padding: 7.5px 20px;
@@ -42,7 +42,7 @@ button.icon_button {
 }
 
 /* variants */
-.inverted_button {
+.iconButton--inverted {
     background-color: black;
     color: white;
     svg, path {
@@ -59,7 +59,7 @@ button.icon_button {
     }
 }
 
-a > .icon_button_book_links {
+a > .iconButton--book_links {
   padding: 5px 15px;
   margin: 0 1px;
   border-radius: 10px;
@@ -83,29 +83,26 @@ a > .icon_button_book_links {
   }
 }
 
-.icon_button_form_cta {
+.iconButton--contactForm__submit {
   justify-content: center;
   padding: 8px;
   width: 200px;
   box-shadow: 0px 1px 2px #00000050;
-  transition: .25s ease-in-out;
-
   i {
       transform: translateY(2px);
       margin-left: 5px;
       transition: .25s ease-in-out;
   }
-
   &:hover i {
     margin-left: 10px;
   }
 }
 @media (max-width: 1024px) {
-    .icon_button.form_button_cta {  width: 220px; }
+    .iconButton.iconButton--contactForm__submit {  width: 220px; }
 }
 @media (max-width: 768px) {
-    .icon_button.form_button_cta {  width: 230px; }
+    .iconButton.iconButton--contactForm__submit {  width: 230px; }
 }
 @media (max-width: 576px) {
-    .icon_button.form_button_cta {  width: 240px; }
+    .iconButton.iconButton--contactForm__submit {  width: 240px; }
 }
