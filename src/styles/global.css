@@ -1,39 +1,34 @@
+/* global.css
+ * shared styles across all components
+ */
+
+
+/* tailwind import */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  font-size: 16px;
-  line-height: 1.5;
-  color-scheme: light;
-  color: #27272a;
-  background-color: #faf8f6;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  --nav-height: 150px;
-  --background-standard: #faf8f6;
-  --background-white: #ffffffaa;
-  --background-semitransparent: rgba(250, 248, 246, 0.85);
-  --rgb-gold: 204, 153, 51;
-  --color-gold: rgb(var(--rgb-gold));
-}
-
-#root {
-  margin: 0;
-  width: 100%;
-}
-
+/* global styles */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
-
-html {
+:root {
+  font-size: 16px;
+  line-height: 1.5;
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-primary);
+  color: var(--color-primary);
+}
+html, #root {
+  margin: 0;
+  width: 100%;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
 
@@ -42,12 +37,45 @@ html {
     display: none;
   }
 }
-
 body {
   margin: 0;
-  display: flex;
   min-height: 100vh;
 }
 
+/* app-container – size of entire web app and responsive design */
+.app_container {
+  margin: 0 20%;
+}
+@media (max-width: 1920px) {
+  .app_container {
+    margin: 0 15%;
+  }  
+}
 
+@media (max-width: 1440px) {
+  .app_container {
+    margin: 0 10%;
+  }  
+}
+
+@media (max-width: 1024px) {
+  .app_container {
+    margin: 0 8%;
+  }  
+}
+
+@media (max-width: 768px) {
+  .app_container {
+    margin: 0 7%;
+  }  
+}
+
+@media (max-width: 576px) {
+  .app_container {
+    margin: 0 5%;
+  }  
+}
+.app_container {
+  margin-top: 10em;
+}
 

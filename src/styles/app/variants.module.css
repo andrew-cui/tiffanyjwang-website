@@ -1,0 +1,29 @@
+/* context specific styles */
+
+/* CONTACT PAGE */
+.hyperlink_contact {
+    font-size: 14px;
+    justify-content: center;
+    &::after {
+        content: none;
+    }
+    h3&::before {
+        content: "";
+        display: inline-block;
+        background-color: var(--color-gold);
+        -webkit-mask: url("/icons/email.svg") no-repeat center;
+        mask: url("/icons/email.svg") no-repeat center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        height: 14px;
+        width: 14px;
+        margin: 0 4px 0 0;
+        transform: translateY(2.5px)
+    }
+}
+.banner_contact {
+    --banner-title-size: 16px;
+    --banner-padding: 0.75em 1.5em 1.25em 1.25em;
+    --banner-content-margin: 0.25em;
+}
+

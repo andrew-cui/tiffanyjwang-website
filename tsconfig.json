@@ -30,7 +30,7 @@
       "@css/*": ["css/*"],
       "@styles/*": ["styles/*"],
       "@data/*": ["data/*"],
-      "@types/*": ["types/*"],
+      "@/types/*": ["types/*"],
     }
   },
   "include": ["src"]

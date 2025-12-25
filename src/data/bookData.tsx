@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
-import type { BookData } from "types/booktypes";
+import type { BookProps } from "@/types/book";
 import { Hyperlink } from "@components/ui/Hyperlink";
 
-const books: BookData[] = [
+const books: BookProps[] = [
     {   
         html_id: "infernosheir",    
         title: "Inferno's Heir", 
@@ -35,21 +35,25 @@ const books: BookData[] = [
             type: "read" as const
         },
         {   href: "https://www.amazon.com/Infernos-Heir-Tiffany-Wang/dp/1959411772",
-            site: <><i className="bi bi-amazon"></i>Amazon / Kindle</>,
+            icon: <i className="bi bi-amazon"></i>,
+            site: 'Amazon / Kindle',
             type: "read" as const
         },
         {   href: "https://www.waterstones.com/book/infernos-heir/tiffany-wang/9781444980608",
-            site: "Waterstones (UK 🇬🇧)",
+            icon: <>🇬🇧</>,
+            site: "Waterstones – UK",
             type: "read" as const
         },
         {   href: "https://books.apple.com/us/book/d%C4%9Bdic-pekla/id6748828763",
-            site: "Apple Books (Czech 🇨🇿)",
+            icon: <>🇨🇿</>,
+            site: "Apple Books – Czech",
             type: "read" as const
         },
 
         
         {   href: "https://open.spotify.com/show/3D8clfGNA4nqRpL1uAslzt",
-            site: <><i className="bi bi-spotify"></i>Spotify</>,
+            icon: <i className="bi bi-spotify"></i>,
+            site: 'Spotify',
             type: "audio" as const
         },
         {   href: "https://podiumentertainment.com/titles/27478/infernos-heir",
@@ -89,17 +93,20 @@ const books: BookData[] = [
             type: "read" as const
         },
         {   href: "https://www.amazon.com/Tempests-Queen-Infernos-Heir-Duology/dp/196472144X/ref=tmm_pap_swatch_0",
-            site: <><i className="bi bi-amazon"></i>Amazon / Kindle</>,
+            icon: <i className="bi bi-amazon"></i>,
+            site: 'Amazon / Kindle',
             type: "read" as const
         },
         {   href: "https://www.waterstones.com/book/tempests-queen/tiffany-wang/9781444980622",
-            site: "Waterstones (UK 🇬🇧)",
+            icon: <>🇬🇧</>,
+            site: "Waterstones – UK",
             type: "read" as const
         },
     
 
         {   href: "https://open.spotify.com/show/61VGm6rfkp6W5trY4qi1V6",
-            site: <><i className="bi bi-spotify"></i>Spotify</>,
+            icon: <i className="bi bi-spotify"></i>,
+            site: 'Spotify',
             type: "audio" as const
         },
         {   href: "https://www.audible.com/pd/Tempests-Queen-Audiobook/B0FSNG69W7?source_code=AUDORWS0718179KY7",
@@ -116,13 +123,13 @@ const books: BookData[] = [
         description: <>
         <p>An immortal goddess and a boy who has vowed revenge against the gods are caught in a political plot that could scorch the mortal realm and topple the heavens, while inexplicably falling in love with each other. Written as a duology coming in 2027.</p>
         <Hyperlink 
-            title = {"Publisher's Weekly Announcement"}
-            classes = {'banner-link'}
-            disabled = {false}
-            inline = {true}
-            arrow = {true}
+            text = {"Publisher's Weekly Announcement"}
             href = {"https://www.publishersweekly.com/pw/by-topic/childrens/childrens-book-news/article/98517-rights-report-week-of-september-1-2025.html"}
-            sitePage = {false}
+            classes = {'banner-link'}
+            external
+            inline
+            underline={false}
+            arrow
             />
             </>,
         comingsoon: true,

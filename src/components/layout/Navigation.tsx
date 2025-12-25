@@ -33,27 +33,24 @@ export function Navigation () {
                     return (
                         <div key={index} className={css.nav_desktop_books}>
                             <Hyperlink
-                                title = {item.title}
+                                text = {item.title}
                                 href = {item.link}
-                                disabled = {item.disabled}
                                 classes = {
                                     clsx(item.classes,
                                         css.nav_link_desktop)} 
-                                sitePage = {true}
                                 active = {(currentPage === item.link || '/' + currentPage === item.link)}
+                                disabled = {item.disabled}
                             />
                             <div className={css.nav_desktop_books_menu}>
                             {books.filter(book => book.nav).map((book, bookIndex) => (
                                 <Hyperlink
                                     key = {bookIndex}
-                                    title = {<>{book.title}</>}
+                                    text = {<>{book.title}</>}
                                     href = {item.link}
-                                    disabled = {false}
                                     classes = {
                                         clsx(item.classes,
                                             css.nav_link_desktop,
                                             css.nav_link_desktop_books)} 
-                                    sitePage = {true}
                                     onClick = {() => {
                                         navigate("/books", {    state: { scrollTo: book.html_id }   })
                                     }}
@@ -66,14 +63,13 @@ export function Navigation () {
                 return (
                     <Hyperlink
                         key = {index}
-                        title = {item.title}
+                        text = {item.title}
                         href = {item.link}
-                        disabled = {item.disabled}
                         classes = {
                             clsx(item.classes,
                                 css.nav_link_desktop)} 
-                        sitePage = {true}
                         active = {(currentPage === item.link || '/' + currentPage === item.link)}
+                        disabled = {item.disabled}
                     />
                 )
             })}

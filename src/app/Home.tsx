@@ -5,13 +5,12 @@ import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer } from '@components/layout/S
 import '@styles/home.css'
 
 
-
-function Home() {    
+export default function Home () {    
     return (
         <>
         <AnimatePageLoad ReactDOMElement={
-            <div className="app-container">
-                <div className="home-container flex-container">
+            <div className="app_container" id="home">
+                <div className="home-container">
                     <div className="home-hero-image">
                         {/* https://images.squarespace-cdn.com/content/v1/65d50069b811380a895ef714/6c2ad843-a03e-4474-83a4-4a0cdcef2705/2024-TJW-Author-3.jpg?format=2500w */}
                         <img src="/tiff/tjw-2.jpg"></img>
@@ -21,16 +20,16 @@ function Home() {
                         <h2>
                             <span className="nav-title-name">Tiffany Wang</span>&nbsp;is an writer based in New York City and the author of the 
                             <Hyperlink
-                                title = {"INFERNO'S HEIR"}
+                                text = {"INFERNO'S HEIR"}
                                 href = {'https://www.barnesandnoble.com/w/infernos-heir-tiffany-wang/1144758931'}
                                 classes = {'home-link'} 
-                                inline = {true}/> duology. She studied communication and international relations at the University of Pennsylvania. In her spare time, she enjoys reading a variety of books (especially in YA!), perusing her local library, and searching for the best deals at happy hour.
+                                inline /> duology. She studied communication and international relations at the University of Pennsylvania. In her spare time, she enjoys reading a variety of books (especially in YA!), perusing her local library, and searching for the best deals at happy hour.
                                 </h2>
                         <h2>She is represented by<Hyperlink
-                                title = {'Kelly Van Sant of KT Literary'}
+                                text = {'Kelly Van Sant of KT Literary'}
                                 href = {'https://ktliterary.com/'}
                                 classes = {'home-link'} 
-                                inline = {true}/>.</h2>
+                                inline />.</h2>
                         <LG_Spacer/>
                         <Banner 
                             title = {'The Secrets We Carry'}
@@ -42,7 +41,7 @@ function Home() {
                                 {
                                     "name": "Publishers Weekly announcement",
                                     "href": "https://www.publishersweekly.com/pw/by-topic/childrens/childrens-book-news/article/98517-rights-report-week-of-september-1-2025.html",
-                                    sitePage: false
+                                    external: true
                                 }
                             ]}
                         />
@@ -58,12 +57,12 @@ function Home() {
                                 {
                                     "name": "Buy @ B&N US",
                                     "href": "https://www.barnesandnoble.com/w/tempests-queen-tiffany-wang/1146745369",
-                                    sitePage: false
+                                    external: true
                                 },
                                 {
                                     "name": "Read Inferno's Heir",
                                     "href": "https://www.barnesandnoble.com/w/infernos-heir-tiffany-wang/1144758931",
-                                    sitePage: false
+                                    external: true
                                 }
                             ]}
                         />
@@ -73,8 +72,4 @@ function Home() {
         }/>
         </>
     )
-    }
-
-
-
-export default Home
+}

@@ -60,7 +60,7 @@
 
 .library-book {
     h5 {
-        color: #222222;
+        color: var(--color-text);
         filter: brightness(0.9);
     }
 

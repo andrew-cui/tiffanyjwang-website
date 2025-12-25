@@ -1,19 +1,19 @@
 import { useState } from 'react';
-import type { BookData } from "types/booktypes";
+import type { BookProps } from "@/types/book";
 import '@styles/booknavigation.css'
 import { motion, AnimatePresence } from 'framer-motion';
 
 type BookNavProps = {
-    bookData: BookData[];
-    handleBookClick: (book: BookData) => void;
-    activeBook: BookData;
+    bookData: BookProps[];
+    handleBookClick: (book: BookProps) => void;
+    activeBook: BookProps;
 };
 
 export function BookNav ({ 
     bookData,
     handleBookClick,
     activeBook,
-    } : BookNavProps) {
+} : BookNavProps) {
 
     const [isOpenBookNav, setIsOpen] = useState(false);
     const toggleBookNav = () => {  
@@ -22,7 +22,7 @@ export function BookNav ({
 
     return (
         <div className="book-navigation-container">
-            <div className="app-container">
+            <div className="app_container">
                 <div className="book-navigation">
                     {/* Top navigation item */}
                     <button 

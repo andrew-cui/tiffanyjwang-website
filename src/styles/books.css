@@ -91,7 +91,7 @@
     .blurb-name {
         margin-top: 10px;
         font-size: 14px;
-        color: #27272a;
+        color: var(--color-text);
         font-weight: 500;
     }
     .blurb-bio {
@@ -108,28 +108,4 @@
     flex-wrap: wrap;
     gap: 10px;
     row-gap: 7.5px;
-}
-.book-button {
-    padding: 5px 15px;
-    border-radius: 10px;
-    border: 0.25px solid #27272a22;
-    box-shadow: 1px 1px 1.5px #33333350;
-    background-color: #faf8f6;
-    font-weight: 300;
-    font-size: 14px;
-
-    &:hover{
-        box-shadow: 1px 1px 1.5px #33333399;
-    }
-
-    &#goodreads {
-        box-shadow: none;
-        border: none;
-        background-color: rgba(255,255,255,0.3);
-
-        &:hover {
-            box-shadow: none;
-            background-color: rgba(0,0,0,0.75);
-        }
-    }
 }

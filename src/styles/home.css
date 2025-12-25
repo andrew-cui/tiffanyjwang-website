@@ -1,10 +1,18 @@
+.app_container#home {
+    padding-top: 1.5em;
+}
 .home-container {
     justify-content: space-between;
+
+  display: flex;
+  flex-wrap: wrap;
     gap: 5%;
     margin: 0 auto;
     margin-top: 2.5em;
     row-gap: 2em;
+    margin-bottom: 5em;
 }
+
 
 .home-hero-image {
     flex: 1 1 40%;
@@ -65,9 +73,7 @@ p.home-caption-text {
     text-align: center;
     margin-top: 5px;
 }
-.home-container {
-    padding-top: 2.5em;
-}
+
 
 @media (max-width: 1024px) {
     .home-hero-image {
@@ -99,21 +105,21 @@ p.home-caption-text {
         height: 100%;  
         padding-top: 2.5em;
     }
-    .home-container {
+.app_container#home {
     padding-top: 0.75em;
-    }
+}
 }
 
 @media (max-width: 576px) {
     .home-container {
         width: 95%;
     }
-    .home-container {
-    padding-top: 0.75em;
-}
 }
   
-
+.nav-title-name {
+    font-family: var(--serif);
+    font-weight: 400;
+}
 
 .page-title {
     display: none;

@@ -1,0 +1,14 @@
+:root {
+    /* backgrounds & colors */
+    --background-primary: #faf8f6;
+    --background-white: #ffffffaa;
+    --background-white85: rgba(250, 248, 246, 0.85);
+
+    --color-text: #27272a;
+    --rgb-gold: 204, 153, 51;
+    --color-gold: rgb(var(--rgb-gold));
+    --color-disabled: #cccccc;
+
+    /* navigation */
+    --nav-height: 150px;
+}

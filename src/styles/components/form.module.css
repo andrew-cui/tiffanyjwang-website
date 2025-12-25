@@ -49,7 +49,7 @@
     input, textarea {
         font-family: var(--sans-serif-1);
         width: 100%;
-        background-color: var(--background-standard);
+        background-color: var(--background-primary);
         padding: 7.5px 10px;
         border: 1px solid rgba(204,204,204, 0.8);
         border-radius: 10px;
@@ -72,37 +72,9 @@
 .form_submit {
     width: 100%;
     display: flex;
+    justify-content: center;
 
-    .form_button {
-        cursor: pointer;
-        margin: 0 auto;
-        padding: 8px;
-        width: 30%;
-        border-radius: 10px;
-        border: 0;
-        box-shadow: 0px 1px 2px #00000050;
-        transition: .25s ease-in-out;
-        font-family: var(--sans-serif-1);
-
-        .form_button_cta {
-            justify-content: center;
-        }
-        img {
-            transform: translateY(3px);
-            width: 0;
-            transition: .25s ease-in-out;
-        }
-
-        &:hover {
-            box-shadow: 0px 2px 4px #00000050;
-            img {
-                width: 18px;
-                margin-left: 8px;
-            }
-        }
-    }
-
-    .form_button_confirmation {
+    .form_submit_confirmation {
         font-family: var(--sans-serif-1);
         text-align: center;
         margin: 0;

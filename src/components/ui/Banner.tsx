@@ -1,51 +1,41 @@
-import '@styles/library.css'
-import { motion, AnimatePresence } from 'framer-motion';
-import { ReactNode } from 'react';
+import clsx from 'clsx'
 import { Hyperlink } from '@components/ui/Hyperlink'
-import '@styles/shared.css'
-import '@styles/components/banner.css'
-
-type BannerLink = { name: string, href: string, sitePage?: boolean }
-type BannerLinks = BannerLink[] // external links
-
-type BannerProps = {
-    title?: string;
-    subtitle?: string;
-    content?: ReactNode | string;
-    links?: BannerLinks;
-    imgSrc?: string;
-};
+import type { BannerProps } from '@/types/banner'
+import css from '@styles/components/banner.module.css'
+import variantcss from '@styles/app/variants.module.css'
 
 export function Banner ({ 
-        title = '', 
-        subtitle = '', 
-        content = '', 
-        links = [], 
-        imgSrc = undefined
-    } : BannerProps) {
+    title = '', 
+    subtitle, 
+    content, 
+    links = [], 
+    imgSrc = undefined,
+    variant
+} : BannerProps) {
     return (
-        <div className="banner flex flex-row">
-            {imgSrc && 
-                (<div className="banner-image">
+        <div className={clsx(css.banner, variant && variantcss[`banner_${variant}`])}>
+            {imgSrc && (
+                <div className={css.banner_image}>
                     <img src={imgSrc}/>
-                </div>)
-            }
-            <div className="banner-content">
-                <h4 className="banner-subtitle">{subtitle}</h4>
-                <h3 className="banner-title">{title}</h3>
-                <div className="banner-body">{content}</div>
-                {links.map((item, index) => (
-                    <Hyperlink 
-                    key={index}
-                    title = {item.name}
-                    classes = {'banner-link'}
-                    disabled = {false}
-                    inline = {true}
-                    arrow = {true}
-                    href = {item.href}
-                    sitePage = {item.sitePage ?? false}
-                    />
-                ))}
+                </div>
+            )}
+            <div className={css.banner_body}>
+                <h4 className={css.banner_subtitle}>{subtitle}</h4>
+                <h3 className={css.banner_title}>{title}</h3>
+                <div className={css.banner_content}>{content}</div>
+                    {links.map((item, index) => (
+                        <Hyperlink 
+                            key={index}
+                            text={item.name}
+                            href={item.href}
+                            classes={clsx(css.banner_link)}
+                            variant={variant}
+                            external={item.external}
+                            underline={false}
+                            inline
+                            arrow
+                        />
+                    ))}
             </div>
         </div>
     )

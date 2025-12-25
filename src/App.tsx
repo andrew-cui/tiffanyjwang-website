@@ -5,7 +5,6 @@ import Contact from '@app/Contact'
 import Books from '@app/books/BooksPage'
 import { Navigation } from '@components/layout/Navigation'
 import { Footer } from '@components/layout/Footer'
-import '@styles/App.css'
 
 
 function TopOfPage (): null {

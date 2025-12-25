@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import clsx from 'clsx'
 import emailjs from 'emailjs-com'
+import { IconButton } from '@components/ui/IconButton'
 import css from '@styles/components/form.module.css'
 import { SM_Spacer } from '@components/layout/Spacers'
 
@@ -136,18 +137,16 @@ export function EmailForm() {
 
                 {/* Submit */}
                 <div className={css.form_submit}>
-                    <button type="submit" 
-                        className={clsx(
-                            css.form_button,
-                            submit && css.submitted_hide
-                        )}>
-                        <div className={css.form_button_cta}>
-                            <span>Send your message</span>
-                            <img width="16" height="16" src="https://img.icons8.com/glyph-neue/64/send.png" alt="send"/>
-                        </div>
-                    </button>
+                    {!submit &&     
+                    <IconButton
+                        icon={<i className="bi bi-envelope-check"></i>}
+                        label={'send message'}
+                        iconAfterText
+                        variant={'icon_button_form_cta'}
+                        type={"submit"}/>        
+                    }                    
                     <div className={submit ? css.submitted_show : css.submitted_hide}>
-                        <p className={css.form_button_confirmation}>Sent, thank you!</p>
+                        <p className={css.form_submit_confirmation}>Sent, thank you!</p>
                     </div>
                 </div>
             </form>

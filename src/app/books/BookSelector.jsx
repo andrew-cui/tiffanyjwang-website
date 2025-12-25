@@ -7,8 +7,7 @@ export function Library ({
         homepage = false, 
         clickable = true,
         handleBookClick,
-        activeBook = null,
-        overlay = false, width = '100%', header = null}) { 
+        activeBook = null}) { 
 
     return (
         <div className={`library ${homepage ? 'library-homepage' : ''}`}>

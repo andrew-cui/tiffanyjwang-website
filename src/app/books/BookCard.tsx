@@ -1,18 +1,17 @@
-import '@styles/shared.css'      
+
 import '@styles/books.css'
-import type { BookData } from "types/booktypes";
-import { SM_Spacer } from '@components/layout/Spacers';
+import type { BookProps } from '@/types/book'
+import { SM_Spacer } from '@components/layout/Spacers'
+import { IconButton } from '@components/ui/IconButton'
 import { forwardRef } from 'react';
 
-type BookProps = {
-  bookData: BookData;
+type BookCardProps = {
+  bookData: BookProps;
 };
 
-export const Book = forwardRef<HTMLDivElement, BookProps>(({ bookData }, ref) => {
+export const BookCard = forwardRef<HTMLDivElement, BookCardProps>(({ bookData }, ref) => {
     const bookLinks = bookData.purchaseLinks.filter(l => l.type === "read");
     const audioLinks = bookData.purchaseLinks.filter(l => l.type === "audio");
-
-    // console.log(bookData);
 
     return (
         <div ref={ref} id={bookData.html_id}
@@ -20,8 +19,11 @@ export const Book = forwardRef<HTMLDivElement, BookProps>(({ bookData }, ref) =>
                 <div className='book-cover'>
                     <img src={bookData.img_src}></img>
                     <p>{bookData.img_caption || null}</p>
-                    {bookData.href_goodreads != '' && (<a href={bookData.href_goodreads} target="_blank" className="site-button book-button" id="goodreads">
-                        <i className="bi bi-bookmark-heart"></i>add to goodreads
+                    {bookData.href_goodreads != '' && (<a href={bookData.href_goodreads} target="_blank" id="goodreads">
+                        <IconButton
+                        icon={<i className="bi bi-bookmark-heart"></i>}
+                        label={'add to goodreads'}
+                        variant={'icon_button_book_links'}/>
                     </a>)}
                 </div>
                 <div className='book-content'>
@@ -46,8 +48,11 @@ export const Book = forwardRef<HTMLDivElement, BookProps>(({ bookData }, ref) =>
                         <>
                         <h4 className="book-button-title"><i className="bi bi-book"></i>Read the Book</h4>
                         <div className="book-button-container">{bookLinks.map((link, index) => (
-                            <a href={link.href} target="_blank" key={index} className='site-button book-button'>
-                                {link.site}
+                            <a href={link.href} target="_blank" key={index}>
+                                <IconButton
+                                icon={link.icon}
+                                label={link.site}
+                                variant={'icon_button_book_links'}/>
                             </a>
                         ))}
                         </div>
@@ -59,8 +64,11 @@ export const Book = forwardRef<HTMLDivElement, BookProps>(({ bookData }, ref) =>
                         <h4 className="book-button-title"><i className="bi bi-headphones"></i>Listen to the Audiobook</h4>
                         <div className="book-button-container">
                         {audioLinks.map((link, index) => (
-                            <a href={link.href} target="_blank" key={index} className='site-button book-button'>
-                                {link.site}
+                            <a href={link.href} target="_blank" key={index}>
+                                <IconButton
+                                icon={link.icon}
+                                label={link.site}
+                                variant={'icon_button_book_links'}/>
                             </a>
                         ))}
                         </div>

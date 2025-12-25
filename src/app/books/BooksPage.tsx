@@ -1,109 +1,55 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion';
-import { useLocation, useNavigate } from "react-router-dom";
 import { Library } from '@app/books/BookSelector'
-import { Book } from '@app/books/BookCard'
+import { BookCard } from '@app/books/BookCard'
 import { BookNav } from '@app/books/BookNavigation'
 import { AnimatePageLoad } from '@components/layout/animations/AnimatePageLoad'
-import type { BookData } from "types/booktypes";
+import { useBookAutoScroll } from './hooks/useBookAutoScroll';
+import { useBookScrollSpy } from './hooks/useBookScrollSpy';
+import type { BookProps } from "@/types/book";
 import { SM_Spacer, MD_Spacer, LG_Spacer, XL_Spacer, Inline_Spacer } from '@components/layout/Spacers'
-import '@styles/App.css'
+import '@styles/global.css'
 import '@styles/books.css'
 import '@styles/library.css'
 import '@styles/home.css'
 import books from '@data/bookData'
 
-function Books () {
-    const location = useLocation();
-    const navigate = useNavigate();
-    const [scrolled, setScrolled] = useState(false);
-    const [activeBook, setActiveBook] = useState(null);
+export default function BooksPage () {
+    const autoScrollDuration = 300;
+    const [activeBook, setActiveBook] = useState<BookProps | null>(null);
     const [autoScroll, setAutoScroll] = useState(false);
     const bookRefs = useRef<Record<string, HTMLDivElement | null>>({});
-    const threshold = 400;
-    const offset = 115;
 
-    // Navigate upon page load
-    useEffect(() => {
-        const bookId = location.state?.scrollTo;
-        if (!bookId) return;
+    useBookAutoScroll({
+        books, bookRefs,
+        offset: 115,
+        setActiveBook, setAutoScroll
+    });
 
-        const book = books.find(b => b.html_id === bookId);
-        const el = bookRefs.current[bookId];
-        if (!book || !el) return;
+    const { scrolled } = useBookScrollSpy({
+        books, bookRefs,
+        offset: 115,
+        threshold: 400,
+        autoScroll, activeBook, setActiveBook
+    });
 
-        setActiveBook(book);
-        setAutoScroll(true);
-
-        requestAnimationFrame(() => {
-            window.scrollTo({
-                top: el.getBoundingClientRect().top + window.scrollY - offset + 1,
-                behavior: "smooth"
-            });
-
-            setAutoScroll(false);
-            navigate(".", { replace: true, state: null });
-        });
-    }, [location.state]);
-
-    const handleBookClick = (book: BookData) => {
+    const handleBookClick = (book: BookProps) => {
         const el = bookRefs.current[book.html_id];
         if (!el) return;
-
         setAutoScroll(true);
-        setActiveBook(book);  // highlight in BookNav immediately
-
-        const scrollTarget = el.offsetTop - offset;
-        window.scrollTo({ top: scrollTarget, behavior: 'smooth' });
-        setTimeout(() => setAutoScroll(false), 300); 
-    };
-
-    useEffect(() => {
-        const handleScrollSpy = () => {
-            if (autoScroll) return; // ignore clicks in progress
-
-            const scrollY = window.scrollY + offset;
-            setScrolled(scrollY > threshold);
-
-            // Update activeBook based on topmost book passed
-            for (let i = books.length - 1; i >= 0; i--) {
-                const el = bookRefs.current[books[i].html_id];
-                if (!el) continue;
-
-                if (scrollY >= el.offsetTop) {
-                    if (activeBook?.html_id !== books[i].html_id) {
-                        setActiveBook(books[i]);
-                    }
-                    break;
-                }
-            }
-        };
-
-        window.addEventListener('scroll', handleScrollSpy, { passive: true });
-        handleScrollSpy(); // initialize
-        return () => window.removeEventListener('scroll', handleScrollSpy);
-    }, [autoScroll, activeBook]);
-    // const scrollRight = () => {
-    //     console.log(libraryRef.current?.scrollWidth);
-    //     console.log(libraryRef.current?.clientWidth);
-    //     libraryRef.current?.scrollBy({
-    //     left: 300,
-    //     behavior: "smooth",
-    //     });
-    // };
-
-    // const scrollLeft = () => {
-    //     libraryRef.current?.scrollBy({
-    //     left: -300,
-    //     behavior: "smooth",
-    //     });
-    // };
+        setActiveBook(book);
+        window.scrollTo({
+            top: el.offsetTop - 115,
+            behavior: 'smooth',
+        });
+        setTimeout(() => setAutoScroll(false), autoScrollDuration);
+    }
 
 
     return (
         <>
         <AnimatePageLoad ReactDOMElement={
-            <div className="app-container">
+            <div className="app_container">
                 <h1 className="page-title">Books</h1>
                 {scrolled && (
                     <AnimatePresence><motion.div initial={{ opacity: 0, x: 0 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 0 }} transition={{ duration: 0.2 }}>
@@ -120,8 +66,7 @@ function Books () {
                     bookData={books.filter(book => book.nav)}
                     homepage={false}
                     handleBookClick={handleBookClick}
-                    activeBook={activeBook}
-                    overlay={false} width={"100%"} />
+                    activeBook={activeBook}/>
                 {/* <button onClick={scrollRight}>→</button> */}
                 <div className="library-dots">
                     <i className="bi bi-three-dots"/>
@@ -130,7 +75,7 @@ function Books () {
                 <MD_Spacer/>
 
                 {books.map((book, _) => (
-                    <Book
+                    <BookCard
                         key={book.html_id}
                         bookData={book}
                         ref={(el: HTMLDivElement | null) => {bookRefs.current[book.html_id] = el}}
@@ -143,4 +88,19 @@ function Books () {
     )
 }
 
-export default Books;
+
+// const scrollRight = () => {
+    //     console.log(libraryRef.current?.scrollWidth);
+    //     console.log(libraryRef.current?.clientWidth);
+    //     libraryRef.current?.scrollBy({
+    //     left: 300,
+    //     behavior: "smooth",
+    //     });
+    // };
+
+    // const scrollLeft = () => {
+    //     libraryRef.current?.scrollBy({
+    //     left: -300,
+    //     behavior: "smooth",
+    //     });
+    // };
