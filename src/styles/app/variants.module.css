@@ -52,7 +52,14 @@
     --banner-padding: 0.75em 1.5em 1.25em 1.25em;
     --banner-content-margin: 0.25em;
 }
-
+.banner--homePage {
+    --banner-subtitle-margin: 0.75em 0 0.5em 0;
+}
+@media (min-width: 768px) {
+    .banner--homePage {
+        --banner-subtitle-margin: 0.25em 0 0.5em 0;
+    }
+}
 
 /* HYPERLINKS */
 .hyperlink--active {

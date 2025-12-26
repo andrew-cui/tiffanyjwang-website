@@ -24,6 +24,7 @@ export default function HomePage () {
                                 variant = {'homepage_about'} 
                                 inline /> duology. She studied communication and international relations at the University of Pennsylvania. In her spare time, she enjoys reading a variety of books (especially in YA!), perusing her local library, and searching for the best deals at happy hour.
                                 </h2>
+                        <Spacer size={"xs"}/>
                         <h2>She is represented by
                             <Hyperlink
                                 text = {'Kelly Van Sant of KT Literary'}
@@ -53,6 +54,7 @@ export default function HomePage () {
                                     external: true
                                 }
                             ]}
+                            variant={'homePage'}
                             />
                         <Spacer size={"m"}/>
                         <Banner 

@@ -16,8 +16,10 @@ button.iconButton {
   box-shadow: 1px 1px 3px rgba(var(--rgb-black), 0.15);
 
   transition: 0.25s ease-in-out;
+  color: var(--color-text);
 
   h4 {
+    color: var(--color-text);
     margin: 0;
   }
   span {
@@ -79,7 +81,6 @@ a > .iconButton--book_links {
     font-weight: 300;
     font-size: 15px;
     font-family: var(--sans-serif-2);
-    color: var(--color-primary);
   }
 }
 

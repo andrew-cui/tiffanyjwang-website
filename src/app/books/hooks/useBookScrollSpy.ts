@@ -42,9 +42,10 @@ export default function useBookScrollSpy({
       }
     };
 
+    
+    if (autoScroll) return;
     window.addEventListener('scroll', handleScrollSpy, { passive: true });
     handleScrollSpy();
-
     return () => window.removeEventListener('scroll', handleScrollSpy);
   }, [autoScroll, activeBook]);
 

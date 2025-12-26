@@ -1,7 +1,7 @@
 /* global – fonts and styles definition */
 :root {
   --serif: "Noto Serif", system-ui, serif;
-  --sans-serif-1: 'Open Sans', Avenir, sans-serif;
+  --sans-serif-1: Avenir, sans-serif;
   --sans-serif-2: "halyard-display", system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 h1, h2, h3, h4 { 

@@ -18,7 +18,7 @@ import bookData from '@data/bookData'
 export default function BooksPage () {
     const offset = 115;
     const threshold = 400;
-    const autoScrollDuration = 300;
+    const autoScrollDuration = 400;
     const [activeBook, setActiveBook] = useState<BookProps | null>(null);
     const [autoScroll, setAutoScroll] = useState(false);
     const bookRefs = useRef<Record<string, HTMLDivElement | null>>({});
@@ -27,7 +27,7 @@ export default function BooksPage () {
     useBookAutoScroll({ 
         bookData, bookRefs, 
         offset: offset, 
-        setActiveBook, setAutoScroll
+        setActiveBook, setAutoScroll, autoScrollDuration: autoScrollDuration
     })
     const { scrolled } = useBookScrollSpy({ 
         bookData, bookRefs, 
@@ -38,7 +38,6 @@ export default function BooksPage () {
         const el = bookRefs.current[book.html_id];
         if (!el) return;
         setAutoScroll(true);
-        setActiveBook(book);
         window.scrollTo({
             top: el.offsetTop - offset,
             behavior: 'smooth',
@@ -53,7 +52,7 @@ export default function BooksPage () {
             <div className={'app_container'}>
                 <h1 className={'page_title'}>Books</h1>
                 {scrolled && (
-                    <AnimatePresence><motion.div initial={{ opacity: 0, x: 0 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 0 }} transition={{ duration: 0.2 }}>
+                    <AnimatePresence><motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }}>
                         <BookNav
                             bookData={bookData.filter(book => book.nav)}
                             handleBookClick={handleBookClick}

@@ -44,8 +44,7 @@
 .banner__subtitle {
     color: rgba(var(--rgb-gold-alt), 0.8);
     text-transform: uppercase;
-    margin-top: 0;
-    margin-bottom: .25em;
+    margin: var(--banner-subtitle-margin, 0 auto .25em auto);
 }
 
 .banner__title {

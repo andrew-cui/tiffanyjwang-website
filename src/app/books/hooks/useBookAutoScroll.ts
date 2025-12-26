@@ -2,12 +2,14 @@ import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import type { BookProps } from "@/types/book";
 
+
 type Params = {
   bookData: BookProps[];
   bookRefs: React.RefObject<Record<string, HTMLDivElement | null>>;
   offset?: number;
   setActiveBook: (_: BookProps) => void;
   setAutoScroll: (_: boolean) => void;
+  autoScrollDuration?: number;
 };
 
 export default function useBookAutoScroll({
@@ -16,6 +18,7 @@ export default function useBookAutoScroll({
   offset = 115,
   setActiveBook,
   setAutoScroll,
+  autoScrollDuration = 400
 }: Params) {
   const location = useLocation();
   const navigate = useNavigate();
@@ -31,14 +34,20 @@ export default function useBookAutoScroll({
     setActiveBook(book);
     setAutoScroll(true);
 
+    // let layout settle one frame
     requestAnimationFrame(() => {
+      const y = el.offsetTop - offset;
+
       window.scrollTo({
-        top: el.getBoundingClientRect().top + window.scrollY - offset + 1,
+        top: y,
         behavior: 'smooth',
       });
 
-      setAutoScroll(false);
-      navigate('.', { replace: true, state: null });
+      // keep autoScroll locked long enough for Safari
+      setTimeout(() => {
+        setAutoScroll(false);
+        navigate('.', { replace: true, state: null });
+      }, autoScrollDuration); // longer than Safari's smooth scroll
     });
   }, [location.state]);
 }

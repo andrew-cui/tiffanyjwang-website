@@ -51,7 +51,7 @@ export default function BookNav ({
                     {/* Dropdown navigation item */}
                     <AnimatePresence>
                     {isOpenBookNav && (
-                        <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} style={{ overflow: "hidden" }} 
+                        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} style={{ overflow: "hidden" }} 
                         className={clsx(css.bookNav__menu)}>
                             {bookData.map((book, index) => (
                                 <button 

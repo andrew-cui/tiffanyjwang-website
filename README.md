@@ -15,7 +15,7 @@ typescript / reactjs project by @andrew-cui
 - [] blog - search
 
 ### milestone 3 - codebase
-- in progress: *updated* december 2025
+- in progress: *updated - almost done!* december 2025
 - [x] platform - begin migration to typescript
 - [x] platform - complete typescript migration
 - [x] platform - update components file system
@@ -23,7 +23,8 @@ typescript / reactjs project by @andrew-cui
 - [x] platform - rename components
 - [x] design - move components into module css
 - [x] design - improve css naming & consistency
-- [?] design - refactor all css to reduce redundancy
+- [] design - refactor all css to reduce redundancy
+- [] browser compatibility
 
 ### milestone 3 - ui
 - completed december 2025
