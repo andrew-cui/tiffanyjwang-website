@@ -1,17 +1,23 @@
+/* useBookAutoScroll
+ * () => {} scrolls to book location on site when a book is clicked by user
+ */
+
+// packages 
 import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+
+// interfaces
 import type { BookProps } from "@/types/book";
-
-
-type Params = {
+type useBookAutoScrollParams = {
   bookData: BookProps[];
   bookRefs: React.RefObject<Record<string, HTMLDivElement | null>>;
   offset?: number;
   setActiveBook: (_: BookProps) => void;
   setAutoScroll: (_: boolean) => void;
   autoScrollDuration?: number;
-};
+}
 
+// ReactHook
 export default function useBookAutoScroll({
   bookData,
   bookRefs,
@@ -19,7 +25,7 @@ export default function useBookAutoScroll({
   setActiveBook,
   setAutoScroll,
   autoScrollDuration = 400
-}: Params) {
+}: useBookAutoScrollParams) {
   const location = useLocation();
   const navigate = useNavigate();
 

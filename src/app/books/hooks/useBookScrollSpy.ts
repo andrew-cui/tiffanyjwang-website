@@ -1,7 +1,13 @@
-import { useEffect, useState } from 'react';
-import type { BookProps } from "@/types/book";
+/* useBookScrollSpy
+ * () => {} to automatically update /books ui components upon user scroll
+ */
 
-type Params = {
+// packages
+import { useEffect, useState } from 'react';
+
+// interfaces
+import type { BookProps } from "@/types/book";
+type useBookScrollSpyParams = {
   bookData: BookProps[];
   bookRefs: React.RefObject<Record<string, HTMLDivElement | null>>;
   offset?: number;
@@ -9,8 +15,9 @@ type Params = {
   autoScroll: boolean;
   activeBook: BookProps | null;
   setActiveBook: (_: BookProps) => void;
-};
+}
 
+// ReactHook
 export default function useBookScrollSpy({
   bookData,
   bookRefs,
@@ -19,7 +26,7 @@ export default function useBookScrollSpy({
   autoScroll,
   activeBook,
   setActiveBook,
-}: Params) {
+}: useBookScrollSpyParams) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {

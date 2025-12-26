@@ -1,10 +1,19 @@
+/* Hyperlink 
+ * ui component to have dynamic styling for hyperlinks caross navigation, links and banners
+ */
 
+// packages 
 import { Link } from 'react-router-dom'
 import clsx from 'clsx'
+
+// components, styles & data
 import css from '@styles/components/hyperlink.module.css'      
 import variantcss from '@styles/app/variants.module.css'
+
+// interfaces
 import type { HyperlinkProps } from '@/types/hyperlink'
 
+// render
 export default function Hyperlink ({
     text = '',
     href = '',
@@ -18,20 +27,13 @@ export default function Hyperlink ({
     arrow = false,          // true = includes arrow to the right
     onClick
 }: HyperlinkProps) {
-
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-        if (disabled) { 
-            e.preventDefault();  
-            return; 
-        }
-        if (onClick) {
-            e.preventDefault();  
-            onClick(e); 
-        }
-    };
+        if (disabled || onClick)    { e.preventDefault();   }
+        if (disabled)               { return;               }
+        if (onClick)                { onClick(e);           }
+    }
 
     return (
-        
         <>
         {inline && ' '}
         <Link to={href} 

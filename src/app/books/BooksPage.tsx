@@ -1,20 +1,21 @@
+/* Books 
+ * /books page to display all books and details
+ */
+
+// packages 
 import { useState, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-// components
-import { AnimatePageLoad } from '@components/layout/animations/AnimatePageLoad'
-import {
-    BookCard, BookCollection, BookNav,
-    useBookAutoScroll, useBookScrollSpy
-} from '@app/books'
-import Spacer from '@components/layout/Spacer'
-
-// styles and modules
+// components, styles & data
+import { Spacer, AnimateFadeIn } from '@components'
+import { BookCard, BookCollection, BookNav, useBookAutoScroll, useBookScrollSpy } from '@app/books'
 import css from '@styles/app/books/books.module.css'
-import type { BookProps } from "@/types/book";
 import bookData from '@data/bookData'
 
+// interfaces
+import type { BookProps } from "@/types/book";
 
+// render
 export default function BooksPage () {
     const offset = 115;
     const threshold = 400;
@@ -48,7 +49,7 @@ export default function BooksPage () {
 
     return (
         <>
-        <AnimatePageLoad ReactDOMElement={
+        <AnimateFadeIn ReactDOMElement={
             <div className={'app_container'}>
                 <h1 className={'page_title'}>Books</h1>
                 {scrolled && (

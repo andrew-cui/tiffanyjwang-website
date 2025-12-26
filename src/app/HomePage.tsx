@@ -1,14 +1,18 @@
-import Banner from '@components/ui/Banner'
-import Hyperlink from '@components/ui/Hyperlink'
-import { AnimatePageLoad } from '@components/layout/animations/AnimatePageLoad'
-import Spacer from '@components/layout/Spacer'
+/* Home 
+ * / page to show intro and key highlights. site landing page
+ */
+
+
+// packages 
+// components, styles & data
+import { Banner, Hyperlink, Spacer, AnimateFadeIn } from '@components'
 import css from '@styles/app/home.module.css'
 
-
+// render
 export default function HomePage () {    
     return (
         <>
-        <AnimatePageLoad ReactDOMElement={
+        <AnimateFadeIn ReactDOMElement={
             <div className="app_container" id="home">
                 <div className={css.homePage__content} id="homePage__header">
                     <div className={css.homePage__image}>

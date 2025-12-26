@@ -1,9 +1,19 @@
+/* Banner 
+ * ui component to show text and image content on site in a container
+ */
+
+// packages 
 import clsx from 'clsx'
+
+// components, styles & data
 import Hyperlink from '@components/ui/Hyperlink'
-import type { BannerProps } from '@/types/banner'
 import css from '@styles/components/banner.module.css'
 import variantcss from '@styles/app/variants.module.css'
 
+// interfaces
+import type { BannerProps } from '@/types/banner'
+
+// render
 export default function Banner ({ 
     title = '', 
     subtitle, 

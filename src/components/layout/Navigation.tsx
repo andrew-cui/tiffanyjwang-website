@@ -1,15 +1,23 @@
-import { useState } from 'react';
+/* Navigation 
+ * top desktop navigation bar and mobile navigation dropdown
+ */
+
+// packages 
+import { useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import clsx from 'clsx'
-import Footer from '@components/layout/Footer'
+
+// components, styles & data
 import Hyperlink from '@components/ui/Hyperlink'
-import { AnimatePageLoad } from '@animations/AnimatePageLoad'
+import Footer from '@components/layout/Footer'
+import { AnimateFadeIn } from '@components/layout/animations/AnimateFadeIn'
+import css from '@styles/components/nav.module.css'
+
 import favicon from '/favicon-no-bg.png'
 import pagesData from '@data/pagesData.json'
 import books from '@data/bookData'
-import css from '@styles/components/nav.module.css'
 
-// Top Navigation
+// render
 export default function Navigation ({
     dots = true
 } : {
@@ -103,7 +111,7 @@ export default function Navigation ({
                 </div>
                 
                 {isOpenMobile && (
-                    <AnimatePageLoad 
+                    <AnimateFadeIn 
                         duration = {0.25}
                         ReactDOMElement={
                     <div className={css['nav--mobile__menu']}>

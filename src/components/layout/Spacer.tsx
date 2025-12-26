@@ -1,6 +1,14 @@
+/* Spacer 
+ * custom class for spacing between objects
+ */
+
+// packages 
 import clsx from 'clsx'
+
+// components, styles & data
 import css from '@styles/components/spacer.module.css'
 
+// render
 export default function Spacer({
     size = "s",
     inline = false

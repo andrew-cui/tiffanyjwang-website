@@ -1,15 +1,24 @@
+/* BookNav 
+ * ui banner that appears to allow navigation between books
+ */
+
+// packages 
 import { useState } from 'react'
 import clsx from 'clsx'
-import type { BookProps } from "@/types/book"
-import css from '@styles/app/books/bookNav.module.css'
 import { motion, AnimatePresence } from 'framer-motion'
 
+// components, styles & data
+import css from '@styles/app/books/bookNav.module.css'
+
+// interfaces
+import type { BookProps } from "@/types/book"
 type BookNavProps = {
     bookData: BookProps[];
     handleBookClick: (book: BookProps) => void;
     activeBook: BookProps;
-};
+}
 
+// render
 export default function BookNav ({ 
     bookData,
     handleBookClick,

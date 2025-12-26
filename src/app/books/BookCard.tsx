@@ -1,14 +1,20 @@
+/* BookCard 
+ * ui display for each item on /books
+ */
+
+// packages 
 import clsx from 'clsx'
+import { forwardRef } from 'react'
+
+// components, styles & data
+import { Spacer, IconButton } from '@components'
 import css from '@styles/app/books/bookCard.module.css'
+
+// interfaces
 import type { BookProps } from '@/types/book'
-import Spacer from '@components/layout/Spacer'
-import IconButton from '@components/ui/IconButton'
-import { forwardRef } from 'react';
+type BookCardProps = {  bookData: BookProps;  };
 
-type BookCardProps = {
-  bookData: BookProps;
-};
-
+// render
 export const BookCard = forwardRef<HTMLDivElement, BookCardProps>(({ bookData }, ref) => {
     const bookLinks = bookData.purchaseLinks.filter(l => l.type === "read");
     const audioLinks = bookData.purchaseLinks.filter(l => l.type === "audio");

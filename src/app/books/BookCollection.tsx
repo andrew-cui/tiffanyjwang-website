@@ -1,9 +1,17 @@
-import css from '@styles/app/books/bookCollection.module.css'
-import variantcss from '@styles/app/variants.module.css'
+/* BookCollection
+ * ui display for top level scroll of all books, clickable to scroll
+ */
+
+// packages 
 import clsx from 'clsx'
 import { motion, AnimatePresence } from 'framer-motion'
-import type { BookProps } from '@/types/book'
 
+// components, styles & data
+import css from '@styles/app/books/bookCollection.module.css'
+import variantcss from '@styles/app/variants.module.css'
+
+// interfaces
+import type { BookProps } from '@/types/book'
 type BookCollectionProps = {
     bookData: BookProps[];
     handleBookClick: (book: BookProps) => void;
@@ -11,8 +19,9 @@ type BookCollectionProps = {
     clickable?: boolean
     showReleaseDate?: boolean
     variant?: string
-};
+}
 
+// render
 export default function BookCollection ({
     bookData,
     handleBookClick,
@@ -21,14 +30,12 @@ export default function BookCollection ({
     showReleaseDate = false,        // true to show release date
     variant = ''
 } : BookCollectionProps) { 
-    // {[css.bookCollection__clickable]: clickable},
     return (
         <div className={clsx(
             css.bookCollection,
             variant && variantcss[`bookCollection--${variant}`]
         )}>
             {bookData.map((book, index) => (
-                // If we have a selectable menu, then use the option to toggle the parent. Otherwise, external link
                 <div key={index} className={clsx(
                     css.bookCollection__book,
                     variant && variantcss[`bookCollection__book--${variant}`]

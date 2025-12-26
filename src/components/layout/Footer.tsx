@@ -1,6 +1,12 @@
-import socials from '@data/socialsData'
-import css from '@styles/components/nav.module.css'
+/* Footer 
+ * footer with social media links
+ */
 
+// components, styles & data
+import css from '@styles/components/nav.module.css'
+import socials from '@data/socialsData'
+
+// render
 export default function Footer () { 
     return (
         <div className={css.footer}>

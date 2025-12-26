@@ -1,11 +1,20 @@
+/* EmailForm 
+ * ui component to have an emailJS form that takes in user inputs. used in /contact. only supports 1 input
+ */
+
+// packages 
 import { useState } from 'react'
 import clsx from 'clsx'
 import emailjs from 'emailjs-com'
+
+// components, styles & data
 import IconButton from '@components/ui/IconButton'
 import css from '@styles/components/form.module.css'
 import Spacer from '@components/layout/Spacer'
 
+// render
 export default function EmailForm() {
+    // emailJS params
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const userId = import.meta.env.VITE_EMAILJS_USER_ID;
@@ -55,9 +64,10 @@ export default function EmailForm() {
                 <h3>send me an <i className="bi bi-envelope-at"></i> here!</h3>
             </div>
             {!submit && <Spacer size={"s"}/>}
+
             {/* Contact form */}
             <form 
-                name="tiffanywang_contactform" 
+                name="contactForm" 
                 onSubmit={handleSubmit} 
                 className={clsx(
                             css.contactForm__form

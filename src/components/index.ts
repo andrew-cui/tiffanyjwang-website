@@ -10,4 +10,4 @@ export { default as Navigation } from './layout/Navigation'
 export { default as Spacer } from './layout/Spacer'
 
 // animations
-// export { AnimatePageLoad } from './layout/animations/AnimatePageLoad'
+export { AnimateFadeIn } from './layout/animations/AnimateFadeIn'

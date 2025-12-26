@@ -1,7 +1,15 @@
-import { motion, AnimatePresence } from 'framer-motion';
+/* AnimatePageLoad 
+ * framer-motion animation for crossfade upon new page
+ */
+
+// packages 
+import { motion, AnimatePresence } from 'framer-motion'
+
+// interfaces
 import type { ReactNode } from 'react';
 
-export function AnimatePageLoad ({ 
+// render
+export function AnimateFadeIn ({ 
         ReactDOMElement,
         duration = 1
     } : {

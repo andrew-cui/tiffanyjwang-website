@@ -1,15 +1,20 @@
+/* Contact 
+ * /contact page to include links and contact form
+ */
+
+// packages 
 import clsx from 'clsx'
-import { Banner, Hyperlink, EmailForm, IconButton } from '@components'
-import { AnimatePageLoad } from '@components/layout/animations/AnimatePageLoad'
-import Spacer from '@components/layout/Spacer'
+
+// components, styles & data
+import { Banner, Hyperlink, EmailForm, IconButton, AnimateFadeIn, Spacer } from '@components'
 import css from '@styles/app/contact.module.css'
-import socials from '@data/socialsData'
+import socialsData from '@data/socialsData'
 
-
+// render
 export default function ContactPage () {
     return (
         <>
-        <AnimatePageLoad ReactDOMElement={
+        <AnimateFadeIn ReactDOMElement={
             <div className={clsx('app_container')} id="contact">
                 <h1 className={'page_title'}>Contact</h1>
                 <div className={css.contactPage__container}>
@@ -59,7 +64,7 @@ export default function ContactPage () {
                         <h3 className={css.contactPage__title}>social media</h3>
                         {/* <p className={css.contactPage__socials_title}>I'm active at the social media links here. You can also send an email from the form below!</p> */}
                         <div className={css.contactPage__socials}>
-                            {socials.map((item, index) => (
+                            {socialsData.map((item, index) => (
                             <a key={index} href={item.href || "#"}
                                     target={`${item.label == "home" ? '' : "_blank"}`}
                                 >
