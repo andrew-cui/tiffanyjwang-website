@@ -1,11 +1,9 @@
 import { useEffect } from 'react';
 import {  BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
-import Home from '@app/Home'
-import Contact from '@app/Contact'
-import Books from '@app/books/BooksPage'
-import { Navigation } from '@components/layout/Navigation'
-import { Footer } from '@components/layout/Footer'
-
+import HomePage from '@app/HomePage'
+import ContactPage from '@app/ContactPage'
+import BooksPage from '@app/books/BooksPage'
+import { Navigation, Footer } from '@components'
 
 function TopOfPage (): null {
   const location = useLocation();
@@ -23,10 +21,10 @@ function App() {
         <TopOfPage /> 
         <Navigation/>
         <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Home/>} />
-          <Route path="/contact" element={<Contact/>} />
-          <Route path="/form" element={<Contact/>} />
-          <Route path="/books" element={<Books/>} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/form" element={<ContactPage/>} />
+          <Route path="/books" element={<BooksPage/>} />
 
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

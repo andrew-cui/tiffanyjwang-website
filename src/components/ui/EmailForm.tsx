@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import clsx from 'clsx'
 import emailjs from 'emailjs-com'
-import { IconButton } from '@components/ui/IconButton'
+import IconButton from '@components/ui/IconButton'
 import css from '@styles/components/form.module.css'
-import { SM_Spacer } from '@components/layout/Spacers'
+import Spacer from '@components/layout/Spacer'
 
-export function EmailForm() {
+export default function EmailForm() {
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const userId = import.meta.env.VITE_EMAILJS_USER_ID;
@@ -54,7 +54,7 @@ export function EmailForm() {
                         )}>
                 <h3>send me an <i className="bi bi-envelope-at"></i> here!</h3>
             </div>
-            {!submit && <SM_Spacer/>}
+            {!submit && <Spacer size={"s"}/>}
             {/* Contact form */}
             <form 
                 name="tiffanywang_contactform" 
@@ -133,7 +133,7 @@ export function EmailForm() {
                     />
                 </div>
 
-                <SM_Spacer/>
+                <Spacer size={"s"}/>
 
                 {/* Submit */}
                 <div className={css.contactForm__submit}>

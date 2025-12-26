@@ -1,0 +1,39 @@
+/* spacer module
+ *
+ */
+
+/* spacer - variable sets distance on EITEHR side */
+.spacer {
+    margin: 0;
+    opacity: 0;
+    display: block;
+    --spacer-distance: 0;  
+}
+
+.spacer--xs {
+    --spacer-distance: 12px;
+}
+.spacer--s {
+    --spacer-distance: 24px;
+}
+.spacer--m {
+    --spacer-distance: 36px;
+}
+.spacer--l {
+    --spacer-distance: 48px;
+}
+.spacer--xl {
+    --spacer-distance: 72px;
+}
+
+.spacer {
+    width: 100%;
+    height: var(--spacer-distance);
+}
+
+.spacer--inline {
+    display: inline-block;
+    width: var(--spacer-distance);
+    margin-right: var(--spacer-distance);
+    height: 16px;
+}

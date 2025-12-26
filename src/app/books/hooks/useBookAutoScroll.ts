@@ -3,15 +3,15 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import type { BookProps } from "@/types/book";
 
 type Params = {
-  books: BookProps[];
+  bookData: BookProps[];
   bookRefs: React.RefObject<Record<string, HTMLDivElement | null>>;
   offset?: number;
   setActiveBook: (_: BookProps) => void;
   setAutoScroll: (_: boolean) => void;
 };
 
-export function useBookAutoScroll({
-  books,
+export default function useBookAutoScroll({
+  bookData,
   bookRefs,
   offset = 115,
   setActiveBook,
@@ -24,7 +24,7 @@ export function useBookAutoScroll({
     const bookId = location.state?.scrollTo;
     if (!bookId) return;
 
-    const book = books.find(b => b.html_id === bookId);
+    const book = bookData.find(b => b.html_id === bookId);
     const el = bookRefs.current[bookId];
     if (!book || !el) return;
 

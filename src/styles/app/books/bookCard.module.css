@@ -1,24 +1,28 @@
+/* bookCard
+ * styling for individual book objects */
+
+/* overall parent item */
 .book {
     margin-bottom: 30px;
     border-radius: 10px;
     padding: 30px;
     width: 100%;
     background-color: rgba(255,255,255,0.3);
-    box-shadow: 1px 1px 1px #88888870,
-        -0.5px -0.25px 0.5px #88888840;
+    box-shadow: 1px 1px 1px var(--color-boxshadow-primary),
+        -0.5px -0.25px 0.5px var(--color-boxshadow-primary);
     display: flex;
     flex-wrap: wrap;
     gap: 5%;
     transition: 0.4s ease;
 
     &:hover {
-        background-color: var(--background-white);
-        box-shadow: 1px 2px 1.5px #33333350,
-        -0.5px -0.25px 0.5px #33333350;
+        background-color: var(--color-background-white);
+        box-shadow: 1px 2px 1.5px var(--color-boxshadow-hover),
+        -0.5px -0.25px 0.5px var(--color-boxshadow-hover);
     }
 }
 
-.book-cover {
+.book__image {
     display: flex;
     flex: 1 1 25%;
     flex-direction: column;
@@ -34,37 +38,39 @@
         font-size: 12px;
     }
 }
-.book-content {
+.book__content {
     flex: 1 1 70%;
 
-    h2 {
+    h2.book__title {
         font-size: 22px;
         font-weight: 400;
     }
-    h3 {
+    h3.book__subtitle, h4.book__links_title {
         font-size: 16px;
+        font-family: var(--sans-serif-1);
+        color: var(--color-gold);
+    }
+    h3 {
         font-style: italic;
         font-weight: 400;
-        color: var(--color-gold);
-        font-family: var(--sans-serif-1);
     }
-    h4 {
-        font-size: 16px;
+    h4.book__links_title {
         font-weight: 500;
-        font-family: var(--sans-serif-1);
-        color: var(--color-gold);
     }
     p {
         font-size: 15px;
     }
+    .book__description h3 {
+        font-size: 14px;
+    }
 }
 @media (max-width: 768px) {
-    .book-cover, .book-content {
+    .book__cover, .book__content {
         flex: 1 1 100%;
     }
 }
 
-.book-blurb {
+.book__blurb {
     position: relative;
     padding-left: 15px;
 
@@ -82,35 +88,31 @@
         margin-bottom: 5px;
     }
 
-    .blurb-content {
+    .book__blurb_content {
         margin-top: 5px;
-        font-size: 16px;
+        font-size: 15px;
         font-weight: 400;
         font-style: italic;
     }
-    .blurb-name {
-        margin-top: 10px;
-        font-size: 14px;
+    .book__blurb_name {
+        margin-top: 5px;
+        font-size: 15px;
         color: var(--color-text);
         font-weight: 500;
+        padding-left: 15px;
     }
-    .blurb-bio {
+    .book__blurb_bio {
         font-weight: 300;
-
+        font-size: 13px;
     }
 }
 
-.book-button-title > i {
+.book__links_title > i {
     margin-right: 5px;
 }
-.book-button-container {
+.book__links {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     row-gap: 7.5px;
-}
-
-.library-dots {
-    width: 100%;
-    text-align: center;
 }

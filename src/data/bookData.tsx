@@ -1,6 +1,6 @@
-import type { ReactNode } from "react";
 import type { BookProps } from "@/types/book";
-import { Hyperlink } from "@components/ui/Hyperlink";
+import Hyperlink from "@components/ui/Hyperlink";
+import bannercss from '@styles/components/banner.module.css'
 
 const books: BookProps[] = [
     {   
@@ -18,7 +18,7 @@ const books: BookProps[] = [
         comingsoon: false,
         release: "Fall 2024", 
         img_src: "/books/IH-CV.jpg", 
-        img_caption: "Cover by Dan Funderburgh",
+        img_caption: "cover by Dan Funderburgh",
         blurbs: [
         {   content: "A mesmerizing debut fantasy.", 
             name: "Rebecca Yarros", 
@@ -31,7 +31,8 @@ const books: BookProps[] = [
             type: "read" as const
         },
         {   href: "https://binderybooks.com/books/infernos-heir/",
-            site: "Bindery - Hardcover exclusive",
+            icon: <i className="bi bi-journal-richtext"></i>,
+            site: "Bindery – Hardcover",
             type: "read" as const
         },
         {   href: "https://www.amazon.com/Infernos-Heir-Tiffany-Wang/dp/1959411772",
@@ -57,10 +58,12 @@ const books: BookProps[] = [
             type: "audio" as const
         },
         {   href: "https://podiumentertainment.com/titles/27478/infernos-heir",
+            icon: <i className="bi bi-earbuds"></i>,
             site: "Podium",
             type: "audio" as const
         },
         {   href: "https://www.audible.com/pd/Infernos-Heir-Audiobook/B0D3JNTS33",
+            icon: <i className="bi bi-earbuds"></i>,
             site: "Audible",
             type: "audio" as const
         }
@@ -80,7 +83,7 @@ const books: BookProps[] = [
         comingsoon: false,
         release: "Fall 2025", 
         img_src: "/books/TQ-CV.jpg", 
-        img_caption: "Cover by Dan Funderburgh",
+        img_caption: "cover by Dan Funderburgh",
         blurbs: [],
         href_goodreads: "https://www.goodreads.com/book/show/222942059-tempest-s-queen",
         purchaseLinks: [
@@ -110,6 +113,7 @@ const books: BookProps[] = [
             type: "audio" as const
         },
         {   href: "https://www.audible.com/pd/Tempests-Queen-Audiobook/B0FSNG69W7?source_code=AUDORWS0718179KY7",
+            icon: <i className="bi bi-earbuds"></i>,
             site: "Audible",
             type: "audio" as const
         }]
@@ -125,7 +129,7 @@ const books: BookProps[] = [
         <Hyperlink 
             text = {"Publisher's Weekly Announcement"}
             href = {"https://www.publishersweekly.com/pw/by-topic/childrens/childrens-book-news/article/98517-rights-report-week-of-september-1-2025.html"}
-            classes = {'banner-link'}
+            classes = {bannercss['banner__link']}
             external
             inline
             underline={false}

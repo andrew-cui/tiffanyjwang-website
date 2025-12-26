@@ -5,7 +5,7 @@ import css from '@styles/components/hyperlink.module.css'
 import variantcss from '@styles/app/variants.module.css'
 import type { HyperlinkProps } from '@/types/hyperlink'
 
-export function Hyperlink ({
+export default function Hyperlink ({
     text = '',
     href = '',
     classes,
@@ -28,28 +28,31 @@ export function Hyperlink ({
             e.preventDefault();  
             onClick(e); 
         }
-  };
+    };
 
     return (
+        
         <>
         {inline && ' '}
         <Link to={href} 
             style={{pointerEvents: disabled ? 'none' : 'auto'}} 
             className={clsx(
                 css.hyperlink,
-                {[css.hyperlink_active]: active},
-                {[css.hyperlink_no_underline]: !underline},
+                disabled && variantcss['hyperlink--disabled'],
+                active && variantcss['hyperlink--active'],
+                !underline && variantcss['hyperlink--no_underline'],
                 variant && variantcss[`hyperlink--${variant}`],
                 classes)} 
-            target={external && '_blank'}
-            rel={external && 'noopener noreferrer'}
+            target={external ? '_blank' : undefined}
+            rel={external ? 'noopener noreferrer' : undefined}
             onClick={handleClick}>
             <h3 className={clsx(
-                css.hyperlink_text,
-                {[css.hyperlink_disabled]: disabled},
-                {[css.hyperlink_active]: active},
-                {[css.hyperlink_inline]: inline},
-                variant && variantcss[`hyperlink--${variant}`],
+                css.hyperlink__text,
+                disabled && variantcss['hyperlink--disabled'],
+                active && variantcss['hyperlink--active'],
+                !underline && variantcss['hyperlink--no_underline'],
+                inline && variantcss['hyperlink--inline'],
+                variant && variantcss[`hyperlink__text--${variant}`],
                 classes)}>
                 {text}
                 {arrow && <i className="bi bi-chevron-double-right"></i>}

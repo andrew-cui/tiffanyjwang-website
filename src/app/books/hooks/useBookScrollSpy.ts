@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import type { BookProps } from "@/types/book";
 
 type Params = {
-  books: BookProps[];
+  bookData: BookProps[];
   bookRefs: React.RefObject<Record<string, HTMLDivElement | null>>;
   offset?: number;
   threshold?: number;
@@ -11,8 +11,8 @@ type Params = {
   setActiveBook: (_: BookProps) => void;
 };
 
-export function useBookScrollSpy({
-  books,
+export default function useBookScrollSpy({
+  bookData,
   bookRefs,
   offset = 115,
   threshold = 400,
@@ -29,13 +29,13 @@ export function useBookScrollSpy({
       const scrollY = window.scrollY + offset;
       setScrolled(scrollY > threshold);
 
-      for (let i = books.length - 1; i >= 0; i--) {
-        const el = bookRefs.current[books[i].html_id];
+      for (let i = bookData.length - 1; i >= 0; i--) {
+        const el = bookRefs.current[bookData[i].html_id];
         if (!el) continue;
 
         if (scrollY >= el.offsetTop) {
-          if (activeBook?.html_id !== books[i].html_id) {
-            setActiveBook(books[i]);
+          if (activeBook?.html_id !== bookData[i].html_id) {
+            setActiveBook(bookData[i]);
           }
           break;
         }

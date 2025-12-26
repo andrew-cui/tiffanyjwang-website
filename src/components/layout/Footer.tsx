@@ -1,12 +1,12 @@
 import socials from '@data/socialsData'
 import css from '@styles/components/nav.module.css'
 
-export function Footer () { 
+export default function Footer () { 
     return (
         <div className={css.footer}>
-            <div className={css.footer_icons}>
+            <div className={css.footer__icons}>
                 {socials.map((item, index) => (
-                <div key={index} className={css.footer_icon}>
+                <div key={index} className={css.footer__icon}>
                     <a
                         href={item.href || "#"}
                         target={`${item.label == "home" ? '' : "_blank"}`}
@@ -15,7 +15,7 @@ export function Footer () {
                 </div>
                 ))}
             </div>
-            <p className={css.footer_copyright}>Copyright &copy; Tiffany Wang, 2024-2026. All rights reserved.</p>
+            <p className={css.footer__copyright}>Copyright &copy; Tiffany Wang, 2024-2026. All rights reserved.</p>
         </div>
     )
 }

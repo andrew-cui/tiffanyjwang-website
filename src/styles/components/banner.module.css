@@ -15,9 +15,9 @@
     box-shadow: 1px 1px 3px rgba(var(--rgb-gold), 0.1);
     opacity: 0.9;
 
-    transition: box-shadow 0.3s ease-in-out, opacity 0.2s ease;
+    transition: box-shadow 0.25s ease-in-out, opacity 0.25s ease;
     &:hover {
-        box-shadow: 1px 1px 3px 0.5px rgba(219, 171, 4, 0.3);
+        box-shadow: 1px 1px 3px 0.5px rgba(var(--rgb-gold-alt), 0.3);
         opacity: 1;
     }
 
@@ -27,40 +27,40 @@
 }
 
 /* banner_image - optional image */
-.banner_image {
+.banner__image {
     flex: 0 1 20%;
     img {
         width: 100%;
         border-radius: 10px;
-        box-shadow: 1px 1px 0.5px rgba(0,0,0,0.1);
+        box-shadow: 1px 1px 0.5px var(--color-boxshadow-hover);
     }
 }
 
 /* banner_body - text formatting */
-.banner_body {
+.banner__body {
     flex: 1 1 70%;
 }
 
-.banner_subtitle {
-    color: rgba(209, 161, 4, 0.8);
+.banner__subtitle {
+    color: rgba(var(--rgb-gold-alt), 0.8);
     text-transform: uppercase;
     margin-top: 0;
     margin-bottom: .25em;
 }
 
-.banner_title {
+.banner__title {
     margin-top: .25em;
     font-size: var(--banner-title-size, 18px);
     font-weight: 400;
 }
 
-.banner_content {
+.banner__content {
     font-size: 14px;
     margin: var(--banner-content-margin, 0);
     margin-left: 0;
 }
 
-.banner_link {
+.banner__link {
     font-family: var(--sans-serif-1);
     font-weight: 400;
     color: var(--color-gold);
@@ -73,7 +73,7 @@
         margin-right: 30px;
         transition: margin-left 0.5s ease;
     }
-    transition: filter 0.3s ease-in-out;
+    transition: filter 0.25s ease-in-out;
 
     &:hover {
         filter: brightness(0.8);
@@ -88,10 +88,10 @@
 }
 
 @media (max-width: 960px) {
-    .banner_image {
+    .banner__image {
         flex: 0 1 25%;
     }
-    .banner_body {
+    .banner__body {
         flex: 1 1 60%;
     }
 }
@@ -100,10 +100,10 @@
         margin: 0 2.5%;
         width: 95%;
     }
-    .banner_image {
+    .banner__image {
         flex: 0 1 25%;
     }
-    .banner_body {
+    .banner__body {
         flex: 1 1 90%;
         padding-right: 1em;
     }

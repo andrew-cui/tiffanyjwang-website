@@ -2,7 +2,6 @@ import css from '@styles/app/books/bookCollection.module.css'
 import variantcss from '@styles/app/variants.module.css'
 import clsx from 'clsx'
 import { motion, AnimatePresence } from 'framer-motion'
-import { SM_Spacer } from '@components/layout/Spacers'
 import type { BookProps } from '@/types/book'
 
 type BookCollectionProps = {
@@ -14,7 +13,7 @@ type BookCollectionProps = {
     variant?: string
 };
 
-export function BookCollection ({
+export default function BookCollection ({
     bookData,
     handleBookClick,
     activeBook = null,

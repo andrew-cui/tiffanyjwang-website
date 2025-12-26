@@ -1,8 +1,8 @@
-
-import '@styles/books.css'
+import clsx from 'clsx'
+import css from '@styles/app/books/bookCard.module.css'
 import type { BookProps } from '@/types/book'
-import { SM_Spacer } from '@components/layout/Spacers'
-import { IconButton } from '@components/ui/IconButton'
+import Spacer from '@components/layout/Spacer'
+import IconButton from '@components/ui/IconButton'
 import { forwardRef } from 'react';
 
 type BookCardProps = {
@@ -15,39 +15,39 @@ export const BookCard = forwardRef<HTMLDivElement, BookCardProps>(({ bookData },
 
     return (
         <div ref={ref} id={bookData.html_id}
-            className={`book`}>
-                <div className='book-cover'>
+            className={clsx(css.book)}>
+                <div className={clsx(css.book__image)}>
                     <img src={bookData.img_src}></img>
                     <p>{bookData.img_caption || null}</p>
                     {bookData.href_goodreads != '' && (<a href={bookData.href_goodreads} target="_blank" id="goodreads">
                         <IconButton
                         icon={<i className="bi bi-bookmark-heart"></i>}
                         label={'add to goodreads'}
-                        variant={'icon_button_book_links'}/>
+                        variant={'iconButton--book_links'}/>
                     </a>)}
                 </div>
-                <div className='book-content'>
-                    <h2 className={``}>
+                <div className={clsx(css.book__content)}>
+                    <h2 className={css.book__title}>
                         {bookData.title}
                     </h2>
-                    <h3 className={``}>
+                    <h3 className={css.book__subtitle}>
                         {bookData.subtitle}
                     </h3>
-                    <div className={``}>
+                    <div className={css.book__description}>
                         {bookData.description}
                     </div>
-                    <SM_Spacer/>
+                    {bookData.blurbs.length > 0 && <Spacer size={"xs"}/>}
                     {bookData.blurbs.map((blurb, index) => (
-                        <div key={index} className='book-blurb'>
-                            <p className='blurb-content'>“{blurb.content}”</p>
-                            <p className='blurb-name'>— {blurb.name}<span className='blurb-bio'>, {blurb.bio}</span></p>
+                        <div key={index} className={clsx(css.book__blurb)}>
+                            <p className={clsx(css.book__blurb_content)}>“{blurb.content}”</p>
+                            <p className={clsx(css.book__blurb_name)}>{blurb.name}<span className={clsx(css['book__blurb_bio'])}>, {blurb.bio}</span></p>
                         </div>
                     ))}
-                    {bookData.blurbs.length > 0 && <SM_Spacer/>}
+                    {bookData.blurbs.length > 0 ? <Spacer size={"s"}/> : <Spacer size={"xs"}/>}
                     {bookLinks.length > 0 && (
                         <>
-                        <h4 className="book-button-title"><i className="bi bi-book"></i>Read the Book</h4>
-                        <div className="book-button-container">{bookLinks.map((link, index) => (
+                        <h4 className={clsx(css.book__links_title)}><i className="bi bi-book"></i>Read the Book</h4>
+                        <div className={clsx(css.book__links)}>{bookLinks.map((link, index) => (
                             <a href={link.href} target="_blank" key={index}>
                                 <IconButton
                                 icon={link.icon}
@@ -56,13 +56,13 @@ export const BookCard = forwardRef<HTMLDivElement, BookCardProps>(({ bookData },
                             </a>
                         ))}
                         </div>
-                        <SM_Spacer/>
+                        <Spacer size={"s"}/>
                         </>
                     )}
                     {audioLinks.length > 0 && (
                         <>
-                        <h4 className="book-button-title"><i className="bi bi-headphones"></i>Listen to the Audiobook</h4>
-                        <div className="book-button-container">
+                        <h4 className={clsx(css.book__links_title)}><i className="bi bi-headphones"></i>Listen to the Audiobook</h4>
+                        <div className={clsx(css.book__links)}>
                         {audioLinks.map((link, index) => (
                             <a href={link.href} target="_blank" key={index}>
                                 <IconButton

@@ -1,46 +1,46 @@
-.contact_container {
+.contactPage__container {
     padding-top: 2.5em;
 }
-.contact_section {
+.contactPage__section {
     align-content: center;
     place-content: start;
-
-
-    .contact_hyperlink h3 {
+    .contactPage__hyperlink h3 {
         font-size: 14px;
         
     }
 }
-.contact_details {
+.contactPage__details {
     display: flex;
     flex-direction: row;
     justify-content: flex-start; /* left */
-    align-items: top; 
+    align-items: start; 
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px;
     row-gap: 15px;
 }
-.contact_card {
-    flex: 0 1 30%;
+.contactPage__card {
+    flex: 1 1 30%;
 
 }
-.contact_socials_title {
+.contactPage__socials_title {
     text-align: center;
 }
-.contact_socials {
+.contactPage__socials {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     padding-top: 10px;
     gap: 2em;
+    row-gap: 12px;
 }
 
-.contact_title {
+.contactPage__title {
     font-size: 18px;
     text-align: center;
     font-weight: 400;
 }
 
-.contact_card_text, .contact_card_text > p {
+.contactPage__card_text, .contactPage__card_text > p {
     margin: 0;
     display: inline;
 }
@@ -48,12 +48,19 @@
 
 /* responsive queries */
 @media (max-width: 1024px) {
-    .contact_card {
+    .contactPage__card {
         flex: 0 1 45%;
     }
 }
 @media (max-width: 768px) {
-    .contact_card {
+    .contactPage__container {
+        padding-top: 0.5em;
+    }
+    .contactPage__details {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .contactPage__card {
         flex: 1 1 50%;
     }
 }

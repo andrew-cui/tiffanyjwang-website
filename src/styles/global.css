@@ -23,7 +23,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--background-primary);
+  background-color: var(--color-background-primary);
   color: var(--color-primary);
 }
 html, #root {
@@ -81,4 +81,3 @@ body {
 .app_container {
   margin-top: 10em;
 }
-

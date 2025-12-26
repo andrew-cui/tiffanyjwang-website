@@ -11,8 +11,19 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 32px;
   line-height: 1.1;
+
+  &.page_title {
+    display: none;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 400;
+    text-transform: lowercase;
+    padding-top: 35px;
+    padding-bottom: 25px;
+    margin: 0;
+  }
 }
 
 h2 {
@@ -54,4 +65,3 @@ a {
     cursor: pointer;
   }
 }
-

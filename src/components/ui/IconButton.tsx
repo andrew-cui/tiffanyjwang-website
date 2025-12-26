@@ -1,7 +1,7 @@
 
 import { ReactNode } from 'react'
 
-export function IconButton ({
+export default function IconButton ({
     icon,
     label = '',
     iconAfterText = false, // if true, place icon second

@@ -1,7 +1,8 @@
-import { useState } from 'react';
-import type { BookProps } from "@/types/book";
-import '@styles/booknavigation.css'
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react'
+import clsx from 'clsx'
+import type { BookProps } from "@/types/book"
+import css from '@styles/app/books/bookNav.module.css'
+import { motion, AnimatePresence } from 'framer-motion'
 
 type BookNavProps = {
     bookData: BookProps[];
@@ -9,7 +10,7 @@ type BookNavProps = {
     activeBook: BookProps;
 };
 
-export function BookNav ({ 
+export default function BookNav ({ 
     bookData,
     handleBookClick,
     activeBook,
@@ -21,21 +22,25 @@ export function BookNav ({
     }
 
     return (
-        <div className="book-navigation-container">
+        <div className={clsx(css.bookNav__container)}>
             <div className="app_container">
-                <div className="book-navigation">
+                <div className={clsx(
+                    css.bookNav
+                )}>
                     {/* Top navigation item */}
                     <button 
-                        className="book-navigation-item"
+                        className={clsx(
+                            css.bookNav__selector
+                        )}
                         onClick={() => {
                             toggleBookNav();
                         }}>
-                        <div className="book-navigation-item-cover"><img src={activeBook ? activeBook.img_src : bookData[0].img_src}></img></div>
-                        <div className="book-navigation-item-title">
+                        <div className={clsx(css.bookNav__selector_image)}><img src={activeBook ? activeBook.img_src : bookData[0].img_src}></img></div>
+                        <div className={clsx(css.bookNav__selector_text)}>
                             <h3>{activeBook ? activeBook.title : bookData[0].title}</h3>
                             <h5>{activeBook ? activeBook.library_subtitle : bookData[0].library_subtitle}</h5>
                         </div>
-                        <div className="book-navigation-item-icon">
+                        <div className={clsx(css.bookNav__selector_icon)}>
                             {isOpenBookNav ? 
                                 <i className="bi bi-toggle-on"></i> : 
                                 <i className="bi bi-toggle-off"></i>
@@ -46,17 +51,26 @@ export function BookNav ({
                     {/* Dropdown navigation item */}
                     <AnimatePresence>
                     {isOpenBookNav && (
-                        <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} style={{ overflow: "hidden" }} className="book-navigation-dropdown">
+                        <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} style={{ overflow: "hidden" }} 
+                        className={clsx(css.bookNav__menu)}>
                             {bookData.map((book, index) => (
                                 <button 
                                     key={index} 
-                                    className="book-navigation-item"
+                                    className={clsx(
+                                        css.bookNav__menu_item, 
+                                        css.bookNav__selector)}
                                     onClick={() => {
                                         toggleBookNav();
                                         setTimeout(() => handleBookClick(book), 0);
                                     }}>
-                                    <div className="book-navigation-item-cover"><img src={book.img_src}></img></div>
-                                    <div className="book-navigation-item-title">
+                                    <div className={clsx(
+                                        css.bookNav__menu_item_image, 
+                                        css.bookNav__selector_image)}>
+                                            <img src={book.img_src}></img>
+                                    </div>
+                                    <div className={clsx(
+                                        css.bookNav__menu_item_text, 
+                                        css.bookNav__selector_text)}>
                                         <h3>{book.title}</h3>
                                         <h5>{book.library_subtitle}</h5>
                                     </div>

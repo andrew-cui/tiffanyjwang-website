@@ -1,13 +1,23 @@
 :root {
     /* backgrounds & colors */
-    --background-primary: #faf8f6;
-    --background-white: #ffffffaa;
-    --background-white85: rgba(250, 248, 246, 0.85);
+    --rgb-primary-bg: 250, 248, 246;           /* #faf8f6 */
+    --rgb-primary-color: 39, 39, 42;
+    --rgb-gold: 204, 153, 51;  
+    --rgb-gold-alt: 219, 171, 4;
+    --rgb-gray-light: 170, 170, 170;               
+    --rgb-gray-medium: 135, 135, 135;                
+    --rgb-gray-dark: 50, 50, 50;                
+    --rgb-black: 15, 15, 15;
 
-    --color-text: #27272a;
-    --rgb-gold: 204, 153, 51;
+    /* backgrounds and colors */
+    --color-background-primary: rgb(var(--rgb-primary-bg));  
+    --color-background-nav: rgba(var(--rgb-primary-bg), 0.85);      
+    --color-background-white: #ffffffaa;
+    --color-text: rgb(var(--rgb-primary-color));
     --color-gold: rgb(var(--rgb-gold));
-    --color-disabled: #cccccc;
+    --color-disabled: rgb(var(--rgb-gray-light));
+    --color-boxshadow-primary: rgba(var(--rgb-gray-medium), 0.25);
+    --color-boxshadow-hover: rgba(var(--rgb-gray-dark), 0.4);
 
     /* navigation */
     --nav-height: 150px;
