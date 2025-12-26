@@ -200,3 +200,33 @@ p.footer__copyright {
         position: fixed;
     }
 }
+
+/* responsive design for rotated screens */
+@media (max-height: 768px) {
+    .nav--mobile__icons {
+        padding-top: 30px;
+    }
+}
+@media (max-height: 576px) {
+    .nav__header_logo {
+        height: 50px;
+        margin: 10px;
+    }
+    .footer {
+        margin: 0.5em auto;
+    }
+    .nav--mobile__icons {
+        padding-top: 15px;
+    }
+    .footer__icons {
+        margin-bottom: 10px;
+    }
+}
+@media (max-height: 360px) {
+    .nav__header {
+        padding-top: 10px;
+    }
+    .nav--mobile__icons {
+        display: none;
+    }
+}

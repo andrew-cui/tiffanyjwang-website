@@ -22,3 +22,9 @@
     /* navigation */
     --nav-height: 150px;
 }
+
+@media (max-height: 576px) {
+    :root {
+        --nav-height: 120px;
+    }
+}
