@@ -85,12 +85,11 @@
     }
 }
 .hyperlink--no_underline {
-    &:hover, 
-    &:active, 
-    &:focus > .hyperlink__text,
-    .hyperlink--inline {
-        &::after {
-            width: 0;
+    &:hover, &:active, &:focus {
+        .hyperlink__text, .hyperlink--inline {
+            &::after {
+                width: 0;
+            }
         }
     }
 }

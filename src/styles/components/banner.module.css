@@ -63,6 +63,7 @@
     font-family: var(--sans-serif-1);
     font-weight: 400;
     color: var(--color-gold);
+    margin-bottom: 2px;
     
     i {
         position: relative;

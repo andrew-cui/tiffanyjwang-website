@@ -20,7 +20,7 @@ export default function Hyperlink ({
     classes,
     variant,
     active = false,         // false = do not color
-    external = true,        // false = remains on-site, true = redirects in new tab
+    external = false,       // false = remains on-site, true = redirects in new tab
     disabled = false,       // true = not clickable
     inline = false,         // true = able to be shown on the same line
     underline = true,       // true = includes underline animation

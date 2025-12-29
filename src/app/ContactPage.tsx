@@ -30,7 +30,8 @@ export default function ContactPage () {
                                             <Hyperlink
                                                 text = {'KT Literary'}
                                                 href = {'https://ktliterary.com/agents'}
-                                                inline />
+                                                inline
+                                                external />
                                         </span>
                                     )}
                                     variant = {'contact'}
