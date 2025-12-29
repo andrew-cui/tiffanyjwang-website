@@ -115,5 +115,5 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    row-gap: 7.5px;
+    row-gap: 10px;
 }

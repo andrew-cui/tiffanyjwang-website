@@ -19,7 +19,6 @@ button.iconButton {
   color: var(--color-text);
 
   h4 {
-    color: var(--color-text);
     margin: 0;
   }
   span {

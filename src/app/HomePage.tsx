@@ -26,7 +26,8 @@ export default function HomePage () {
                                 text = {"INFERNO'S HEIR"}
                                 href = {'https://www.barnesandnoble.com/w/infernos-heir-tiffany-wang/1144758931'}
                                 variant = {'homepage_about'} 
-                                inline /> duology. She studied communication and international relations at the University of Pennsylvania. In her spare time, she enjoys reading a variety of books (especially in YA!), perusing her local library, and searching for the best deals at happy hour.
+                                inline
+                                external /> duology. She studied communication and international relations at the University of Pennsylvania. In her spare time, she enjoys reading a variety of books (especially in YA!), perusing her local library, and searching for the best deals at happy hour.
                                 </h2>
                         <Spacer size={"xs"}/>
                         <h2>She is represented by
@@ -34,7 +35,8 @@ export default function HomePage () {
                                 text = {'Kelly Van Sant of KT Literary'}
                                 href = {'https://ktliterary.com/'}
                                 variant = {'homepage_about'} 
-                                inline />.
+                                inline 
+                                external />.
                         </h2>
                         
                         {/* banners */}
