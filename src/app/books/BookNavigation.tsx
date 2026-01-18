@@ -51,8 +51,8 @@ export default function BookNav ({
                         </div>
                         <div className={clsx(css.bookNav__selector_icon)}>
                             {isOpenBookNav ? 
-                                <i className="bi bi-toggle-on"></i> : 
-                                <i className="bi bi-toggle-off"></i>
+                                <i className="bi bi-chevron-up"></i> : 
+                                <i className="bi bi-chevron-down"></i>
                             }
                         </div>
                     </button>
